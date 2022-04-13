@@ -1,0 +1,27 @@
+
+<style media="screen">
+	@media only screen and (min-width: 500px) {
+	#park_video_m{ display: None; }
+
+}
+@media only screen and (max-width: 500px) {
+#park_video_l{ display: None; }
+
+}
+</style>
+<div id="carouselExampleSlidesOnly " class="carousel slide" data-ride="carousel">
+<div class="carousel-inner "  id="park_video_m" style="height:300px;">
+<video loop="true" autoplay="autoplay" controls muted style="width:500px;">
+  <source src="../media/home/icon/park2.mp4" type="video/mp4" >
+  <source src="../media/home/icon/park2.mp4" type="video/ogg" >
+</video>
+</div>
+
+<div class="carousel-inner "  id="park_video_l"  style="height:500px; margin-top:1%;">
+<video  loop="true" autoplay="autoplay" controls muted style="width:100%; ">
+  <source src="../media/home/icon/lg_park.mp4" type="video/mp4" >
+  <source src="../media/home/icon/lg_park.mp4" type="video/ogg" >
+
+</video>
+</div>
+</div>

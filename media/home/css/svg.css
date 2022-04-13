@@ -1,0 +1,96 @@
+/*===================== SVG CSS ======================= */
+
+.header-icon {
+	fill: #bdc3d3;
+	fill-rule: evenodd;
+}
+.header-icon:hover {
+	fill: #434f74;
+	fill-rule: evenodd;
+}
+.full-width .home li:hover .header-icon, .full-width .home li.active .header-icon {
+	fill: #434f74;
+	fill-rule: evenodd;
+}
+
+.left-icons {
+	fill: #bdc3d3;
+	fill-rule: evenodd;
+	margin-right: 10px;
+}
+
+.sidebar .nav-item:hover .left-icons, .sidebar .nav-item.active .left-icons {
+	fill: #f24f86;
+	fill-rule: evenodd;
+}
+
+.location-icon {
+	fill: #fff;
+	fill-rule: evenodd;
+	margin-right:5px;
+}
+.radar-icon3 {
+	fill: #bdc3d3;
+	fill-rule: evenodd;
+	position: absolute;
+    top: 14px;
+    z-index: 9;
+    margin-left: 15px;
+	pointer-events: none;
+}
+.option-links {
+    fill: #bdc3d3;
+    fill-rule: evenodd;
+	margin-bottom: 10px;
+}
+.more-options:hover .option-links {
+    fill: #4267B2;
+    fill-rule: evenodd;
+}
+.report-icon {
+    fill: #bdc3d3;
+    fill-rule: evenodd;
+	margin-right: 5px;
+}
+/****** MAP ******/
+
+.listing-tab {
+    display: block;
+    transition: all .2s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+.profile-body {
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+.tab-content {
+    position: relative;
+}
+.upload {
+	fill: #bdc3d3;
+	fill-rule: evenodd;
+	margin-bottom: 10px;
+}
+.caret-down {
+	fill: #434f74;
+	fill-rule: evenodd;
+}
+.delete-icon {
+	fill: #bdc3d3;
+	fill-rule: evenodd;
+}
+.delete-icon:hover {
+	fill: #434f74;
+	fill-rule: evenodd;
+}
+.publish-listing {
+	fill: #fff;
+	fill-rule: evenodd;
+	width: 40px;
+	opacity: 0.2;
+	float: right;
+	padding: 7px 0;
+    margin-right: 15px;
+}
