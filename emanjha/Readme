@@ -1,0 +1,7 @@
+When the project is created on Django framework at that time the folder gets created with project name 
+Emnjha is the projectc name and so is the folder emnjha created by default
+Default files---
+setting.py 
+urls.py
+wsgy.py
+
