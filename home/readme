@@ -1,0 +1,2 @@
+/templates- html files
+/templatetags- Custom filter whih serve as helper functions transposing any strings, data, lists while being saved or exposed to the DB or rendered in UI
