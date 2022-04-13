@@ -1,0 +1,370 @@
+
+<div class="tab-pane" role="tabpanel" id="reviews">
+  <div class="row lr-row">
+    <div class="col-md-7">
+      {% if r_cnt == 0 %}
+      <br>
+        <p>No review yet...}</p>
+        {% endif %}
+      {% for r in review %}
+
+
+      <div class=" locatins">
+        <div class="heading1">
+          <img src="../../../../www.gambolthemes.net/html-items/brexit/White/images/icon/user.html" alt="">
+          <h3>
+            {{r.user_nm}}
+
+            <p style="color:#000;"> {{r.p_date}} </p>
+          </h3>
+        </div>
+        <div class="rightmais">
+          {% load mathfilters %}
+
+          {{r.overall|add:"0"|add:r.service|add:"0"|add:r.behaviour|add:"0"|div:3|floatformat:"0"}}/<span>5</span>
+        </div>
+
+        <div class="sub-heading">
+        <p style="color:#000;">  {{r.comment}}</p>
+        </div>
+
+        <div class="rating">
+          <span>	Overall Rating </span>
+          <div class="rating-star-selected">
+            {% with s=r.overall|add:"0" %}
+            {% if s == 1  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 2  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 3  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 4  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 5  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            {% endif %}
+
+            {% endwith %}
+
+          </div>
+        </div>
+
+        <div class="rating">
+          <span>	Service </span>
+          <div class="rating-star-selected">
+            {% with s=r.service|add:"0" %}
+            {% if s == 1  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 2  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 3  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 4  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 5  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            {% endif %}
+
+            {% endwith %}
+
+          </div>
+        </div>
+        <div class="rating">
+          <span>	Behaviour </span>
+          <div class="rating-star-selected">
+            {% with s=r.behaviour|add:"0" %}
+            {% if s == 1  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 2  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 3  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 4  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            {% endif %}
+            {% if s == 5  %}
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            <i class="fa blue fa-star" aria-hidden="true"></i>
+            {% endif %}
+
+            {% endwith %}
+
+          </div>
+        </div>
+        <!-- here image slider -->
+        {% include "review_image.html" %}
+        <!-- end image slider -->
+      <div class="clearfix"></div>
+    </div>
+  {% endfor %}
+
+
+  <br>
+  {% if r_cnt > 3 %}
+<center><a href="/after_review/local,{{i.id}}" class="btn btn-primary" style="background:red; margin-top:10px;">View More {{r_cnt|add:'-3'}}</a></center>
+{% endif %}
+    </div>
+    <div class="col-md-5">
+      <div class="box-left">
+        <div class="rightboxs">
+          <div class="heading5">
+            <h3>Add Review</h3>
+          </div>
+          <form action="/review" enctype="multipart/form-data" method="post" id="myForm">
+            {% csrf_token %}
+        <div class="rating margin">
+          <span>	overall rating </span>
+          <div class="rating-star-selected">
+            <div class="stars">
+
+                <input class="star star-5" id="star-5" type="radio" name="overall" value="5"/>
+                <label class="star star-5" for="star-5"></label>
+                <input class="star star-4" id="star-4" type="radio" name="overall" value="4"/>
+                <label class="star star-4" for="star-4"></label>
+                <input class="star star-3" id="star-3" type="radio" name="overall" value="3"/>
+                <label class="star star-3" for="star-3"></label>
+                <input class="star star-2" id="star-2" type="radio" name="overall" value="2"/>
+                <label class="star star-2" for="star-2"></label>
+                <input class="star star-1" id="star-1" type="radio" name="overall" value="1"/>
+
+
+                <label class="star star-1" for="star-1"></label>
+
+            </div>
+          </div>
+        </div>
+        <div class="rating">
+          <span>	service </span>
+          <div class="rating-star-selected">
+            <div class="stars">
+
+                <input class="star star-5" id="star-5-1" type="radio" name="service" value="5"/>
+                <label class="star star-5" for="star-5-1"></label>
+                <input class="star star-4" id="star-4-1" type="radio" name="service" value="4"/>
+                <label class="star star-4" for="star-4-1"></label>
+                <input class="star star-3" id="star-3-1" type="radio" name="service" value="3"/>
+                <label class="star star-3" for="star-3-1"></label>
+                <input class="star star-2" id="star-2-1" type="radio" name="service" value="2"/>
+                <label class="star star-2" for="star-2-1"></label>
+                <input class="star star-1" id="star-1-1" type="radio" name="service" value="1"/>
+                <label class="star star-1" for="star-1-1"></label>
+
+            </div>
+          </div>
+        </div>
+        <div class="rating">
+          <span>	behaviour</span>
+          <div class="rating-star-selected">
+            <div class="stars">
+
+                <input class="star star-5" id="star-5-2" type="radio" name="behaviour" value="5"/>
+                <label class="star star-5" for="star-5-2"></label>
+                <input class="star star-4" id="star-4-2" type="radio" name="behaviour" value="4"/>
+                <label class="star star-4" for="star-4-2"></label>
+                <input class="star star-3" id="star-3-2" type="radio" name="behaviour" value="3"/>
+                <label class="star star-3" for="star-3-2"></label>
+                <input class="star star-2" id="star-2-2" type="radio" name="behaviour" value="2"/>
+                <label class="star star-2" for="star-2-2"></label>
+                <input class="star star-1" id="star-1-2" type="radio" name="behaviour" value="1"/>
+                <label class="star star-1" for="star-1-2"></label>
+
+            </div>
+          </div>
+        </div>
+
+
+        <div class="rating">
+          <span>	Upload Image</span>
+
+        </div>
+
+
+            <div class="image-upload">
+  <label for="file-input">
+    <img src="http://icon-library.com/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width:35px; height:35px; margin-top:10%;">
+  </label>
+
+  <input id="file-input" type="file" name="img" style="display: none;" onchange="preview_image(event)" multiple />
+
+  <!-- image preview -->
+  <style type="text/css">
+  .thumbimage {
+      float:left;
+      width:100px;
+      height:100px;
+      position:relative;
+      padding:5px;
+  }
+  </style>
+
+<!-- end -->
+</div>
+
+
+          <div class="rightboxes">
+            <input  type="hidden" name="id" value="{{id}}"/>
+            <input  type="hidden" name="tag" value="{{tag}}"/>
+            <input  type="hidden" name="user_id" value="{{user.username}}"/>
+            <input  type="hidden" name="user_nm" value="{{user.first_name}}"/>
+
+
+            <div  id="preview-image" >
+              <h3>Your Comment*</h3>
+              </div>
+              <textarea id="comt" placeholder="Enter Comment" name='comt' required></textarea>
+
+              {% if user.is_authenticated %}
+              <input type="button" onclick="tab()" class="btn btn-danger" data-toggle="modal" value="Submit" data-target="#exampleModal">
+              {% else %}
+
+              <a href="/signin" style="color:#fff;" class="btn btn-danger">Sign In Please</a>
+                {% endif %}
+
+          </div>
+          <div id="demo"></div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script type='text/javascript'>
+
+
+$("#file-input").on('change', function () {
+
+     var countFiles = $(this)[0].files.length;
+
+     var imgPath = $(this)[0].value;
+     var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+     var image_holder = $("#preview-image");
+     image_holder.empty();
+
+     if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+         if (typeof (FileReader) != "undefined") {
+
+             for (var i = 0; i < countFiles; i++) {
+
+                 var reader = new FileReader();
+                 reader.onload = function (e) {
+                     $("<img />", {
+                         "src": e.target.result,
+                             "class": "thumbimage"
+                     }).appendTo(image_holder);
+                 }
+
+                 image_holder.show();
+                 reader.readAsDataURL($(this)[0].files[i]);
+             }
+
+         } else {
+             alert("It doesn't supports");
+         }
+     } else {
+         alert("Select Only images");
+     }
+
+ });
+ function tab(){
+   var c = document.getElementById('comt').value
+   if(c!=''){
+   document.getElementById("demo").innerHTML=`<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">Review Alert</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           Are you sure You want to submit this review
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           <input value="Submit" type="submit" class="btn btn-primary">
+         </div>
+       </div>
+     </div>
+   </div>`
+
+ }else {
+     alert("Fill all the fields");
+   }
+ }
+</script>
+<!-- Modal -->

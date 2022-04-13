@@ -1,0 +1,122 @@
+<style media="screen">
+@media only screen and (max-width: 500px) {
+  #title_img{
+  width:80%;
+  }
+}
+</style>
+{% extends 'header.html' %}
+{% block title %}Travel As You Go | Community & Forum{% endblock %}
+
+{% block body %}
+{% load myfilter %}
+<div id="content-wrapper" >
+  <div class="container-fluid pb-0">
+   <!-- Profile Detail Area Start-->
+    <div class="video-block section-padding">
+      <div class="main-items">
+        <div class="row justify-content-md-center" >
+          <div class="messages text-center col-md-12" >
+            <br>
+          <img src="../media/home/park_img/community.png" alt="Community & Forum"  id="title_img" >
+            <hr>
+          </div>
+        </div>
+        <div class="my-all-lisitngs" style="margin-top:-5%;">
+          <div class="row justify-content-md-center" >
+            <div class="col-lg-10 col-sm-12" >
+              <div class="help-tabs" >
+
+                <div class="tab-content" id="myTabContent" >
+                  <div class="tab-pane show active" id="web" role="tabpanel" >
+                    <div class="help-faq" >
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Lorem ipsum dolor</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:17px;">lorem : </b>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+
+                        </div>
+                      </div>
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Lorem ipsum dolor</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:17px;">lorem : </b>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- end -->
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Lorem ipsum dolor</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:17px;">lorem : </b>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- end -->
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Lorem ipsum dolor</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:17px;">lorem : </b>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- end -->
+
+
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Lorem ipsum dolor</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:17px;">lorem : </b>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- end -->
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+var acc = document.getElementsByClassName("help-accordion");
+var i;
+
+for(i = 0; i < acc.length; i++){
+ acc[i].addEventListener("click", function(){
+ this.classList.toggle("active");
+
+   var panel = this.nextElementSibling;
+   if(panel.style.display === "block"){
+     panel.style.display = "none";
+   } else {
+     panel.style.display ="block";
+   }
+ });
+}
+
+</script>
+<!--content-wrapper End-->
+
+    {% endblock %}

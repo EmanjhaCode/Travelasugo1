@@ -1,0 +1,30 @@
+<style media="screen">
+@media only screen and (max-width: 500px) {
+#sign113 {
+display: None;
+}
+
+}
+@media only screen and (max-width: 740px) {
+  .sign112 {
+  background:red;
+  }
+}
+
+
+</style>
+
+
+    <div class="dropdown " id="sign113" style="background:#fff; ">
+      <div class="account-dt dropdown-toggle-no-caret sign112"   aria-haspopup="true" aria-expanded="true" role="main" >
+
+        {% if user.is_authenticated %}
+          <i style="margin-left:-12%;" class="fa fa-user-circle"></i>
+        <a href="/save-park" style="color:#4267B2; ">{{user.first_name|slice:":12"}}</a>
+        {% else %}
+        <i style="margin-left:-20%;" class="fa fa-user-circle"></i>
+        <a  href="/signin" style="color:#4267B2;" id="#sign113">Sign In </a>
+          {% endif %}
+      </div>
+
+    </div>

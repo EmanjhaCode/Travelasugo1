@@ -1,0 +1,54 @@
+<style media="screen">
+@media only screen and (max-width: 500px) {
+#pgimg{
+  width:340px;
+  margin-left:-95%;
+  height:300px;
+}
+@media only screen and (min-width: 1024px) {
+#pgimg{
+
+  height:500px;
+}
+}
+</style>
+<div class="col-md-12 px-0">
+  <div class="profile-area">
+    <div class="bnnr-img-dpt">
+      {% if random == 1 %}
+    <div class="featured-section profile-cover profile-cover-image"  style="background-image: url(../../media/{{i.other1}})"></div>
+      <div class=" dash-profile">
+        <img src="../../media/{{i.other1}}" alt="" id="pgimg">
+      </div>
+      {% elif random == 2 %}
+      <div class="featured-section profile-cover profile-cover-image"  style="background-image: url(../../media/{{i.other2}})"></div>
+        <div class=" dash-profile">
+          <img src="../../media/{{i.other2}}" alt="" id="pgimg">
+        </div>
+        {% elif random == 3 %}
+        <div class="featured-section profile-cover profile-cover-image"  style="background-image: url(../../media/{{i.other3}})"></div>
+          <div class=" dash-profile">
+            <img src="../../media/{{i.other3}}" alt="" id="pgimg">
+          </div>
+          {% elif random == 4 %}
+          <div class="featured-section profile-cover profile-cover-image"  style="background-image: url(../../media/{{i.thumbnail1}})"></div>
+            <div class=" dash-profile">
+              <img src="../../media/{{i.thumbnail1}}" alt="" id="pgimg">
+            </div>
+            {% else %}
+            <div class="featured-section profile-cover profile-cover-image"  style="background-image: url(../../media/{{i.thumbnail2}})"></div>
+              <div class=" dash-profile">
+                <img src="../../media/{{i.thumbnail2}}" alt="" id="pgimg">
+              </div>
+              {% endif %}
+
+    </div>
+    <div class="item-dt">
+      <div class="item-title">
+        <h4> {{i.name}} </h4>
+
+      </div>
+
+    </div>
+  </div>
+</div>

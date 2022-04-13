@@ -1,0 +1,121 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+{% if user.is_authenticated %}
+{% if msg %}
+<script>
+ alert(`{{msg}}`);
+ window.open('/emanjha/admin_feedback','_self');
+  </script>
+{% endif %}
+<!-- start page content -->
+      <div class="page-content-wrapper">
+          <div class="page-content">
+              <div class="page-bar">
+                  <div class="page-title-breadcrumb">
+                      <div class=" pull-left">
+                          <div class="page-title">Feedback</div>
+                      </div>
+                      <ol class="breadcrumb page-breadcrumb pull-right">
+                          <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                          </li>
+
+
+                      </ol>
+                  </div>
+              </div>
+               <div class="row">
+                  <div class="col-md-12">
+                      <div class="card card-box">
+                          <div class="card-head">
+                              <header>Feedback</header>
+                              <div class="tools">
+                                  <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                                <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                                <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                              </div>
+                          </div>
+
+                          <div class="card-body ">
+
+                              <div class="table-scrollable">
+                              <table class="table table-hover table-checkable order-column full-width" id="example4">
+                                  <thead>
+                                      <tr>
+                                        <th class="center"> Name </th>
+                                        <th class="center"> Email </th>
+
+                                          <th class="center">Feedback</th>
+
+                                          <th class="center"> Date </th>
+                                          <th class="center"> Action </th>
+
+
+
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+{% for i in data%}
+                <tr class="odd gradeX">
+
+                  <td class="center">{{i.nm}}</td>
+                  <td class="center">{{i.em}}</td>
+                  <td class="center">{{i.feed}}</td>
+                  <td class="center">{{i.p_date}}</td>
+
+
+                  <td class="center">
+
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#tab{{i.id}}">
+                      Delete
+                   </button>
+
+                  </td>
+
+                </tr>
+{% endfor %}
+
+              </tbody>
+                              </table>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- modal start -->
+      {% for i in data %}
+      <!-- feedback delete section start -->
+      <div class="modal fade" id="tab{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="tab{{i.id}}Label" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title btn btn-danger" id="tab{{i.id}}Label">Alert....!</h5>
+
+      </div>
+      <div class="modal-body">
+      Are you sure you want to delete {{i.name}}
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <form class="" action='feedback_delete' method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{i.id}}">
+        <input type="submit" name="submit" value="Delete" class="btn btn-danger">
+      </form>
+      </div>
+      </div>
+      </div>
+      </div>
+      {% endfor %}
+      <!-- feedback delete section end -->
+      <!-- end page content -->
+      {% else %}
+       <script>
+         alert('You are not Logged-In..!');
+         window.open('/login','_self');
+         </script>
+         {% endif %}
+{% endblock %}

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Travel As You Go | Find Your Activity Facility & Near By Place </title>
+
+  {% include 'data_css.html' %}
+
+
+  </head>
+
+  <body id="page-top">
+
+
+    {% include 'navbar.html' %}
+    <script type="text/javascript">
+      if(screen.width<500) {
+      var element = document.getElementById("page-top");
+      element.classList.add("sidebar-toggled");
+    }
+    </script>
+	<div class="full-width" style="background:#fff;">
+		<div style="margin-left:1%; margin-right:1%;" >
+		  <!-- Sidebar -->
+
+			<div id="content-wrapper" style="background:#fff;">
+				<div class="container-fluid pb-0">
+				 <!-- Profile Detail Area Start-->
+					<div class="video-block section-padding">
+						<div class="main-item">
+							<div class="row">
+
+								<!-- Profile Detail Area End-->
+								<!--Nav Tabs Start -->
+								<div class="row item-detail-tabs">
+									<div class="col-xl-12 com-md-12 col-sm-12 px-0">
+										<ul class="nav  nav-tabs" role="tablist" id="myTab">
+											<li role="presentation">
+                        {% if user_back == 'user_back1' %}
+                        <a class="active" href="/park-detail_user/{{id}}" aria-controls="profile" role="tab" > Back </a>
+                        {% else %}
+                        <a class="active" href="/best-park-in-usa/usa-park,{{id}}" aria-controls="profile" role="tab" > Back </a>
+                        {% endif %}
+											</li>
+										</ul><!--Nav Tabs End -->
+
+										<div class="tab-content">
+
+                      <div class="tab-pane active" role="tabpanel" id="reviews">
+                        <div class="row lr-row">
+                          <div class="col-md-5">
+                            <div class="box-left">
+                              <div class="rightboxs">
+                                <div class="heading5">
+                                  <h3>Add Review </h3>
+                                </div>
+                                <form action="/review" enctype="multipart/form-data" method="post" id="myForm">
+                                  {% csrf_token %}
+                              <div class="rating margin">
+                                <span>	overall rating </span>
+                                <div class="rating-star-selected">
+                                  <div class="stars">
+
+                                      <input class="star star-5" id="star-5" type="radio" name="overall" value="5"/>
+                                      <label class="star star-5" for="star-5"></label>
+                                      <input class="star star-4" id="star-4" type="radio" name="overall" value="4"/>
+                                      <label class="star star-4" for="star-4"></label>
+                                      <input class="star star-3" id="star-3" type="radio" name="overall" value="3"/>
+                                      <label class="star star-3" for="star-3"></label>
+                                      <input class="star star-2" id="star-2" type="radio" name="overall" value="2"/>
+                                      <label class="star star-2" for="star-2"></label>
+                                      <input class="star star-1" id="star-1" type="radio" name="overall" value="1"/>
+
+
+                                      <label class="star star-1" for="star-1"></label>
+
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="rating">
+                                <span>	service </span>
+                                <div class="rating-star-selected">
+                                  <div class="stars">
+
+                                      <input class="star star-5" id="star-5-1" type="radio" name="service" value="5"/>
+                                      <label class="star star-5" for="star-5-1"></label>
+                                      <input class="star star-4" id="star-4-1" type="radio" name="service" value="4"/>
+                                      <label class="star star-4" for="star-4-1"></label>
+                                      <input class="star star-3" id="star-3-1" type="radio" name="service" value="3"/>
+                                      <label class="star star-3" for="star-3-1"></label>
+                                      <input class="star star-2" id="star-2-1" type="radio" name="service" value="2"/>
+                                      <label class="star star-2" for="star-2-1"></label>
+                                      <input class="star star-1" id="star-1-1" type="radio" name="service" value="1"/>
+                                      <label class="star star-1" for="star-1-1"></label>
+
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="rating">
+                                <span>	behaviour</span>
+                                <div class="rating-star-selected">
+                                  <div class="stars">
+
+                                      <input class="star star-5" id="star-5-2" type="radio" name="behaviour" value="5"/>
+                                      <label class="star star-5" for="star-5-2"></label>
+                                      <input class="star star-4" id="star-4-2" type="radio" name="behaviour" value="4"/>
+                                      <label class="star star-4" for="star-4-2"></label>
+                                      <input class="star star-3" id="star-3-2" type="radio" name="behaviour" value="3"/>
+                                      <label class="star star-3" for="star-3-2"></label>
+                                      <input class="star star-2" id="star-2-2" type="radio" name="behaviour" value="2"/>
+                                      <label class="star star-2" for="star-2-2"></label>
+                                      <input class="star star-1" id="star-1-2" type="radio" name="behaviour" value="1"/>
+                                      <label class="star star-1" for="star-1-2"></label>
+
+                                  </div>
+                                </div>
+                              </div>
+
+
+                              <div class="rating">
+                                <span>	Upload Image</span>
+
+                              </div>
+
+
+                                  <div class="image-upload">
+                        <label for="file-input">
+                          <img src="http://icon-library.com/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width:35px; height:35px; margin-top:10%;">
+                        </label>
+
+                        <input id="file-input" type="file" name="img" style="display: none;" onchange="preview_image(event)" multiple />
+                        <p id="output_image"></p>
+                      </div>
+
+                      <!-- image preview -->
+                      <style type="text/css">
+                      .thumbimage {
+                          float:left;
+                          width:100px;
+                          height:100px;
+                          position:relative;
+                          padding:5px;
+                      }
+                      </style>
+
+                    <!-- end -->
+                                <div class="rightboxes">
+                                  <input  type="hidden" name="id" value="{{id}}"/>
+                                  <input  type="hidden" name="tag" value="{{tag}}"/>
+                                  <input  type="hidden" name="user_id" value="{{user.username}}"/>
+                                  <input  type="hidden" name="user_nm" value="{{user.first_name}}"/>
+
+
+
+                                  <div  id="preview-image" >
+                                    <h3>Your Comment*</h3>
+                                    </div>
+                                    <textarea id="comt" placeholder="Enter Comment" name='comt' required></textarea>
+                                    {% if user.is_authenticated %}
+                                    <input type="button" onclick="tab()" class="btn btn-danger" data-toggle="modal" value="Submit" data-target="#exampleModal">
+
+                                    {% else %}
+
+                                    <a href="/signin" style="color:#fff;" class="btn btn-danger">Sign In Please</a>
+                                      {% endif %}
+
+                                </div>
+                                  <div id="demo"></div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-7" >
+                            {% if r_cnt == 0 %}
+                            <br>
+                              <p>No review yet...}</p>
+                              {% endif %}
+
+                            {% for r in review %}
+
+
+                            <div class=" locatins">
+                              <div class="heading1">
+                                <img src="../../../../www.gambolthemes.net/html-items/brexit/White/images/icon/user.html" alt="">
+                                <h3>
+                                  {{r.user_nm}}
+
+
+                                </h3>
+                              </div>
+
+                                {% load mathfilters %}
+
+                                <div class="rating-star-selected">
+                                  {% with s=r.overall|add:"0" %}
+                                  {% if s == 1  %}
+                                  <i style="color:#ff0000;"  class="fa blue fa-star" aria-hidden="true" ></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  {% endif %}
+                                  {% if s == 2  %}
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  {% endif %}
+                                  {% if s == 3  %}
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  {% endif %}
+                                  {% if s == 4  %}
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                                  {% endif %}
+                                  {% if s == 5  %}
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+                                  {% endif %}
+
+                                  {% endwith %}
+
+                                </div>
+
+
+                              <div class="sub-heading" >
+                            <p style="color:#000;">  {{r.comment}}</p>
+                              </div>
+
+
+                              <!-- here image slider -->
+                              {% include "review_image.html" %}
+                              <!-- end image slider -->
+                            <div class="clearfix"></div>
+                          </div>
+                        {% endfor %}
+                        <!--  include "sreview.html"  -->
+
+
+
+                        <div  id="load_data"></div>
+                        <div id="load_data_message"></div>
+
+
+                          </div>
+
+                        </div>
+                      </div>
+
+
+
+                      </div>
+
+										<!--Tabs Panes End -->
+
+								</div>
+								<!--Tab Links End-->
+							</div>
+						</div>
+					</div>
+			</div>
+		  <!--content-wrapper End-->
+		</div>
+	</div>
+	</div>
+
+    <!--wrapper -->
+			<!-- Sticky Footer -->
+			<footer class="sticky-footer">
+			  <div class="container my-auto">
+				<div class="copyright text-center my-auto">
+
+				<div class="footer-info">
+							<a href="#">About </a> |
+							<a href="#">Faq’s </a> |
+							<a href="#">Privacy</a> |
+							<a href="#"> Advertise</a>  |
+							<a href="#">Term & Conditions </a> |
+							<a href="#">Sitemap  </a>|
+							<a href="#">Tags  </a>|
+							<a href="#">Blog</a>
+						</div>
+						<div class="copy-right">
+						© Copyright 2019 by Emanjha LLC. All Rights Reserved.
+						</div>
+				</div>
+			  </div>
+			</footer>
+
+
+    <!-- Scroll to Top Button Start-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="ti-arrow-up"></i>
+    </a>
+	<!-- Scroll to Top Button End-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../media/home/js/jquery.min.js"></script>
+    <script src="../media/home/js/bootstrap.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src='../../../../api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../media/home/js/sb-admin.min.js"></script>
+	<script src="../media/home/js/carousel_recom.js"></script>
+	<script src="../media/home/js/menurght.js"></script>
+	<script src="../media/home/js/crausal1.js"></script>
+	<script src="../media/home/js/custom.js"></script>
+	<script src="../media/home/js/photoswipe.min.js"></script>
+	<script src="../media/home/js/photoswipe-ui-default.min.js"></script>
+
+	<!-- Demo scripts for this page-->
+   	<script src="../media/home/js/slick.min.js"></script>
+
+	<!-- Assect scripts for this page-->
+	<script src="../media/home/assets/vendors/jquery.min.js"></script>
+    <script src="../media/home/assets/owlcarousel/owl.carousel.js"></script>
+<script src="../media/assets/js/res_sidebar.js"></script>
+	<script>
+	var acc = document.getElementsByClassName("faq-accordion");
+	var i;
+
+	for(i = 0; i < acc.length; i++){
+		acc[i].addEventListener("click", function(){
+		this.classList.toggle("active");
+
+			var panel = this.nextElementSibling;
+			if(panel.style.display === "block"){
+				panel.style.display = "none";
+			} else {
+				panel.style.display ="block";
+			}
+		});
+	}
+
+	</script>
+  <script type='text/javascript'>
+
+  $("#file-input").on('change', function () {
+
+       var countFiles = $(this)[0].files.length;
+
+       var imgPath = $(this)[0].value;
+       var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+       var image_holder = $("#preview-image");
+       image_holder.empty();
+
+       if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+           if (typeof (FileReader) != "undefined") {
+
+               for (var i = 0; i < countFiles; i++) {
+
+                   var reader = new FileReader();
+                   reader.onload = function (e) {
+                       $("<img />", {
+                           "src": e.target.result,
+                               "class": "thumbimage"
+                       }).appendTo(image_holder);
+                   }
+
+                   image_holder.show();
+                   reader.readAsDataURL($(this)[0].files[i]);
+               }
+
+           } else {
+               alert("It doesn't supports");
+           }
+       } else {
+           alert("Select Only images");
+       }
+
+   });
+   function tab(){
+     var c = document.getElementById('comt').value
+     if(c!=''){
+     document.getElementById("demo").innerHTML=`<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Review Alert</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             Are you sure You want to submit this review
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             <input value="Submit" type="submit" class="btn btn-primary">
+           </div>
+         </div>
+       </div>
+     </div>`
+
+   }else {
+       alert("Fill all the fields");
+     }
+   }
+  </script>
+  <!-- Modal -->
+  <script>
+
+
+  $(document).ready(function(){
+
+   var limit = 1;
+   var start = 1;
+   var action = 'inactive';
+   var state = 'California';
+   var id = `{{id}}`
+   function load_country_data(limit, start)
+   {
+    $.ajax({
+
+     url:"/load_review",
+     method:"POST",
+     data:{limit:limit, start:start,state:state,id:id,'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()},
+     cache:false,
+     success:function(data)
+     {
+
+      $('#load_data').append(data);
+
+
+      if(data == '')
+      {
+
+       $('#load_data_message').html("<br><center><h1 class='btn btn-danger'>No data found</h1></center>");
+       action = 'active';
+      }
+      else
+      {
+
+       $('#load_data_message').html("<center><img src='../media/categories/mygif.gif' width='170' ></center>");
+       action = "inactive";
+      }
+     }
+    });
+   }
+
+   if(action == 'inactive')
+   {
+    action = 'active';
+    load_country_data(limit, start);
+   }
+   $(window).scroll(function(){
+    if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == 'inactive')
+    {
+     action = 'active';
+     start = start + limit;
+     setTimeout(function(){
+      load_country_data(limit, start);
+     }, 1000);
+    }
+   });
+
+  });
+
+  </script>
+  </body>
+
+</html>

@@ -1,0 +1,143 @@
+
+
+<div class="video-block section-padding">
+  <div class="row">
+    <div class="htitle col-md-12">
+
+      <h5>Recommended  </h5>
+
+
+      <form class="" action="/nearby" method="POST" id="near">{% csrf_token %}
+       <input type="hidden" name="lat" id="nm">
+       <input type="hidden" name="lon" id="nm1">
+      </form>
+    </div>
+    <section id="demos1">
+      <div class="col-md-12">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            <!-- NearBy section -->
+
+          <div class="item">
+            <div class="box">
+            <div class="box-img" >
+              <a  onclick="getloc()" class="over-bg"></a>
+              <img src="../media/home/recommend/near.png" class="img" alt="" title="" style="height:180px;">
+              <div class="box-heading1">
+                <a   onclick="getloc()">Near By </a>
+
+              </div>
+
+            </div>
+            <div class="box-radius">
+              <img src="../media/home/recommend/near.png" class="img" alt="" title="" style="width:50px; height:50px; border-radius: 50%;">
+            </div>
+            <div class="box-heading3">
+            <a  onclick="getloc()">Near By</a>
+            </div>
+          </div>
+          </div>
+          <!-- end nearby section -->
+
+          <!-- state wise data -->
+          <div class="item">
+            <div class="box">
+            <div class="box-img">
+              <a href="/usa_all_park"  class="over-bg"></a>
+              <img src="../media/home/recommend/us_state.jpg" class="img" alt="" title="" style="height:180px;">
+              <div class="box-heading1">
+                <a href="/usa_all_park" >USA All Park</a>
+
+              </div>
+
+            </div>
+            <div class="box-radius">
+              <img src="../media/home/recommend/us_state.jpg" class="img" alt="" title="" style="width:50px; height:50px; border-radius: 50%;">
+            </div>
+            <div class="box-heading3">
+            <a href="/usa_all_park" >USA All Park</a>
+            </div>
+          </div>
+          </div>
+
+          <!-- end state wise -->
+          <!-- Alphabet wise data -->
+          <div class="item">
+            <div class="box">
+            <div class="box-img">
+              <a href="/us_national_park/alpha"  class="over-bg"></a>
+              <img src="../media/home/recommend/aplpha.jpg" class="img" alt="" title="" style="height:180px;">
+              <div class="box-heading1">
+                <a href="/alphabet" >Park By Alphabet</a>
+
+              </div>
+
+            </div>
+            <div class="box-radius">
+              <img src="../media/home/recommend/aplpha.jpg" class="img" alt="" title="" style="width:50px; height:50px; border-radius: 50%;">
+            </div>
+            <div class="box-heading3">
+            <a href="/us_national_park/alpha" >Park By Alphabet</a>
+            </div>
+          </div>
+          </div>
+
+          <!-- end Alphabet wise -->
+          <!-- usa national park wise data -->
+          <div class="item">
+            <div class="box">
+            <div class="box-img">
+              <a href="/us_national_park/state"  class="over-bg"></a>
+              <img src="../media/home/recommend/us_state.jpg" class="img" alt="" title="" style="height:180px;">
+              <div class="box-heading1">
+                <a class="more-options" type="button" data-toggle="modal" data-target="#sharelisitng" >USA National Park</a>
+
+              </div>
+
+            </div>
+            <div class="box-radius">
+              <img src="../media/home/recommend/us_state.jpg" class="img" alt="" title="" style="width:50px; height:50px; border-radius: 50%;">
+            </div>
+            <div class="box-heading3">
+            <a href="/us_national_park/state" >USA National Park</a>
+            </div>
+          </div>
+          </div>
+
+          <!-- end national wise -->
+          <!-- usa Country park wise data -->
+          <div class="item">
+            <div class="box">
+            <div class="box-img">
+              <a href="/by_country"  class="over-bg"></a>
+              <img src="../media/home/recommend/country.jpg" class="img" alt="" title="" style="height:180px;">
+              <div class="box-heading1">
+                <a href="/by_country" >All Country Park</a>
+
+              </div>
+
+            </div>
+            <div class="box-radius">
+              <img src="../media/home/recommend/country.jpg" class="img" alt="" title="" style="width:50px; height:50px; border-radius: 50%;">
+            </div>
+            <div class="box-heading3">
+            <a href="/by_country" >All Country Park</a>
+            </div>
+          </div>
+          </div>
+
+          <!-- end country wise -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div  id="nearclick">
+
+</div>
+<script type="text/javascript">
+  $('#nearclick').load("/nearclick").fadeIn("slow");
+</script>

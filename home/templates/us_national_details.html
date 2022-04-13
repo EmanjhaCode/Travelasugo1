@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Travel As You Go | Find Your Activity Facility & Near By Place </title>
+
+      {% include 'data_css.html' %}
+    <style media="screen">
+    @media screen and (min-width: 0px) and (max-width: 600px) {
+    #weather{ display: None; }  /* show it on smaller screen */
+    }
+    </style>
+
+  </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <body id="page-top">
+
+	<!-- Social Account Share Model Start -->
+	<div class="modal fade" id="sharelisitng" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered none" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<ul class="share-options">
+            <li>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-facebook-f" style="background-color: #3b5998;"></i> Facebook </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/share?url=https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-twitter" style="background-color: #4099FF;"></i> Twitter </a>
+            </li>
+            <li>
+              <a href="whatsapp://send?text={{i.name}} | https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-whatsapp" style="background-color: #128c7e;"></i> Whatsapp </a>
+            </li>
+            <li>
+              <a href="https://telegram.me/share/url?url=https://mychaps.net/park-detail/{{i.id}}&text={{i.name}}"><i class="fa fa-telegram" style="background-color: #0088cc;"></i> Telegram </a>
+            </li>
+            <li>
+              <a href="http://pinterest.com/pin/create/link/?url=https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-pinterest" style="background-color: #C92228;"></i> Pinterest </a>
+            </li>
+            <li>
+              <a href="https://plus.google.com/share?url=https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-google-plus" style="background-color: #D34836;"></i> Google+ </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mychaps.net/park-detail/{{i.id}}&title={{i.name}}&summary={{i.overview}}"><i class="fa fa-linkedin" style="background-color: #0077B5;"></i> LinkedIn </a>
+            </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Social Account Share Model End -->
+  {% include 'navbar.html' %}
+  <script type="text/javascript">
+    if(screen.width<500) {
+    var element = document.getElementById("page-top");
+    element.classList.add("sidebar-toggled");
+  }
+  </script>
+	<div class="full-width">
+		<div id="wrapper">
+		  <!-- Sidebar -->
+      {% include "sidebar.html" %}
+			<div id="content-wrapper">
+				<div class="container-fluid pb-0">
+				 <!-- Profile Detail Area Start-->
+					<div class="video-block section-padding">
+						<div class="main-item">
+							<div class="row">
+                <!-- PAGE IMAGE -->
+                {% for n in state_name %}
+
+                <div class="col-md-12 px-0">
+                  <div class="profile-area">
+
+                    <div class="bnnr-img-dpt">
+                      <div class="featured-section profile-cover profile-cover-image"  style="background-image: url({{n.images.0.url}})"></div>
+                        <div class=" dash-profile">
+                          <img src="{{n.images.0.url}}" alt="">
+                        </div>
+
+                      </div>
+
+                      <div class="item-dt">
+                        <div class="item-title">
+                          <h4> {{n.fullName}} </h4>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  {% endfor %}
+
+                <!-- END -->
+
+								<!-- Profile Detail Area End-->
+								<!--Nav Tabs Start -->
+								<div class="row item-detail-tabs">
+									<div class="col-xl-12 com-md-12 col-sm-12 px-0">
+										<ul class="nav  nav-tabs" role="tablist" id="myTab">
+											<li role="presentation">
+												<a class="active" href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> Park Details </a>
+											</li>
+											<li role="presentation">
+												<a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab"> Reviews </a>
+											</li>
+											<li role="presentation">
+												<a href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab"> Gallery </a>
+											</li>
+
+											<li role="presentation">
+												<a class="more-options" type="button" data-toggle="modal" data-target="#sharelisitng"> Share </a>
+											</li>
+
+										</ul><!--Nav Tabs End -->
+
+										<!--Tabs Panes Start -->
+
+										<div class="tab-content">
+                    {% for n in state_name %}
+											<div class="tab-pane active" role="tabpanel" id="profile">
+												<div class="row lr-row">
+													<div class="col-md-8" >
+														<div class=" locatins">
+                              <div class="heading" id="cweather">
+
+                                </div>
+                              <script type="text/javascript">
+                          	    $('#cweather').load("/cweather/{{n.addresses.1.city}}").fadeIn("slow");
+                          	  </script>
+															<div class="sub-heading">
+																{{n.description}}
+															</div>
+															<div class="clearfix"></div>
+														</div>
+                            <!-- google news api -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                                <img src="../media/home/images/svg/map.svg" alt=""><h3> News & Updates</h3>
+                              </div>
+                              <p  class="faq-accordion" ></p>
+
+                              <div id="update_news"  class="panel" style="overflow: scroll; height:300px;">
+                              <center>  <img src="../media/home/img/load113.gif" alt="" style="width:300px; height:200px;" ></center>
+                            <p style="margin-left:40%; margin-top:-5%; color:red;">News Loading...</p>
+                           </div>
+                            </div>
+                                <div class="clearfix"></div>
+                              </div>
+                              <script type="text/javascript">
+                                $('#update_news').load("/google_news_api/{{n.addresses.1.city}}").fadeIn("slow");
+
+    													</script>
+                            <!-- end -->
+                            <div class=" locatins">
+															<div class="heading">
+																<img src="../media/home/images/svg/menu1.svg" alt=""><h3>Weather Info</h3>
+															</div>
+															<div class="sub-heading">
+																{{n.weatherInfo}}
+															</div>
+															<div class="clearfix"></div>
+														</div>
+
+														<div class="locatins heading">
+															<div class="heading">
+																<img src="../media/home/images/svg/tag.svg" alt=""><h3>Activity</h3>
+															</div>
+															<div class="tag">
+
+                                {%  for i in n.activities %}
+																       <a href="#" class="tag-r">{{i.name}}</a>
+                                {% endfor %}
+
+
+															</div>
+															<div class="clearfix"></div>
+														</div>
+                            <div class="box-left">
+															<div class="rightboxs">
+																<div class="heading">
+																	<img src="../media/home/images/svg/map.svg" alt=""><h3>Address</h3>
+																</div>
+																<p class="faq-accordion">  {{n.addresses.1.line1}}</p>
+																<div class="panel">
+                                  <div class="open-timing">
+																		<div class="week-left">
+																			City
+																		</div>
+																		<div class="time-right">
+																			{{n.addresses.1.city}}
+																		</div>
+																	</div>
+
+																	<div class="open-timing">
+																		<div class="week-left">
+																		Country
+																		</div>
+																		<div class="time-right">
+																		USA
+																		</div>
+																	</div>
+																	<div class="open-timing">
+																		<div class="week-left">
+																			Zipcode
+																		</div>
+																		<div class="time-right">
+																			{{n.addresses.1.postalCode}}
+																		</div>
+																	</div>
+																	<div class="open-timing">
+																		<div class="week-left">
+																			Longitude
+																		</div>
+																		<div class="time-right">
+																			{{n.longitude}}
+																		</div>
+																	</div>
+																	<div class="open-timing">
+																		<div class="week-left">
+																			Latitude
+																		</div>
+																		<div class="time-right">
+																			{{n.latitude}}
+																		</div>
+																	</div>
+
+
+																</div>
+															</div>
+														</div>
+
+                            <!-- operating hour -->
+
+                            <div class="box-left">
+															<div class="rightboxs">
+																<div class="heading">
+																	<img src="../media/home/images/svg/map.svg" alt=""><h3>Operating Hours</h3>
+																</div>
+																<p class="faq-accordion">  {{n.operatingHours.0.description}}</p>
+																<div class="panel">
+                                  <div class="open-timing">
+																		<div class="week-left">
+																			Monday
+																		</div>
+																		<div class="time-right">
+																			{{n.operatingHours.0.standardHours.monday}}
+																		</div>
+																	</div>
+
+																	<div class="open-timing">
+																		<div class="week-left">
+																		Tuesday
+																		</div>
+																		<div class="time-right">
+																		{{n.operatingHours.0.standardHours.tuesday}}
+																		</div>
+																	</div>
+																	<div class="open-timing">
+																		<div class="week-left">
+																			Wednesday
+																		</div>
+																		<div class="time-right">
+																		{{n.operatingHours.0.standardHours.wednesday}}
+																		</div>
+																	</div>
+																	<div class="open-timing">
+																		<div class="week-left">
+																			Thursday
+																		</div>
+																		<div class="time-right">
+																	{{n.operatingHours.0.standardHours.thursday}}
+																		</div>
+																	</div>
+																	<div class="open-timing">
+																		<div class="week-left">
+																			Friday
+																		</div>
+																		<div class="time-right">
+																		{{n.operatingHours.0.standardHours.friday}}
+																		</div>
+																	</div>
+
+                                  <div class="open-timing">
+																		<div class="week-left">
+																			Saturday
+																		</div>
+																		<div class="time-right">
+																		{{n.operatingHours.0.standardHours.saturday}}
+																		</div>
+																	</div>
+
+                                  <div class="open-timing">
+																		<div class="week-left">
+																			Sunday
+																		</div>
+																		<div class="time-right">
+																		{{n.operatingHours.0.standardHours.sunday}}
+																		</div>
+																	</div>
+
+
+																</div>
+															</div>
+														</div>
+
+                            <!-- end -->
+
+
+                            <div class="locatins heading">
+															<div class="heading">
+																<img src="../media/home/images/svg/tag.svg" alt=""><h3>Topics</h3>
+															</div>
+															<div class="tag">
+                                {%  for i in n.topics %}
+																       <a href="#" class="tag-r">{{i.name}}</a>
+                                {% endfor %}
+															</div>
+															<div class="clearfix"></div>
+														</div>
+
+                            <div class="locatins heading">
+															<div class="heading">
+																<img src="../media/home/images/svg/tag.svg" alt=""><h3>Contact</h3>
+															</div>
+															<div class="tag">
+
+                              <a href="#" class="tag-r">  {{n.contacts.phoneNumbers.0.phoneNumber}}</a>
+                              <a href="#" class="tag-r">  {{n.contacts.emailAddresses.0.emailAddress}}</a>
+
+
+															</div>
+															<div class="clearfix"></div>
+														</div>
+
+
+													</div>
+
+
+                          <div class="col-md-4">
+                            <div class="box-left">
+
+                              <div class="heading">
+																<img src="../media/home/images/svg/tag.svg" alt=""><h3>Recommended</h3>
+															</div>
+                            {% include "suggest.html" %}
+                          </div>
+
+
+                          {% include "promo.html" %}
+
+
+													</div>
+											</div>
+                      </div>
+
+                      {% endfor %}
+											{% include 'review.html' %}
+											<div class="tab-pane" role="tabpanel" id="gallery">
+												<div class="video-block section-padding">
+													<div class="row lr-row mdb-lightbox">
+														<div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+															<div class="gallery-sets">
+                                  {% for n in state_name %}
+                                  {% for img in n.images %}
+																<a class="col-lg-3 col-sm-6" href="{{img.url}}" >
+																	<img src="{{img.url}}" alt="" style="height:200px;">
+                                  <p>{{img.title}}</p>
+																</a>
+
+                              {% endfor %}
+
+                                {% endfor %}
+
+
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+
+
+
+										</div>
+
+										<!--Tabs Panes End -->
+									</div>
+								</div>
+								<!--Tab Links End-->
+							</div>
+						</div>
+					</div>
+			</div>
+		  <!--content-wrapper End-->
+		</div>
+	</div>
+	</div>
+
+    <!--wrapper -->
+			<!-- Sticky Footer -->
+			{% include 'footer.html' %}
+
+
+    <!-- Scroll to Top Button Start-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="ti-arrow-up"></i>
+    </a>
+	<!-- Scroll to Top Button End-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../media/home/js/jquery.min.js"></script>
+    <script src="../media/home/js/bootstrap.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src='../../../../api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../media/home/js/sb-admin.min.js"></script>
+	<script src="../media/home/js/carousel_recom.js"></script>
+	<script src="../media/home/js/menurght.js"></script>
+	<script src="../media/home/js/crausal1.js"></script>
+	<script src="../media/home/js/custom.js"></script>
+	<script src="../media/home/js/photoswipe.min.js"></script>
+	<script src="../media/home/js/photoswipe-ui-default.min.js"></script>
+
+	<!-- Demo scripts for this page-->
+   	<script src="../media/home/js/slick.min.js"></script>
+
+	<!-- Assect scripts for this page-->
+	<script src="../media/home/assets/vendors/jquery.min.js"></script>
+    <script src="../media/home/assets/owlcarousel/owl.carousel.js"></script>
+    <script src="../media/assets/js/res_sidebar.js"></script>
+
+	<script>
+	var acc = document.getElementsByClassName("faq-accordion");
+	var i;
+
+	for(i = 0; i < acc.length; i++){
+		acc[i].addEventListener("click", function(){
+		this.classList.toggle("active");
+
+			var panel = this.nextElementSibling;
+			if(panel.style.display === "block"){
+				panel.style.display = "none";
+			} else {
+				panel.style.display ="block";
+			}
+		});
+	}
+
+	</script>
+
+  </body>
+
+</html>

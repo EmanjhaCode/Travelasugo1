@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Travel As You Go | Find Your Activity Facility & Near By Place </title>
+
+  {% include 'data_css.html' %}
+<style media="screen">
+@media screen and (min-width: 0px) and (max-width: 600px) {
+#weather{ display: None; }  /* show it on smaller screen */
+}
+</style>
+
+  </head>
+<script type="text/javascript">
+if(window.performance==1){
+  alert('ho gaya');
+    window.open('abx','_self');
+}
+
+</script>
+<style media="screen">
+    @media only screen and (max-width: 500px) {
+.state {
+  margin-top:25%;
+}
+.message-radius{
+width:100%;
+}
+.img11{
+  width:100%;
+}
+}
+@media only screen and (min-width: 500px) {
+.state {
+margin-left:30%;
+margin-top:-18%;
+}
+.message-radius{
+width:200px;
+}
+.img11{
+  width:200px;
+}
+}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <body id="page-top">
+{% load myfilter %}
+
+  {% include 'navbar.html' %}
+  <script type="text/javascript">
+    if(screen.width<500) {
+    var element = document.getElementById("page-top");
+    element.classList.add("sidebar-toggled");
+  }
+  </script>
+
+	<div class="full-width" style=" background:#fff;">
+		<div  style="background:#fff; margin:1%;">
+		  <!-- Sidebar -->
+
+			<div id="content-wrapper" >
+				<div class="container-fluid pb-0">
+				 <!-- Profile Detail Area Start-->
+					<div class="video-block section-padding" >
+						<div class="main-items" >
+							<div class="row justify-content-md-center">
+								<div class="messages text-center col-md-12">
+									Find City Info
+									<hr>
+								</div>
+								<div class="feedback col-md-12">
+									<div class="search-people">
+										<form class="" action="hotel-and-news-for-city" method="post">
+                      {% csrf_token %}
+                      <input type="search" name="serch" class="search-people-input" placeholder="Enter City Name | Find News, Hotel, Restaurants...">
+  										<button type="submit" class="people-search" onclick="search()" >Search</button>
+                    </form>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="row" >
+
+								<div class="col-lg-12 col-sm-12" style="background:#fff;">
+									<div class="row">
+										<div class="tabby">
+
+
+
+											<div class="col-xl-6 col-sm-12"  style="overflow: scroll; height:500px;">
+                        <div class="view-spinner" id="loading113">
+                        <table class="table table-striped" >
+                          <tbody >
+                            {% for news in news_api %}
+                            <tr>
+                             <td>
+                            <div class="open-timing"  >
+
+                              <div class="time-left">
+                                {{news.title}}
+
+                              </div> <br>
+                              <div class="time-right">
+                                {{news.desc}}
+                              </div> <br>
+                              <div class="message-heading1">
+
+                                <span style='color:red;'>{{news.date}} </span>
+                              <a href="{{news.link}}"  ><span style='margin-left:5px; color:blue;'>View More</span> </a>
+                              </div>
+                            </div>
+                            {% empty %}
+                            <p>{{msg}}</p>
+                            {% endfor %}
+                          </tbody>
+                        </table>
+											</div>
+                    </div>
+											<div class="col-xl-6 col-sm-12"  style="margin-top:-3%;">
+												<div class="view-spinner" id="loading114">
+                          <div class="heading">
+                            <img src="../media/home/images/svg/tag.svg" alt=""><h3>Hotel</h3>
+                          </div>
+                            <div class="row" >
+                              <section id="demos1" >
+                                <div class="col-md-12" >
+                                  <div class="large-12 columns" >
+                                    <div class="owltab owl-carousel owl-theme " >
+
+                                    {% for hotel in hotel_api %}
+
+                                    {% if hotel.cat|lower == 'hotel'|lower %}
+                                    <div class="item" >
+                                      <div class="box" style="height:170px;">
+                                      <div class="box-img" >
+                                        <a href="https://www.tripadvisor.in/Search?q={{hotel.h_name}}"  >
+                                        <img src="{{hotel.h_img}}" class="img" alt="" title="" style="height:100px; margin-bottom:8%;">
+
+                                        </a>
+
+                                      </div>
+
+                                      <div class="box-heading3" style="margin-left:5%;">
+                                    <a href="https://www.tripadvisor.in/Search?q={{hotel.h_name}}"  >  {{hotel.h_name}}  </a> <br>
+
+                                      </div>
+
+                                    </div>
+                                    </div>
+
+                                    {% endif %}
+                                    {% endfor %}
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+                            </div>
+                          <div class="clearfix"></div>
+                        </div>
+                        <!--XXXXXXX-END-XXXXXXXX-->
+
+                        <!--XXXXXXX-Recommended-XXXXXXXX-->
+                        <div class="locatins heading">
+                          <div class="heading">
+                            <img src="../media/home/images/svg/tag.svg" alt=""><h3>Recommended</h3>
+                          </div>
+                            <div class="row" >
+                              <section id="demos1" >
+                                <div class="col-md-12" >
+                                  <div class="large-12 columns" >
+                                    <div class="owltab owl-carousel owl-theme " >
+
+                                    {% for hotel in hotel_api %}
+                                    {% if hotel.cat|lower != 'hotel'|lower %}
+                                    <div class="item" >
+                                      <div class="box" style="height:170px;">
+                                      <div class="box-img" >
+                                        <a href="https://www.tripadvisor.in/Search?q={{hotel.h_name}}"  >
+                                        <img src="{{hotel.h_img}}" class="img" alt="" title="" style="height:100px; margin-bottom:8%;">
+                                      </a>
+                                      </div>
+
+                                      <div class="box-heading3" style="margin-left:5%;">
+                                    <a href="https://www.tripadvisor.in/Search?q={{hotel.h_name}}" >  {{hotel.h_name}}</a>
+                                      </div>
+
+                                    </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    </div>
+                                  </div>
+                                </div>
+                              </section>
+                            </div>
+                          <div class="clearfix"></div>
+
+                        </div>
+											</div>
+
+											<div class="col-xl-12 col-sm-12" id="wiki" >
+
+											</div>
+
+
+											<script type="text/javascript">
+												function search(){
+													$('#loading114').load('../media/home/img/loading.html').fadeIn("slow");
+													$('#loading113').load('../media/home/img/loading.html').fadeIn("slow");
+												}
+											</script>
+
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+				<!--content-wrapper End-->
+				</div>
+				</div>
+				</div>
+
+				<!--wrapper -->
+				<!-- Sticky Footer -->
+				{% include 'footer.html' %}
+
+				<!-- Scroll to Top Button Start-->
+				<a class="scroll-to-top rounded" href="#page-top">
+				<i class="ti-arrow-up"></i>
+				</a>
+				<!-- Scroll to Top Button End-->
+
+				<!-- Bootstrap core JavaScript-->
+				<script src="../media/home/js/jquery.min.js"></script>
+				<script src="../media/home/js/bootstrap.min.js"></script>
+
+				<!-- Core plugin JavaScript-->
+				<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+				<script src='../../../../api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+
+				<!-- Custom scripts for all pages-->
+				<script src="../media/home/js/sb-admin.min.js"></script>
+				<script src="../media/home/js/carousel_recom.js"></script>
+				<script src="../media/home/js/menurght.js"></script>
+				<script src="../media/home/js/crausal1.js"></script>
+				<script src="../media/home/js/custom.js"></script>
+				<script src="../media/home/js/photoswipe.min.js"></script>
+				<script src="../media/home/js/photoswipe-ui-default.min.js"></script>
+
+				<!-- Demo scripts for this page-->
+				<script src="../media/home/js/slick.min.js"></script>
+
+				<!-- Assect scripts for this page-->
+				<script src="../media/home/assets/vendors/jquery.min.js"></script>
+				<script src="../media/home/assets/owlcarousel/owl.carousel.js"></script>
+				<script src="../media/assets/js/res_sidebar.js"></script>
+
+				<script>
+				var acc = document.getElementsByClassName("faq-accordion");
+				var i;
+
+				for(i = 0; i < acc.length; i++){
+				acc[i].addEventListener("click", function(){
+				this.classList.toggle("active");
+
+				var panel = this.nextElementSibling;
+				if(panel.style.display === "block"){
+					panel.style.display = "none";
+				} else {
+					panel.style.display ="block";
+				}
+				});
+				}
+
+				</script>
+
+				</body>
+
+				</html>

@@ -1,0 +1,305 @@
+
+<style media="screen">
+  .a222:hover {
+  font-size:20px;
+  transform: translateY(10px);
+  background:#FDFADD;
+
+}
+.a32:hover {
+
+background:yellow;
+transform: translateY(-10px);
+}
+
+.box-heading3 {
+  font-size:15px;
+
+}
+
+</style>
+<div class="video-block section-padding a2">
+  <div class="row">
+    <div class="htitle col-md-12" >
+      <img src="../media/home/park_img/tag_text.png" alt="" style="margin-left:40%; margin-top:-1%;">
+
+    </div>
+
+    <div class="item-detail-tabs">
+    <section id="demos1" >
+      <br><br>
+      <div class="col-md-6 nav  nav-tabs" role="tablist" id="myTab">
+          <h3 class="active a1 "  style="margin-top:8%;"   href="#tag1"   data-toggle="tab">
+           <b >Protect yourself, family, friends and your community &nbsp;</b>
+          </h3>
+
+          <h3 class="a1"  style="margin-top:24%;" href="#tag2"  data-toggle="tab">
+           Find out what precautions you should take  &nbsp;
+          </h3>
+          <h3 class="a1"  style="margin-top:38%;" href="#tag3" href="#comments"  data-toggle="tab">
+           Face coverings are required in indoor public settings &nbsp;
+          </h3>
+          <h3 class="a1"  style="margin-top:53%;" href="#tag4"  data-toggle="tab">
+            Face coverings are not required in public outdoor settings  &nbsp;
+          </h3>
+
+        <img class="img_border" src="../media/home/park_img/green10.png" alt="" style="height:640px; width:100%; margin-top:4%; margin-left:1%;">
+      </div>
+      <div class="col-md-6 " >
+
+            <!--Tabs Panes Start -->
+            <div class="tab-content" >
+              {% for g in guideline_detail %}
+              <div class="tab-pane" role="tabpanel" id="tag{{g.id}}">
+                      <!-- popup content section -->
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="text-center1" id="exampleModalLabel"> {{g.guideline}}</h4>
+
+                            </div>
+                            <div class="modal-body">
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <p>{{g.guide_detail1}}  </p>
+                          </div>
+                          <div class="col-md-6">
+                            <img src="../media/home/park_img/bg4.jpeg" alt="" style="height:150px; width:100%;">
+                          </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <p>{{g.guide_detail2}}  </p>
+                          </div>
+                          <div class="col-md-6">
+                            <img src="../media/{{g.img2}}" alt="" style="height:150px; width:100%;">
+                          </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                          <div class="col-md-6">
+                            <p>{{g.guide_detail3}}  </p>
+                          </div>
+                          <div class="col-md-6">
+                            <img src="../media/{{g.img3}}" alt="" style="height:150px; width:100%;">
+                          </div>
+                        </div>
+                        <hr>
+                      </div>
+
+                          </div>
+                        </div>
+
+              </div>
+                {% endfor %}
+                <!-- hide show item here -->
+                <div class="tab-pane active" role="tabpanel" id="tag1" >
+                        <!-- popup content section -->
+                          <div class="modal-dialog modal-lg" role="document" >
+                            <div class="modal-content" >
+                              <div class="modal-header">
+                                <h4 class="text-center1" id="exampleModalLabel"> Protect yourself, family, friends and your community</h4>
+
+                              </div>
+                              <div class="modal-body" >
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <p>Know Before You Go – Prior to leaving home, check the status of the park unit you want to visit to find out what restrictions and guidelines are in place. Have a back-up plan in case your destination is crowded. Stay home if you are sick </p>
+                            </div>
+                            <div class="col-md-6">
+                              <img src="../media/home/park_img/bg4.jpeg" alt="" style="height:150px; width:100%;">
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <p>Know Before You Go – Prior to leaving home, check the status of the park unit you want to visit to find out what restrictions and guidelines are in place. Have a back-up plan in case your destination is crowded. Stay home if you are sick  </p>
+                            </div>
+                            <div class="col-md-6">
+                              <img src="../media/home/park_img/bg4.jpeg" alt="" style="height:150px; width:100%;">
+                            </div>
+                          </div>
+                          <hr>
+
+                          <div class="row">
+                            <div class="col-md-6">
+                              <p>Know Before You Go – Prior to leaving home, check the status of the park unit you want to visit to find out what restrictions and guidelines are in place. Have a back-up plan in case your destination is crowded. Stay home if you are sick </p>
+                            </div>
+                            <div class="col-md-6">
+                              <img src="../media/home/park_img/bg4.jpeg" alt="" style="height:150px; width:100%;">
+                            </div>
+                          </div>
+                          <hr>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+              </section>
+                </div>
+              <section id="demos1">
+
+                <div class="col-md-12 visit_slider" >
+                  <div class="large-12 columns" >
+                    <div class="owl-carousel owl-theme" >
+
+                      {% for t in tag %}
+                      <div class="item">
+                      <div class="box">
+                      <div class="box-img" >
+                        <a  href="/tag_parks/{{t.nm}}" class="over-bg"></a>
+                        <img src="{{t.img}}" class="img" alt="" title="" style="height:300px;">
+                        <div class="box-heading1">
+                          <a   href="/tag_parks/{{t.nm}}">{{t.nm}}</a>
+
+                        </div>
+
+                      </div>
+                      <div class="box-radius">
+                        <img src="{{t.img}}" class="img" alt="" title="" style="width:50px; height:50px; border-radius: 50%;">
+                      </div>
+                      <div class="box-heading3">
+                      <a  href="/tag_parks/{{t.nm}}">{{t.nm}}</a>
+                      </div>
+                      </div>
+                      </div>
+
+                      {% endfor %}
+
+                              </div>
+                            </div>
+                          </div>
+                          <br><br>
+
+                          <!-- gallery start here -->
+
+                        <!-- <div >
+
+                          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+                            <br><br>
+                              <div class="hovereffect">
+                                  <img class="img-responsive" src="../media/home/park_img/gallery1.JPG" style="width:350px; height:200px; border-style: solid; border-color: coral;">
+                                  <div class="overlay">
+                                      <h2>Hover effect 2</h2>
+                                      <a class="info" href="#">link here</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+                            <br><br>
+                              <div class="hovereffect">
+                                  <img class="img-responsive" src="../media/home/park_img/gallery5.JPG" style="width:350px; height:200px;">
+                                  <div class="overlay">
+                                      <h2 >Hover effect 2</h2>
+                                      <a class="info" href="#">link here</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" >
+                            <br><br>
+                              <div class="hovereffect">
+                                  <img class="img-responsive" src="../media/home/park_img/gallery3.JPG" style="width:350px; height:200px;">
+                                  <div class="overlay">
+                                      <h2>Hover effect 2</h2>
+                                      <a class="info" href="#">link here</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <br><br>
+                              <div class="hovereffect">
+                                  <img class="img-responsive" src="../media/home/park_img/gallery4.JPG" style="width:350px; height:200px;">
+                                  <div class="overlay">
+                                      <h2>Hover effect 2</h2>
+                                      <a class="info" href="#">link here</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <br><br>
+                              <div class="hovereffect">
+                                  <img  src="../media/home/park_img/gallery2.JPG" style="width:350px; height:200px;">
+                                  <div class="overlay">
+                                      <h2>Hover effect 2</h2>
+                                      <a class="info" href="#">link here</a>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <br><br>
+                              <div class="hovereffect">
+                                  <img  src="../media/home/park_img/gallery6.JPG" style="width:350px; height:200px;">
+                                  <div class="overlay">
+                                      <h2>Hover effect 2</h2>
+                                      <a class="info" href="#">link here</a>
+                                  </div>
+                              </div>
+                          </div>
+                        </div> -->
+
+
+                          <!-- end -->
+
+                          <!-- second option -->
+                          <!-- Gallery -->
+<div class="row" style="margin-left:1%;">
+
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <br><br>
+    <img
+      src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img
+      src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <br><br>
+    <img
+      src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img
+      src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0" >
+    <br><br>
+    <img
+      src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+  />
+
+    <img
+      src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+</div>
+<!-- Gallery -->
+                          <!-- end here -->
+
+                        </section>
+            </div>
+          </div>

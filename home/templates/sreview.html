@@ -1,0 +1,136 @@
+<style media="screen">
+    @media only screen and (max-width: 500px) {
+#viewmore {
+  margin-left:70%;
+}
+
+}
+@media only screen and (min-width: 500px) {
+#viewmore {
+margin-left:85%;
+
+}
+
+}
+
+    </style>
+{% load mathfilters %}
+
+{% for r in sreview %}
+
+
+<div class=" locatins">
+  <div class="heading1">
+    <img src="../../../../www.gambolthemes.net/html-items/brexit/White/images/icon/user.html" alt="">
+    <h3>
+      {{r.user_nm}}
+
+
+<p style="color:#000;"> {{r.p_date}} </p>
+    </h3>
+  </div>
+  {% load mathfilters %}
+
+  <div class="rating-star-selected">
+    {% with s=r.overall|add:"0" %}
+    {% if s == 1  %}
+    <i style="color:#ff0000;"  class="fa blue fa-star" aria-hidden="true" ></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    {% endif %}
+    {% if s == 2  %}
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    {% endif %}
+    {% if s == 3  %}
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    {% endif %}
+    {% if s == 4  %}
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i class="fa fa-star-o" aria-hidden="true"></i>
+    {% endif %}
+    {% if s == 5  %}
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    <i style="color:#ff0000;" class="fa blue fa-star" aria-hidden="true"></i>
+    {% endif %}
+
+    {% endwith %}
+
+  </div>
+
+  <div class="sub-heading">
+    {% if r.comment != 'none' %}
+  <p style="color:#000;">  {{r.comment}}</p>
+
+  {% endif %}
+  </div>
+
+
+
+  <!-- here image slider -->
+    {% load myfilter %}
+
+  <div class="video-block section-padding">
+    <div class="row">
+      <section id="demos1">
+        <div class="col-md-12">
+          <div class="large-12 columns">
+            <div class="owl-carousel owl-theme">
+
+              {% with img1=r.img|string_to_list %}
+              {% if img1.0 != 'none' %}
+              {% for x in img1 %}
+
+            <div class="item">
+              <div class="box">
+              <div class="box-img">
+                <a href="{{x|remove_quote}}" class="over-bg"></a>
+                <img src="{{x|remove_quote}}" class="img" alt="" title="" style="height:230px;">
+              </div>
+            </div>
+            </div>
+
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <br>
+<a href="http://maps.google.com/?q={{name}}" id="viewmore">View More</a>
+  <!-- end image slider -->
+<div class="clearfix"></div>
+</div>
+
+{% endfor %}
+
+<!-- Custom scripts for all pages-->
+
+<script src="../media/home/js/carousel_recom.js"></script>
+<style media="screen">
+  .owl-theme .owl-nav .owl-prev{
+    margin-bottom:-5%!important;
+  }
+  .owl-theme .owl-nav .owl-next{
+    margin-bottom:-5%!important;
+  }
+</style>

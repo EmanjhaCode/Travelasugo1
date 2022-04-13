@@ -1,0 +1,323 @@
+
+<style media="screen">
+
+  @media screen and (min-width: 740px) and (max-width: 900px) {
+  .hide_gallery{display:None;}
+  }
+  .a222:hover {
+  font-size:20px;
+  transform: translateY(10px);
+  background:#FDFADD;
+
+}
+.a32:hover {
+
+background:yellow;
+transform: translateY(-10px);
+}
+
+.box-heading3 {
+  font-size:15px;
+
+}
+
+</style>
+<div class="video-block section-padding">
+  <div class="row">
+    <div class="htitle col-md-12" >
+    <!-- <h2 class="title_font" style="margin-left:45%;">Visit Activities</h2> -->
+    <img src="../media/home/park_img/title5.png" alt="" style="margin-top:1%; " id="title_tags">
+    </div>
+
+    <div class="item-detail-tabs content_margin1">
+    <section id="demos1" class="d-none d-lg-block d-xl-block d-md-block">
+      <br><br>
+      <div class="col-md-6 nav  nav-tabs" role="tablist" id="myTab">
+          <h3 class="active a1 "  style="margin-top:8%;"   href="#tag12"   data-toggle="tab">
+           <b >National Parks  &nbsp;</b>
+          </h3>
+
+          <h3 class="a1"  style="margin-top:20%;" href="#tag13"  data-toggle="tab">
+           State Parks   &nbsp;
+          </h3>
+          <h3 class="a1"  style="margin-top:33%;" href="#tag14" href="#comments"  data-toggle="tab">
+           National Forests &nbsp;
+          </h3>
+
+
+        <img class="img_border" src="../media/home/park_img/green10.png" alt="" style="height:640px; width:100%; margin-top:4%; margin-left:1%;">
+      </div>
+      <div class="col-md-6 " >
+
+            <!--Tabs Panes Start -->
+            <div class="tab-content" >
+              {% for g in guideline_detail %}
+
+              <div class="tab-pane" role="tabpanel" id="tag{{g.id}}">
+                      <!-- popup content section -->
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 class="text-center1" id="exampleModalLabel" style="font-size:22px;"> {{g.guideline}}</h4>
+
+                            </div>
+                            <div class="modal-body">
+
+                        <div class="row">
+                          <div class="col-md-8">
+                            <p>{{g.guide_detail1|safe}}  </p>
+                          </div>
+                          <div class="col-md-4">
+                            <img src="../media/{{g.img1}}" alt="" style="height:150px; width:100%;">
+                          </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                          <div class="col-md-8">
+                            <p>{{g.guide_detail2|safe}}  </p>
+                          </div>
+                          <div class="col-md-4">
+                            <img src="../media/{{g.img2}}" alt="" style="height:150px; width:100%;">
+                          </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                          <div class="col-md-8">
+                            <p>{{g.guide_detail3|safe}}  </p>
+                          </div>
+                          <div class="col-md-4">
+                            <img src="../media/{{g.img3}}" alt="" style="height:150px; width:100%;">
+                          </div>
+                        </div>
+                        <hr>
+                      </div>
+
+                          </div>
+                        </div>
+
+              </div>
+
+                {% endfor %}
+                <!-- hide show item here -->
+                <div class="tab-pane active" role="tabpanel" id="tag12" >
+                        <!-- popup content section -->
+                          <div class="modal-dialog modal-lg" role="document" >
+                            <div class="modal-content" >
+                              <div class="modal-header">
+                                <h4 class="text-center1" id="exampleModalLabel" style="font-size:22px;"> National Parks</h4>
+
+                              </div>
+                              <div class="modal-body" >
+
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <p>One must, truly, see the state's sprawling nature for themselves. The task is a daunting one. California is home to<b style="color:#000; font-size:17px;"> nine National Parks</b> — more than any other state in the country
+                                      <a href="/tag_parks/National%20Parks">Click here</a> to know more about National Parks.
+                                    </p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <img id="guide_img" src="https://mychaps.net/media/guideline_detail1/national_park.jpeg" alt="" >
+                                  </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                  <div class="col-md-8">
+                                      <p id="lim1"><b style="color:#000; font-size:17px;">As the biggest national park</b> in the contiguous U.S. at over 3 million acres,<a href="/best-park-in-usa/Death%20Valley%20National%20Park,1344"> Death Valley </a>is a geological wonderland, often cited as the "park of superlatives." It's known for having the lowest point in North America, being the driest spot in the United States, and being the hottest place in the world.</p>
+                                      <p id="lim" onclick="this.innerHTML=`<b style='color:#000; font-size:17px;'>As the biggest national park</b> in the contiguous U.S. at over 3 million acres,<a href='/best-park-in-usa/Death%20Valley%20National%20Park,1344'> Death Valley </a>is a geological wonderland, often cited as the 'park of superlatives.' It's known for having the lowest point in North America, being the driest spot in the United States, and being the hottest place in the world.`"><b style="color:#000; font-size:17px;">{{'As the biggest national park</b> in the contiguous U.S. at over 3 million acres,<a href="/best-park-in-usa/Death%20Valley%20National%20Park,1344"> Death Valley </a>is a geological wonderland, often cited as the "park of superlatives." It is known for having the lowest point in North America, being the driest spot in the United States, and being the hottest place in the world.'|slice:":200"}}<b style="color:blue"> Click Here</b></p>
+
+                                   </div>
+                                  <div class="col-md-4">
+                                    <img id="guide_img" src="https://mychaps.net/media/guideline_detail2/Death_Valley_.jpeg" alt="" >
+                                  </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                  <div class="col-md-8">
+                                    <p id="lim1"><b style="color:#000; font-size:17px;">Most visited national park </b> Yosemite is not only California's most visited national park, but it is also one of the most visited national parks in the U.S. Located about 140 miles southeast of Sacramento in northern California, Yosemite welcomes around 4 million visitors per year
+                                      <a href="/best-park-in-usa/Yosemite%20National%20Park,1350">Click here</a> to know more about Yosemite National Parks
+                                    </p>
+                                    <p id="lim" onclick="this.innerHTML=`<b style='color:#000; font-size:17px;'>Most visited national park </b> Yosemite is not only California's most visited national park, but it is also one of the most visited national parks in the U.S. Located about 140 miles southeast of Sacramento in northern California, Yosemite welcomes around 4 million visitors per year
+                                      <a href='/best-park-in-usa/Yosemite%20National%20Park,1350'>Click here</a> to know more about Yosemite National Parks`"><b style="color:#000; font-size:17px;">{{'Most visited national park </b> Yosemite is not only California most visited national park, but it is also one of the most visited national parks in the U.S. Located about 140 miles southeast of Sacramento in northern California, Yosemite welcomes around 4 million visitors per year<a href="/best-park-in-usa/Yosemite%20National%20Park,1350"> Click here</a> to know more about Yosemite National Parks'|slice:":116"}}<b style="color:blue"> Click Here</b>
+                                    </p>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <img id="guide_img" src="https://mychaps.net/media/guideline_detail3/Yosemite.jpeg" alt="" >
+                                  </div>
+                                </div>
+                                <hr>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+              </section>
+              <!-- small screen start here -->
+              <section id="demos1" class="small_screen_view">
+
+                          <div class="col-md-6 nav  nav-tabs" role="tablist" id="myTab">
+                              <h3 class="a2 "  style="margin-top:2%;"   data-toggle="modal" data-target="#pop12">
+                               <b >National Parks  &nbsp;</b>
+                              </h3>
+
+                              <h3 class="a2"  style="margin-top:15%;" href="#pop13"  data-toggle="modal">
+                               State Parks  &nbsp;
+                              </h3>
+                              <h3 class="a2"  style="margin-top:29%;"  href="#pop14"  data-toggle="modal">
+                               National Forests &nbsp;
+                              </h3>
+
+
+                            <img class="img_border1" src="../media/home/park_img/green10.png" alt="" style="height:340px; width:100%; margin-left:2%;">
+                          </div>
+
+
+                          <!-- Modal -->
+                          {% for g in guideline_detail %}
+                          <div class="modal fade" id="pop{{g.id}}" tabindex="-1" role="dialog" aria-labelledby="pop{{g.id}}" aria-hidden="true" >
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header" style="background:#E8E8E8;">
+                                  <h5 class="modal-title" id="pop{{g.id}}">{{g.guideline}}</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <p>{{g.guide_detail1|safe}} </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <img src="../media/home/park_img/bg4.jpeg" alt="" style="height:150px; width:100%;">
+                                    </div>
+                                  </div>
+                                  <hr>
+
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <p>{{g.guide_detail2|safe}} </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <img src="../media/{{g.img2}}" alt="" style="height:150px; width:100%;">
+                                    </div>
+                                  </div>
+                                  <hr>
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <p>{{g.guide_detail3|safe}}  </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <img src="../media/{{g.img3}}" alt="" style="height:150px; width:100%;">
+                                    </div>
+                                  </div>
+                                  <hr>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          {% endfor %}
+                          </section>
+              <!-- small screen end here -->
+
+
+                </div>
+              <section id="demos1">
+
+                <div class="col-md-12 visit_slider" >
+                  <div class="large-12 columns" >
+                    <div class="owl-carousel owl-theme" >
+
+
+                      {% for t in tag %}
+                      <div class="item">
+                      <div class="box">
+                      <div class="box-img" >
+                        <a  href="/tag_parks/{{t.nm}}" class="over-bg"></a>
+                        <img src="{{t.img}}" class="img" alt="" title="" style="height:300px;">
+                        <div class="box-heading1">
+                          <div class="box-heading2" style="">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="20" height="20" class="location-icon" viewBox="0 0 12 14">
+                            <path d="M6.720,10.847 C6.242,11.332 5.477,11.332 4.998,10.847 C2.719,8.534 1.555,6.413 1.555,4.454 C1.555,1.994 3.482,-0.000 5.859,-0.000 C8.236,-0.000 10.163,1.994 10.163,4.454 C10.163,6.413 8.999,8.534 6.720,10.847 ZM8.934,4.454 C8.934,2.697 7.557,1.273 5.859,1.273 C4.161,1.273 2.785,2.697 2.785,4.454 C2.785,6.004 3.793,7.842 5.859,9.938 C7.925,7.842 8.934,6.004 8.934,4.454 ZM5.859,6.045 C4.840,6.045 4.015,5.191 4.015,4.136 C4.015,3.082 4.840,2.227 5.859,2.227 C6.878,2.227 7.704,3.082 7.704,4.136 C7.704,5.191 6.878,6.045 5.859,6.045 ZM5.859,4.773 C6.199,4.773 6.474,4.488 6.474,4.136 C6.474,3.785 6.199,3.500 5.859,3.500 C5.520,3.500 5.244,3.785 5.244,4.136 C5.244,4.488 5.520,4.773 5.859,4.773 ZM2.165,9.509 C2.483,9.385 2.838,9.552 2.957,9.881 C3.076,10.210 2.915,10.577 2.597,10.700 C1.895,10.973 1.555,11.285 1.555,11.454 C1.555,11.987 3.462,12.727 5.859,12.727 C8.256,12.727 10.163,11.987 10.163,11.454 C10.163,11.285 9.823,10.973 9.122,10.700 C8.804,10.577 8.643,10.210 8.762,9.881 C8.881,9.552 9.235,9.385 9.553,9.509 C10.684,9.948 11.393,10.598 11.393,11.454 C11.393,13.031 8.895,14.000 5.859,14.000 C2.823,14.000 0.326,13.031 0.326,11.454 C0.326,10.598 1.034,9.948 2.165,9.509 Z"></path>
+                          </svg><a  href="/tag_parks/{{t.nm}}" >{{t.nm}}</a></div>
+
+
+                        </div>
+
+                      </div>
+                      <div class="box-radius">
+                        <img src="{{t.img}}" class="img" alt="" title="" style="width:50px; height:50px; border-radius: 50%;">
+                      </div>
+                      <div class="box-heading3">
+                      <a  href="/tag_parks/{{t.nm}}">{{t.nm}}</a>
+                      </div>
+                      </div>
+                      </div>
+
+                      {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+                          <br><br>
+                          <!-- gallery start here -->
+                          <!-- Gallery -->
+<div class="row d-none d-lg-block d-xl-block d-md-block " style="margin-left:1%; ">
+
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 hide_gallery"  >
+    <br><br>
+    <img
+      src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img
+      src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0 hide_gallery" >
+    <br><br>
+    <img
+      src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img
+      src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0 hide_gallery"  >
+    <br><br>
+    <img
+      src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+  />
+
+    <img
+      src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+</div>
+<!-- Gallery -->
+                          <!-- end here -->
+
+                        </section>
+            </div>
+          </div>
+          <script src="../media/home/js/carousel_home.js"></script>

@@ -1,0 +1,26 @@
+
+<table class="table table-striped" >
+  <tbody >
+    {% for news in news_api %}
+    <tr>
+     <td>
+    <div class="open-timing" id="loading113" >
+
+      <div class="time-left">
+        {{news.title}}
+
+      </div> <br>
+      <div class="time-right">
+        {{news.desc}}
+      </div> <br>
+      <div class="message-heading1">
+
+        <span style='color:red;'>{{news.date}} </span>
+      <a href="{{news.link}}"  ><span style='margin-left:5px; color:blue;'>View More</span> </a>
+      </div>
+    </div>
+    {% empty %}
+    <p>Currently no news associated with this park!!!</p>
+    {% endfor %}
+  </tbody>
+</table>

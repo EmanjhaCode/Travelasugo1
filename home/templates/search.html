@@ -1,0 +1,31 @@
+<style media="screen">
+@media only screen and (max-width: 500px) {
+.search1 {
+display: None
+}
+}
+@media only screen and (min-width: 500px) {
+.search2 {
+display: None
+}
+}
+</style>
+{% for s in search %}
+	<a class='link-p-colr' href='/best-park-in-usa/{{s.name}},{{s.id}}' style='color:#fff; '>
+		<div class='live-outer'>
+
+                <div class='live-product-det' style='margin-left:5%; '>
+                	<div class='live-product-name' >
+
+                    	<p class="search1">{{s.name}} <span class='fa fa-map-marker' style='margin-left:8px; color:red;'> {{s.city}}</span> </p>
+                      <p class="search2">{{s.name|slice:":25"}}... <span class='fa fa-map-marker' style='margin-left:8px; color:red; '> {{s.city}}</span> </p>
+
+                      <br>
+                    </div>
+
+                </div>
+
+            </div>
+	</a>
+
+{% endfor %}

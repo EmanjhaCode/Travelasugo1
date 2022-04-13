@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Travel As You Go | Sign Up  </title>
+    <link href="../media/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../media/home/css/style.css" rel="stylesheet">
+  <link href="c../media/home/ss/responsive.css" rel="stylesheet">
+  <link href="../media/home/css/select-new.css" rel="stylesheet">
+
+    <!-- Page level plugin CSS-->
+    <link rel="stylesheet" href="../media/home/css/portfolio.css" type="text/css">
+    <link rel="stylesheet" href="../media/home/css/owlslider.css" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="../media/home/css/sb-admin.css" rel="stylesheet" type="text/css">
+    <link href="../media/home/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="../media/home/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../media/home/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../media/home/assets/owlcarousel/assets/owl.theme.default.min.css">
+
+    <link href="fonts.googleapis.com/css6079.css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+  <!-- icons -->
+    <link href="../../media/assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../media/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <!--bootstrap -->
+  <link href="../../media/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="../../media/assets/plugins/summernote/summernote.css" rel="stylesheet">
+  <!-- morris chart -->
+    <link href="../../media/assets/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+    <!-- Material Design Lite CSS -->
+  <link rel="stylesheet" href="../../media/assets/plugins/material/material.min.css">
+  <link rel="stylesheet" href="../../media/assets/css/material_style.css">
+  <!-- animation -->
+  <link href="../../media/assets/css/pages/animate_page.css" rel="stylesheet">
+
+  <!-- favicon -->
+    <link rel="shortcut icon" href="../../media/img/favicon.ico" />
+  <link href="../../media/assets/plugins/dropzone/dropzone.css" rel="stylesheet" media="screen">
+  <link href="../../media/assets/plugins/jquery-tags-input/jquery-tags-input.css" rel="stylesheet">
+    <!--select2-->
+    <link href="../../media/assets/plugins/select2/css/select2.css" rel="stylesheet" type="text/css" />
+    <link href="../../media/assets/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <script type="text/javascript">
+      var placeholder = "Select Activities fromind";
+      $('.select2, .select2-multiple').select2({
+      	theme: "bootstrap",
+          placeholder: placeholder,
+      });
+    </script>
+<style media="screen">
+  @media screen and (max-width: 740px) {
+   #rcaptcha{margin-left:-6%;}
+     .submits1{margin-left:-39px;}
+  }
+
+  @media only screen and (min-width: 1124px) {
+    #rcaptcha{margin-left:5%;}
+  }
+</style>
+  </head>
+
+  <body>
+	<div class=" ">
+		<div class="container" >
+			<div class="row " >
+				<div class="col-lg-12 col-sm-12 " >
+					<div class="bg-form " >
+						<div class="sinheader" >
+							<div class="col-md-6">
+								<a href="/"><img src="../media/home/img/cali1.png" alt="" style="width:230px;"></a>
+							</div>
+							<div class="sings col-md-6">
+								<p> Already account! - <a href="/signin"> Sign in here</a></p>
+							</div>
+
+							<div class="sform" >
+
+
+								<div class="row justify-content-md-center" >
+									<div class="col-lg-4 col-sm-12" >
+                    <form class="" action="signup" method="post" id="test-form" >
+                      {% csrf_token %}
+                              <div class="row">
+
+                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                 <div class="input-container">
+
+                                 <input type="text" name="nm" placeholder="  Name" class="input-field"   style="width:100%; margin-bottom:15px;" required>
+
+                               </div>
+                               </div>
+                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                 <div class="input-container">
+
+                                 <input type="email" class="input-field"  name="em" placeholder="E-Mail" style="width:100%; margin-bottom:15px;" required>
+
+                               </div></div>
+
+                               <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                 <div class="input-container">
+
+                                 <input type="password" class="input-field"  name="ps" placeholder="Password" style="width:100%; margin-bottom:15px;" required>
+
+                               </div></div>
+
+                               <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                 <div class="input-container">
+
+                                 <input type="password" class="input-field"  name="cps" placeholder="Confirm Password" style="width:100%; margin-bottom:15px;" required>
+
+                               </div></div>
+
+                               <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                 <div class="input-container">
+
+                                 <input type="text" class="input-field"  name="city" placeholder=" City" style="width:100%; margin-bottom:15px;" required>
+
+                               </div></div>
+
+                               <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                                 <div class="input-container">
+
+                                 <input type="text" class="input-field"  name="state" placeholder=" State" style="width:100%; margin-bottom:15px;" required>
+
+                               </div></div>
+
+                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                 <div class="input-container">
+
+                                 <input type="text" class="input-field"  name="country" placeholder="Country" style="width:100%; margin-bottom:15px;" required>
+
+                               </div></div>
+
+
+                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 " >
+
+                                 <select id="" name="activity"  class="form-control select2-multiple" multiple required>
+                                     <optgroup label="Select Location Activities">
+
+                                       {% for a in activity_data %}
+                                          <option value={{a.id}}>{{a.name}}</option>
+                                         {% endfor %}
+                                     </optgroup>
+
+                                </select>
+                                <input type="hidden" id="tab">
+
+                               </div>
+
+                               <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 " >
+                                 <br>
+                               <div   class="g-recaptcha" id="rcaptcha"  data-sitekey="6LfrFKQUAAAAAMzFobDZ7ZWy982lDxeps8cd1I2i"></div>
+                               <span  id="captcha" style="color:red" ></span>
+                             </div>
+
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+              <input type="submit" onclick="sign()"  class="btn btn-primary submits1" value="Sign Up" style="width:350px; margin-top:15px;">
+            </div>
+
+                              </div>
+
+        </form>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+    <!-- footer -->
+    {% include 'footer.html' %}
+    <!-- end -->
+	</div>
+
+<script type="text/javascript">
+  function sign(){
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+          alert("You can't leave Captcha Code empty...!");
+          window.open('/signup','_self');
+
+    }
+      var ps = $('input[name=ps]').val();
+      var cps = $('input[name=cps]').val();
+
+       if(ps!=cps){
+         alert('Password and confirm password does not match...!')
+         window.open('/signup','_self');
+       }
+
+  }
+
+
+</script>
+{% if msg %}
+<script>
+ alert(`{{msg}}`);
+  </script>
+{% endif %}
+    <!-- Bootstrap core JavaScript-->
+    <script src="../../media/assets/plugins/jquery/jquery.min.js" ></script>
+    <script src="../../media/assets/plugins/popper/popper.min.js" ></script>
+    <script src="../../media/assets/plugins/jquery-blockui/jquery.blockui.min.js" ></script>
+  <script src="../../media/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- bootstrap -->
+    <script src="../../media/assets/plugins/bootstrap/js/bootstrap.min.js" ></script>
+    <script src="../../media/assets/plugins/sparkline/jquery.sparkline.min.js" ></script>
+  <script src="../../media/assets/js/pages/sparkline/sparkline-data.js" ></script>
+    <!-- Common js-->
+  <script src="../../media/assets/js/app.js" ></script>
+    <script src="../../media/assets/js/layout.js" ></script>
+    <script src="../../media/assets/js/theme-color.js" ></script>
+    <!-- material -->
+    <script src="../../media/assets/plugins/material/material.min.js"></script>
+    <!-- animation -->
+    <script src="../../media/assets/js/pages/ui/animations.js" ></script>
+    <!-- morris chart -->
+    <script src="../../media/assets/plugins/morris/morris.min.js" ></script>
+    <script src="../../media/assets/plugins/morris/raphael-min.js" ></script>
+    <script src="../../media/assets/js/pages/chart/morris/morris_home_data.js" ></script>
+    <!-- end js include path -->
+  <!-- dropzone -->
+    <script src="../../media/assets/plugins/dropzone/dropzone.js" ></script>
+    <!--tags input-->
+    <script src="../../media/assets/plugins/jquery-tags-input/jquery-tags-input.js" ></script>
+    <script src="../../media/assets/plugins/jquery-tags-input/jquery-tags-input-init.js" ></script>
+    <!--select2-->
+    <script src="../../media/assets/plugins/select2/js/select2.js" ></script>
+    <script src="../../media/assets/js/pages/select2/select2-init.js" ></script>
+    <!-- Core plugin JavaScript-->
+
+
+  </body>
+
+</html>

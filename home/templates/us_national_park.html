@@ -1,0 +1,72 @@
+{% extends 'header2.html' %}
+{% block title %}Travel As You Go | Park Related to Activiy{% endblock %}
+
+{% block body %}
+<style media="screen">
+    @media only screen and (max-width: 500px) {
+.state {
+  margin-top:25%;
+}
+.message-radius{
+width:100%;
+}
+.img11{
+  width:100%;
+}
+}
+@media only screen and (min-width: 500px) {
+.state {
+margin-left:30%;
+margin-top:-18%;
+}
+.message-radius{
+width:200px;
+}
+.img11{
+  width:200px;
+}
+}
+    </style>
+				 <!-- Activity Detail Area Start-->
+					<div class="row">
+
+						<div class="col-lg-8 msg col-sm-12">
+							{% for n in state_name %}
+							<div class="rightbox">
+								<div class="msg-scroll">
+									<div class="rightmsg">
+										<a href="/us_national_state/{{n.id}}">
+										<div class="message-radius" style="height:120px;">
+											<img src="../../media/{{n.img}}" alt="" title="" style="height:150px;" class="img11">
+										</div>
+										</a>
+										<div class="message-heading state" >
+											{{n.name}}
+											<p style="text-align:justify;">{{n.desc|slice:":300"}}...</p>
+										</div>
+
+										<div class="message-heading1">
+
+											<span>{{n.park_qnt}}</span>
+
+
+										</div>
+										<div class="clearfix"></div>
+										<hr>
+									</div>
+								</div>
+							</div>
+						 {% endfor %}
+						</div>
+
+
+						<div class="col-md-4">
+
+						{% include "promo.html" %}
+						</div>
+
+					</div>
+
+		  <!--content-wrapper End-->
+
+    {% endblock %}

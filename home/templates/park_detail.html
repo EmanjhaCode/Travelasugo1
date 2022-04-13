@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Travel As You Go | Find Your Activity Facility & Near By Place </title>
+
+  {% include 'data_css.html' %}
+<style media="screen">
+@media screen and (min-width: 0px) and (max-width: 600px) {
+#weather{ display: None; }  /* show it on smaller screen */
+}
+</style>
+
+  </head>
+<script type="text/javascript">
+if(window.performance==1){
+  alert('ho gaya');
+    window.open('abx','_self');
+}
+
+</script>
+<style media="screen">
+    @media only screen and (max-width: 500px) {
+.state {
+  margin-top:25%;
+}
+.message-radius{
+width:100%;
+}
+.img11{
+  width:100%;
+}
+}
+@media only screen and (min-width: 500px) {
+.state {
+margin-left:30%;
+margin-top:-18%;
+}
+.message-radius{
+width:200px;
+}
+.img11{
+  width:200px;
+}
+}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <body id="page-top">
+
+{% load myfilter %}
+{% include 'navbar.html' %}
+  <script type="text/javascript">
+    if(screen.width<500) {
+    var element = document.getElementById("page-top");
+    element.classList.add("sidebar-toggled");
+  }
+  </script>
+
+	<div class="full-width" >
+		<div  style="background:#fff;">
+		  <!-- Sidebar -->
+
+			<div id="content-wrapper" >
+				<div class="container-fluid pb-0">
+				 <!-- Profile Detail Area Start-->
+					<div class="video-block section-padding">
+						<div class="main-item">
+							<div class="row">
+                {% for i in location_single %}
+                {% include 'page_image.html' %}
+                <!-- Social Account Share Model Start -->
+              	<div class="modal fade" id="sharelisitng" tabindex="-1" role="dialog" aria-hidden="true">
+              		<div class="modal-dialog modal-dialog-centered none" role="document">
+              			<div class="modal-content">
+              				<div class="modal-body">
+              					<ul class="share-options">
+              						<li>
+              							<a href="https://www.facebook.com/sharer/sharer.php?u=https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-facebook-f" style="background-color: #3b5998;"></i> Facebook </a>
+              						</li>
+              						<li>
+              							<a href="https://twitter.com/share?url=https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-twitter" style="background-color: #4099FF;"></i> Twitter </a>
+              						</li>
+              						<li>
+              							<a href="whatsapp://send?text={{i.name}} | https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-whatsapp" style="background-color: #128c7e;"></i> Whatsapp </a>
+              						</li>
+              						<li>
+              							<a href="https://telegram.me/share/url?url=https://mychaps.net/park-detail/{{i.id}}&text={{i.name}}"><i class="fa fa-telegram" style="background-color: #0088cc;"></i> Telegram </a>
+              						</li>
+              						<li>
+              							<a href="http://pinterest.com/pin/create/link/?url=https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-pinterest" style="background-color: #C92228;"></i> Pinterest </a>
+                          </li>
+              						<li>
+              							<a href="https://plus.google.com/share?url=https://mychaps.net/park-detail/{{i.id}}"><i class="fa fa-google-plus" style="background-color: #D34836;"></i> Google+ </a>
+              						</li>
+              						<li>
+              							<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mychaps.net/park-detail/{{i.id}}&title={{i.name}}&summary={{i.overview}}"><i class="fa fa-linkedin" style="background-color: #0077B5;"></i> LinkedIn </a>
+              						</li>
+
+              					</ul>
+              				</div>
+              			</div>
+              		</div>
+              	</div>
+              	<!-- Social Account Share Model End -->
+                {% endfor %}
+
+								<!-- Profile Detail Area End-->
+								<!--Nav Tabs Start -->
+								<div class="row item-detail-tabs">
+									<div class="col-xl-12 com-md-12 col-sm-12 px-0" >
+										<ul class="nav  nav-tabs" role="tablist" id="myTab"  style="margin-left:1%;">
+											<li role="presentation" >
+												<a style="color:#000;" class="active" href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> Park Details </a>
+											</li>
+											<li role="presentation">
+												<!-- <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab"> Reviews </a> -->
+                        <a style="color:#000;" href="/after_review/local,{{id}}" aria-controls="reviews"  > Reviews </a>
+											</li>
+											<li role="presentation">
+												<a style="color:#000;" href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab"> Gallery </a>
+											</li>
+
+                      <li role="presentation">
+												<a style="color:#000;" href="#safety" aria-controls="gallery" role="tab" data-toggle="tab"> Safety </a>
+											</li>
+
+											<li role="presentation">
+												<a style="color:#000;" class="more-options" type="button" data-toggle="modal" data-target="#sharelisitng"> Share </a>
+											</li>
+
+
+										</ul><!--Nav Tabs End -->
+
+
+
+
+										<!--Tabs Panes Start -->
+                    {% for i in location_single %}
+
+										<div class="tab-content" style="margin-left:1%;">
+											<div class="tab-pane active" role="tabpanel" id="profile">
+												<div class="row lr-row">
+													<!-- <div class="col-md-8" style="overflow: scroll; height:700px;"> if u want to scroll -->
+                            <div class="col-md-8" >
+
+														<div class=" locatins" >
+                              <h4 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/park_icon2.png" alt=""> {{i.name}}</h4>
+                              <div class="heading" id="cweather">
+
+                                </div>
+                              <script type="text/javascript">
+                          	    $('#cweather').load("/cweather/{{i.city}}").fadeIn("slow");
+                          	  </script>
+															<div class="sub-heading" style="color:#000;">
+																{{i.overview|change_color|safe}}
+															</div>
+															<div class="clearfix"></div>
+														</div>
+
+                            <!-- google news api -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                                <h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/news.jpg" alt=""> News & Updates</h3>
+                              </div>
+                              <p class="faq-accordion"  style="color:#4267B2;">View News : Click Here </p>
+                              <div   class="panel" style="overflow: scroll; height:300px;">
+                              <div id="update_news">
+                                <center>  <img src="../media/home/img/load113.gif" alt="" style="width:300px; height:200px;" ></center>
+                              <p style="margin-left:40%; margin-top:-5%; color:red;">News Loading...</p>
+                              </div>
+                           </div>
+                          </div>
+                              <div class="clearfix"></div>
+                            </div>
+                            {% load myfilter %}
+    													<script type="text/javascript">
+                                $('#update_news').load("/google_news_api/{{i.city|replace_comma}}").fadeIn("slow");
+
+    													</script>
+                            <!-- end -->
+
+                            <!-- Twitter api -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                                <h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/tweet.png" alt=""> Latests Twits</h3>
+                              </div>
+                              <p class="faq-accordion"  style="color:#4267B2;">View {{i.name}} </p>
+                              <div class="panel" style="overflow: scroll; height:300px;">
+                                <table class="table table-striped">
+                                  <tbody>
+                                {% for twit in twit_api %}
+                                <tr>
+                                 <td>
+
+                  							<div class="rightbox">
+                  								<div class="msg-scroll">
+                  									<div class="rightmsg">
+
+                  										<div class="message-heading " >
+
+                  											<p style="text-align:justify;" >  {{twit.twit_text}}...</p>
+                  										</div>
+
+                  										<div class="message-heading1">
+                                        <span>{{twit.twit_date}} </span>
+                                        <a   ><span style='margin-left:5px;'>Retweet Count : {{twit.twit_count}}</span> </a>
+                                        <a   ><span style='margin-left:5px;'>Like : {{twit.twit_like}}</span> </a>
+                                        <a   href="https://twitter.com/stanguy997/status/{{twit.twit_id}}"><span style='margin-left:5px;'>View More</span> </a>
+
+                  										</div>
+                  										<div class="clearfix"></div>
+                  										<hr>
+                  									</div>
+                  								</div>
+                  							</div>
+                              </td>
+                            </tr>
+                                {% empty %}
+                                <p>Currently no twits associated with this park!!!</p>
+                  						 {% endfor %}
+                             </tbody>
+                           </table>
+
+                              </div>
+                            </div>
+  															<div class="clearfix"></div>
+  														</div>
+                            <!-- end -->
+
+                            <!--XXXXXXX-hotel endif-XXXXXXXX-->
+
+                            <div id="park_api">
+                              <center>  <img src="../media/home/img/load113.gif" alt="" style="width:300px; height:200px;" ></center>
+                            </div>
+                            <script type="text/javascript">
+                              $(document).ready( function() {
+                                $('#park_api').load("/park_hotel_api/{{i.id}}").fadeIn("slow");
+                              });
+                            </script>
+                            <!--XXXXXXX-END-XXXXXXXX-->
+
+
+														<div class="locatins heading" >
+															<div class="heading" >
+																<h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/activity_icon.png" alt="">Activity</h3>
+															</div>
+                              {% include "park_activity.html" %}
+
+
+															<div class="clearfix"></div>
+														</div>
+
+                            <div class="locatins heading">
+															<div class="heading">
+															<h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/activity_icon.png" alt="">Facility</h3>
+															</div>
+                              {% include "park_facility.html" %}
+
+															<div class="clearfix"></div>
+														</div>
+
+                            <div class="locatins heading">
+                              <div class="heading">
+                                <img src="../media/home/images/svg/tag.svg" alt=""><h3 style="color:#4267B2;">Categories</h3>
+                              </div>
+                              {% include "park_category.html" %}
+
+                              <div class="clearfix"></div>
+                            </div>
+                            <!--  -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                                <h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/nearby.png" alt="">Address</h3>
+                              </div>
+                              <p class="faq-accordion" style="color:#4267B2;">  {{i.address}}</p>
+                              <div class="panel">
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    City
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.city}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    State
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.state}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                  Country
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.country}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    Zipcode
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.zipcode}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    Longitude
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.logitude}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    Latitude
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.latitude}}
+                                  </div>
+                                </div>
+
+
+                              </div>
+                            </div>
+                            </div>
+
+                            <!--  -->
+
+
+                            <!--  -->
+													</div>
+													<div class="col-md-4">
+                            <div class="box-left">
+
+                              <div class="heading">
+															<img style="width:20px;" src="../media/home/img/recommend113.png" alt="Find all nearby Hotel, Park, restaurants"><h3 style="color:#4267B2;">Recommended</h3>
+															</div>
+                            {% include "suggest.html" %}
+                          </div>
+                          <div class="box-left">
+                          <div class="heading">
+                          <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=320&amp;height=300&amp;hl=en&amp;q={{i.name}}&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+                          <style>.mapouter{position:relative;text-align:right;width:300px;height:300px;}.gmap_canvas {overflow:hidden;background:none!important;width:300px;height:300px;}.gmap_iframe {width:300px!important;height:300px!important;}</style>
+                        </div>
+                          </div>
+                          </div>
+
+                          {% include "promo.html" %}
+
+
+													</div>
+												</div>
+											</div>
+
+
+											<div class="tab-pane" role="tabpanel" id="gallery">
+												<div class="video-block section-padding">
+													<div class="row lr-row mdb-lightbox">
+														<div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+															<div class="gallery-sets">
+																<a class="col-lg-3 col-sm-6" href="../../media/{{i.other1}}" >
+																	<img src="../../media/{{i.other1}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="../../media/{{i.other2}}" >
+																	<img src="../../media/{{i.other2}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="../../media/{{i.other3}}" >
+																	<img src="../../media/{{i.other3}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="../../media/{{i.thumbnail1}}" >
+																	<img src="../../media/{{i.thumbnail1}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="../../media/{{i.thumbnail2}}" >
+																	<img src="../../media/{{i.thumbnail2}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="../../media/{{i.thumbnail3}}" >
+																	<img src="../../media/{{i.thumbnail3}}" alt="" style="height:200px;">
+																</a>
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+                      <!-- XXXXXXXX  SAFETY XXXXXXXX -->
+                      <div class="tab-pane" role="tabpanel" id="safety">
+                        <div class="my-all-lisitngs">
+                          <div class="row justify-content-md-center">
+                            <div class="col-lg-10 col-sm-12">
+                              <div class="help-tabs">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                  <li class="nav-item">
+                                  </li>
+
+                                </ul>
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane show active" id="web" role="tabpanel">
+                            <div class="help-faq">
+                              <div class="faq-items">
+
+                                <button class="help-accordion" style="background:#fff; color:#000;"> <h4>COVID(coronavirus) Safety</h4> </button>
+                                <div class="panel" style="display: none; background:#fff;">
+                                  <li style="list-style-type:none;">Research about the Coronavirus outbreak in the country you are visiting</li><br> <hr>
+                                  <li style="list-style-type:none;">Wear a mask and seek medical help if you develop symptoms</li><br> <hr>
+                                  <li style="list-style-type:none;">Stay in a place with good hygiene and cleanliness</li><br> <hr>
+                                  <li style="list-style-type:none;">Avoid crowds</li><br> <hr>
+                                  <li style="list-style-type:none;">Remember to avoid touching your face with unwashed hands</li><br> <hr>
+                                  <li style="list-style-type:none;">Wash your hands frequently</li><br> <hr>
+                                  <li style="list-style-type:none;">Avoid contact with anyone who is sick</li><br> <hr>
+                                  <li style="list-style-type:none;">Check local requirements and restrictions</li><br> <hr>
+                                  <li style="list-style-type:none;">Contactless payment</li><br> <hr>
+                                  {% for c in c_safety %}
+                                  For more information about {{c.usa_state}} state safety visit : <a href="{{c.link}}">{{c.link}}</a>
+                                  {% endfor %}
+                                </div>
+
+                                {% for safety in safety %}
+                                <button class="help-accordion" style="background:#fff; color:#000;"> <h4>{{safety.title}}</h4> </button>
+                                <div class="panel" style="display: none; background:#fff;">
+
+                                  {{safety.des|safe}}
+                                </div>
+                                {% endfor %}
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                      <!-- END -->
+
+										</div>
+                  {% endfor %}
+										<!--Tabs Panes End -->
+									</div>
+								</div>
+								<!--Tab Links End-->
+							</div>
+						</div>
+					</div>
+			</div>
+		  <!--content-wrapper End-->
+		</div>
+	</div>
+	</div>
+
+    <!--wrapper -->
+			<!-- Sticky Footer -->
+			{% include 'footer.html' %}
+
+    <!-- Scroll to Top Button Start-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="ti-arrow-up"></i>
+    </a>
+	<!-- Scroll to Top Button End-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../media/home/js/jquery.min.js"></script>
+    <script src="../media/home/js/bootstrap.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src='../../../../api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../media/home/js/sb-admin.min.js"></script>
+	<script src="../media/home/js/carousel_recom.js"></script>
+	<script src="../media/home/js/menurght.js"></script>
+	<script src="../media/home/js/crausal1.js"></script>
+	<script src="../media/home/js/custom.js"></script>
+	<script src="../media/home/js/photoswipe.min.js"></script>
+	<script src="../media/home/js/photoswipe-ui-default.min.js"></script>
+
+	<!-- Demo scripts for this page-->
+   	<script src="../media/home/js/slick.min.js"></script>
+
+	<!-- Assect scripts for this page-->
+	<script src="../media/home/assets/vendors/jquery.min.js"></script>
+    <script src="../media/home/assets/owlcarousel/owl.carousel.js"></script>
+    <script src="../media/assets/js/res_sidebar.js"></script>
+
+	<script>
+	var acc = document.getElementsByClassName("faq-accordion");
+	var i;
+
+	for(i = 0; i < acc.length; i++){
+		acc[i].addEventListener("click", function(){
+		this.classList.toggle("active");
+
+			var panel = this.nextElementSibling;
+			if(panel.style.display === "block"){
+				panel.style.display = "none";
+			} else {
+				panel.style.display ="block";
+			}
+		});
+	}
+
+	</script>
+  <script>
+  var acc = document.getElementsByClassName("help-accordion");
+  var i;
+
+  for(i = 0; i < acc.length; i++){
+   acc[i].addEventListener("click", function(){
+   this.classList.toggle("active");
+
+     var panel = this.nextElementSibling;
+     if(panel.style.display === "block"){
+       panel.style.display = "none";
+     } else {
+       panel.style.display ="block";
+     }
+   });
+  }
+
+  </script>
+  </body>
+
+</html>

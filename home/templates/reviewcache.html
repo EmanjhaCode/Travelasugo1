@@ -1,0 +1,7 @@
+{% if user.is_authenticated %}
+
+<input type="button" onclick="tab()" class="btn btn-danger" data-toggle="modal" value="Submit" data-target="#exampleModal">
+{% else %}
+
+<a href="/signin" style="color:#fff;" class="btn btn-danger">Sign In Please</a>
+  {% endif %}

@@ -1,0 +1,126 @@
+{% extends 'header.html' %}
+{% block title %}Travel As You Go | Find Your Activity Facility & Near By Place{% endblock %}
+
+	<!--#Places & Events Listing Start -->
+  {% block body %}
+
+     <!-- Profile Detail Area Start-->
+     <div class="video-block section-padding" style="background:#fff;">
+       <div class="main-items">
+         <div id="cap1">
+         <div class="row justify-content-md-center">
+           <div class="messages text-center col-md-12">
+             Feedback
+
+              
+
+             <hr>
+           </div>
+         </div>
+         <div class="my-all-lisitngs">
+           <div class="row justify-content-md-center">
+             <div class="col-lg-10 col-sm-12">
+               <div class="feedback">
+
+                 <form method='post' id="feedform">
+                   {% csrf_token %}
+                   <div class="email-input">
+                     <div class="midemail">
+                       <img src="../media/home/images/svg/author.svg" alt="">
+                       <h6>name</h6>
+                     </div>
+                     <div class="inputs">
+                       <input type="text" name="nm" placeholder="Enter your Name">
+                     </div>
+                   </div>
+                   <div class="email-input">
+                     <div class="midemail">
+                       <img src="../media/home/images/svg/email.svg" alt="">
+                       <h6>Email</h6>
+                     </div>
+                     <div class="inputs">
+                       <input type="text" name="em" placeholder="Enter your email">
+                     </div>
+                   </div>
+                   <div class="email-input">
+                     <div class="midemail">
+                       <img src="images/svg/pencil.svg" alt="">
+                       <h6>Write Feedback</h6>
+                     </div>
+
+                     <div class="inputs">
+                       <textarea placeholder="Write feedback here" id="fd"></textarea>
+                     </div>
+                   </div>
+
+                     <div class="g-recaptcha" id="rcaptcha"  data-sitekey="6LfrFKQUAAAAAMzFobDZ7ZWy982lDxeps8cd1I2i"></div>
+
+
+                   <br>
+
+
+                   <div class="sends">
+
+                     <button type="button" onclick="tab()" class="btn btn-danger">Send Feedback</button>
+                     </div>
+
+                 </form>
+                  </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <script type="text/javascript">
+    function tab(){
+      var v = grecaptcha.getResponse();
+      if(v.length == 0)
+      {
+         alert("You can't leave Captcha Code empty");
+           return false;
+
+      }else{
+        var nm = $('input[name=nm]').val();
+
+        var em = $('input[name=em]').val();
+        var feed = document.getElementById('fd').value;
+
+
+
+        if(nm=='' || em=='' || feed=='' ){
+        alert('You cant leave Input Field empty')
+            return false;
+        }else{
+           var formData = {
+             'nm': nm,
+             'em': em,
+             'feed': feed,
+
+
+             'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+         };
+         $.ajax({
+                 type: 'POST',
+                 url: '/feedback',
+                 data: formData,
+                 encode: true,
+                 success:function(data){
+
+                   document.getElementById("feedform").reset();
+                   $('#cap1').html(`<img src='../media/home/img/feed.png' style='width:100%;'>`)
+
+                 }
+             })
+         }
+      }
+
+
+      }
+
+
+
+
+
+     </script>
+     {% endblock %}

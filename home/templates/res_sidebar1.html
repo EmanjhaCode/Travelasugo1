@@ -1,0 +1,84 @@
+<form class="" action="/nearby" method="POST" id="near">{% csrf_token %}
+ <input type="hidden" name="lat" id="nm">
+ <input type="hidden" name="lon" id="nm1">
+</form>
+<div class="gNav-mask" aria-hidden="true" tabindex="-1" onclick="gNavClose();"></div>
+
+<div id="gNav-beforeE" tabindex="-1" onfocus="chgFocus('.gNav-closeBtn');"></div>
+<div class="gNav" id="menuList-C" style="background:#fff;">
+  <h3 style="margin-top:-40px; color:#4267B2;" class="fa fa-times" onclick="gNavClose();"></h3>
+  <div class="logo" style="margin-left:12%;; margin-top:-18%;">
+    <a href="/" >
+    <img src="../media/home/img/1.png" alt="logo" style="width:180px; ">
+    </a>
+  </div>
+  <br><br>
+<ul aria-label="Global navigation menu" class="ls--n">
+
+  <li>
+    <a href="/" class="gNav-link1 m0 fa fa-home" style="font-size:20px; color:#4267B2;"> Home</a>
+  </li>
+  <li>
+    <a href="/covid" class="gNav-link1 m0 fa fa-globe" style="font-size:20px; color:#4267B2;"> COVID 19</a>
+  </li>
+  <li>
+    <a  onclick="getloc()" class="gNav-link1 m0 fa fa-search" style="font-size:20px; color:#4267B2;">  NearBy</a>
+  </li>
+  {% if user.is_authenticated %}
+  <li>
+    <a href="/add-location" class="gNav-link1 m0 fa fa-globe" style="font-size:20px; color:#4267B2;"> Add Location</a>
+  </li>
+  {% endif %}
+  <li>
+    <a href="/virtual_list" class="gNav-link1 m0 fa fa-map-pin" style="font-size:20px; color:#4267B2;"> Virtual</a>
+  </li>
+  <li>
+    <a href="/save-park" class="gNav-link1 m0 fa fa-heart" style="font-size:20px; color:#4267B2;"> Wishlist</a>
+  </li>
+  <li>
+    <a href="/trending" class="gNav-link1 m0 fa fa-eye" style="font-size:20px; color:#4267B2;"> Trending</a>
+  </li>
+  <li>
+    <a href="/news" class="gNav-link1 m0 fa fa-search" style="font-size:20px; color:#4267B2;"> Search</a>
+  </li>
+  <li>
+    <a href="/feedback" class="gNav-link1 m0 fa fa-comments" style="font-size:20px; color:#4267B2;"> Send Feedback</a>
+  </li>
+    {% if user.is_authenticated %}
+  <li>
+    <a href="/logout1" class="gNav-link1 m0 fa fa-sign-out" style="font-size:20px; color:#4267B2;"> Logout</a>
+  </li>
+  {% else %}
+  <li>
+    <a href="/signin" class="gNav-link1 m0 fa fa-sign-in" style="font-size:20px; color:#4267B2;"> LogIn</a>
+  </li>
+  {% endif %}
+</ul>
+
+</div>
+
+<div id="gNav-afterE" tabindex="-1" onfocus="chgFocus('.searchCharaInput');"></div>
+<script>
+
+  function getloc(){
+
+  navigator.geolocation.getCurrentPosition(showPosition);
+  function showPosition(position){
+    // lat.innerHTML = position.coords.latitude;
+    // lon.innerHTML = position.coords.longitude;
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+    document.getElementById('nm').value=lat;
+    document.getElementById('nm1').value=lon;
+    // document.getElementById('near').submit();
+
+    var url_string = `/nearby/${lat},${lon}`; //window.location.href
+    window.open(url_string,'_self');
+
+}
+    // localStorage.setItem('latlon', JSON.stringify(t));
+   // localStorage.clear();
+
+
+  }
+</script>

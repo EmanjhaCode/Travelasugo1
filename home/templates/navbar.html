@@ -1,0 +1,714 @@
+<style media="screen">
+
+
+@media only screen and (min-width: 739px) {
+.srch1 {
+display: None
+}
+#logo_size{
+	margin-top:-1%;
+	margin-left:2%;
+
+}
+
+}
+@media only screen and (max-width: 740px) {
+.srch {
+display: None;
+}
+#logo_size{
+	margin-left:0%;
+
+}
+}
+
+@media only screen and (min-width: 950px) {
+	#nav_color{
+		width:100px;
+	}
+	#qu{
+		width:250px;
+	}
+
+}
+@media only screen and (max-width: 1020px) {
+	#menu_hide{
+	display: None;
+	}
+	.srch {
+	display: None
+	}
+
+}
+@media only screen and (max-width: 740px) {
+.new_nav{display: None;}
+
+}
+@media only screen and (min-width: 900px) {
+.new_nav{display: None}
+
+}
+@media screen and (min-width: 740px) and (max-width: 900px) {
+.tabish{
+	display: None
+}
+}
+@media screen and (min-width: 1020px) and (max-width: 1124px) {
+	#menu_hide{
+	width:20%;
+	margin-left:-60px;
+	}
+	#qu {
+	width:150px; margin-left:-580px;
+	}
+	.feedback{display: None}
+	.menu_left{margin-left:-380px;}
+}
+
+
+#nav_color11{
+	color:#000;
+
+}
+
+.radi{
+	border-bottom-left-radius:40px; border-top-right-radius:20px;
+}
+.radi1{
+	border-bottom-left-radius:50px; border-top-right-radius:80px;
+}
+#nav_color:hover {
+color: #4267B2;
+font-size:20px;
+transform: translateY(-7px);
+
+
+}
+.nav_color1:hover {
+color: #4267B2;
+font-size:20px;
+transform: translateY(-7px);
+
+
+}
+
+</style>
+<script>
+
+function lightbg_clr() {
+	$('#qu').val("");
+	$('#textbox-clr').text("");
+ 	$('#search-layer').css({"width":"auto","height":"auto"});
+	$('#livesearch').css({"display":"none"});
+	$("#qu").focus();
+ };
+
+function fxx(str)
+{
+var s1=document.getElementById("qu").value;
+var xmlhttp;
+if (str.length==0) {
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+	document.getElementById("search-layer").style.width="auto";
+	document.getElementById("search-layer").style.height="auto";
+	document.getElementById("livesearch").style.display="block";
+	$('#textbox-clr').text("");
+    return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+  document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+	document.getElementById("search-layer").style.width="100%";
+	document.getElementById("search-layer").style.height="100%";
+	document.getElementById("livesearch").style.display="block";
+  $('#textbox-clr').text("X");
+    }
+}
+xmlhttp.open("GET","/search/"+s1,true);
+xmlhttp.send();
+}
+
+
+<!-- responsive search  -->
+function lightbg_clr2() {
+
+	$('#qu2').val("");
+
+	$('#textbox-clr2').text("");
+
+ 	$('#search-layer').css({"width":"auto","height":"auto"});
+
+	$('#livesearch2').css({"display":"none"});
+
+	$("#qu2").focus();
+
+ };
+
+
+
+function fx(str)
+
+{
+
+var s1=document.getElementById("qu2").value;
+
+var xmlhttp;
+
+if (str.length==0) {
+
+    document.getElementById("livesearch2").innerHTML="";
+
+    document.getElementById("livesearch2").style.border="0px";
+
+	document.getElementById("search-layer").style.width="auto";
+
+	document.getElementById("search-layer").style.height="auto";
+
+	document.getElementById("livesearch2").style.display="block";
+
+	$('#textbox-clr2').text("");
+
+    return;
+
+  }
+
+if (window.XMLHttpRequest)
+
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+
+  xmlhttp=new XMLHttpRequest();
+
+  }
+
+else
+
+  {// code for IE6, IE5
+
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+  }
+
+xmlhttp.onreadystatechange=function()
+
+  {
+
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+
+    {
+
+    document.getElementById("livesearch2").innerHTML=xmlhttp.responseText;
+
+	document.getElementById("search-layer").style.width="100%";
+
+	document.getElementById("search-layer").style.height="100%";
+
+	document.getElementById("livesearch2").style.display="block";
+
+	$('#textbox-clr2').text("X");
+
+    }
+
+  }
+
+xmlhttp.open("GET","/search/"+s1,true);
+
+xmlhttp.send();
+
+}
+
+<!-- for tab search -->
+
+function lightbg_clr3() {
+
+	$('#qu3').val("");
+
+	$('#textbox-clr3').text("");
+
+ 	$('#search-layer').css({"width":"auto","height":"auto"});
+
+	$('#livesearch3').css({"display":"none"});
+
+	$("#qu3").focus();
+
+ };
+
+
+
+function fxx3d(str)
+
+{
+
+var s1=document.getElementById("qu3").value;
+
+var xmlhttp;
+
+if (str.length==0) {
+
+    document.getElementById("livesearch3").innerHTML="";
+
+    document.getElementById("livesearch3").style.border="0px";
+
+	document.getElementById("search-layer").style.width="auto";
+
+	document.getElementById("search-layer").style.height="auto";
+
+	document.getElementById("livesearch3").style.display="block";
+
+	$('#textbox-clr3').text("");
+
+    return;
+
+  }
+
+if (window.XMLHttpRequest)
+
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+
+  xmlhttp=new XMLHttpRequest();
+
+  }
+
+else
+
+  {// code for IE6, IE5
+
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+  }
+
+xmlhttp.onreadystatechange=function()
+
+  {
+
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+
+    {
+
+    document.getElementById("livesearch3").innerHTML=xmlhttp.responseText;
+
+	document.getElementById("search-layer").style.width="100%";
+
+	document.getElementById("search-layer").style.height="100%";
+
+	document.getElementById("livesearch3").style.display="block";
+
+	$('#textbox-clr3').text("X");
+
+    }
+
+  }
+
+xmlhttp.open("GET","/search/"+s1,true);
+
+xmlhttp.send();
+
+}
+
+
+<!-- start hide show  -->
+$(document).ready(function(){
+
+    $("#qu2").hide();
+  $("#show").click(function(){
+    $("#qu2").show();
+
+  });
+});
+</script>
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top nav-menu tabish" >
+
+	<div  class="btn btn-link btn-sm text-white order-1 order-sm-0 " id="st" onclick="gNavOpen();">
+    <div class="menu-bar-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="18" height="14" class="header-icon" viewBox="0 0 18 14">
+        <path d="M17.000,-0.000 C17.552,-0.000 18.000,0.448 18.000,1.000 C18.000,1.552 17.552,2.000 17.000,2.000 L1.000,2.000 C0.448,2.000 -0.000,1.552 -0.000,1.000 C-0.000,0.448 0.448,-0.000 1.000,-0.000 L17.000,-0.000 ZM17.000,6.000 C17.552,6.000 18.000,6.447 18.000,7.000 C18.000,7.552 17.552,8.000 17.000,8.000 L1.000,8.000 C0.448,8.000 -0.000,7.552 -0.000,7.000 C-0.000,6.447 0.448,6.000 1.000,6.000 L17.000,6.000 ZM17.000,12.000 C17.552,12.000 18.000,12.448 18.000,13.000 C18.000,13.552 17.552,14.000 17.000,14.000 L1.000,14.000 C0.448,14.000 -0.000,13.552 -0.000,13.000 C-0.000,12.448 0.448,12.000 1.000,12.000 L17.000,12.000 Z"></path>
+      </svg>
+    </div>
+  </div>
+  {% include 'res_sidebar1.html' %}
+
+	<div class="logo">
+    <a href="/">
+    <img src="../media/home/img/cali1.png" alt="logo" id="logo_size" style="width:230px;">
+    </a>
+  </div>
+	<div class="searching srch" style="margin-left:1%;">
+	 <form class="form-inline my-2 my-lg-0">
+
+	 <input style=" border-bottom-left-radius:40px; border-top-right-radius:20px;" class="form-control mr-sm-2  type="text" onKeyUp="fxx(this.value)" autocomplete="off" name="qu" id="qu" placeholder="Search...." >
+	 </form>
+	  <div id="livesearch" style="background:#fff; color:#000; overflow-y:scroll; " ></div>
+ </div>
+ <div class="searching srch1" style="margin-left:-2%;">
+
+	 <button type="button" style="margin-top:20px; margin-left:-30px;" id="show" data-toggle="modal" data-target="#myModal">
+	 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="19" height="18" class="header-icon" viewBox="0 0 19 18">
+	 		<path d="M14.720,12.516 L18.658,16.455 C18.993,16.790 18.993,17.332 18.658,17.667 C18.324,18.001 17.781,18.001 17.447,17.667 L13.508,13.728 C12.189,14.783 10.516,15.414 8.695,15.414 C4.436,15.414 0.984,11.962 0.984,7.703 C0.984,3.445 4.436,-0.007 8.695,-0.007 C12.954,-0.007 16.406,3.445 16.406,7.703 C16.406,9.524 15.775,11.197 14.720,12.516 L14.720,12.516 ZM8.695,13.701 C12.007,13.701 14.692,11.016 14.692,7.703 C14.692,4.391 12.007,1.706 8.695,1.706 C5.383,1.706 2.698,4.391 2.698,7.703 C2.698,11.016 5.383,13.701 8.695,13.701 Z"></path>
+	 	</svg>
+	 </button>
+
+
+
+</div>
+  <div class="collapse navbar-collapse " id="navbarTogglerDemo01" >
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="menu_hide">
+      <li class="nav-item btn btn-primary radi menu_left" style="background:#4267B2; ">
+				<a class="nav-link fos " style="color:#fff;  height:30px;" href="/" id="nav_color" >Home</a>
+      </li>
+
+			<li class="nav-item btn btn-primary radi feedback" style="margin-left:1%; background:#4267B2;">
+       <a class="nav-link fos " style="color:#fff;  height:30px;" href="/feedback" id="nav_color"> Feedback </a>
+       </li>
+			<li class="nav-item dropdown btn btn-primary radi menu_left" style="margin-left:1%;  color:#fff; background:#4267B2;">
+        <a class="nav-link fa fa-caret-down hover_width" style="  height:30px; color:#fff; margin-top:-3%;" href="#"   data-toggle="dropdown" id="nav_color" >
+          Location<i ></i>
+         </a>
+        <div class="dropdown-menu radi1" aria-labelledby="navbarDropdown" style="background:#4267B2;">
+          <a style="color:#fff; background:#4267B2;" class="dropdown-item radi1 nav_color1" href="#" onclick="getloc()">NearBy</a>
+					<a style="color:#fff; background:#4267B2;" class="dropdown-item nav_color1 " href="/covid" >COVID 19</a>
+						{% if user.is_authenticated %}
+					<a style="color:#fff; background:#4267B2;" class="dropdown-item radi1 nav_color1" href="/add-location">Add Location</a>
+						{% endif %}
+         </div>
+       </li>
+
+			<li class="nav-item dropdown btn btn-primary radi menu_left" style="margin-left:1%; background:#4267B2;  ">
+        <a class="nav-link fa fa-caret-down hover_width" style="color:#fff;  height:30px; margin-top:-3%; " href="#"   data-toggle="dropdown"  id="nav_color">
+          More<i ></i>
+        </a>
+        <div class="dropdown-menu radi1" aria-labelledby="navbarDropdown" style="background:#4267B2; ">
+           <a style=" color:#fff; background:#4267B2;" class="dropdown-item radi1 nav_color1" href="/save-park">Wishlist</a>
+           <a style="color:#fff; background:#4267B2;"  class="dropdown-item nav_color1" href="/trending">Trending</a>
+
+           <a style=" color:#fff; background:#4267B2;" class="dropdown-item nav_color1" href="/news">News</a>
+						{% if user.is_authenticated %}
+					<a style=" color:#fff; background:#4267B2;" class="dropdown-item radi1 nav_color1" href="/logout1">Logout</a>
+						{% endif %}
+         </div>
+       </li>
+     </ul>
+
+   </div>
+ <div id="navbar" ></div>
+</nav>
+<!-- here there -->
+<style media="screen">
+	@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+i {
+	margin-right: 10px;
+}
+/*----------bootstrap-navbar-css------------*/
+.navbar-logo{
+	padding: 15px;
+	color: #fff;
+}
+.navbar-mainbg{
+	background-color: #5161ce;
+	padding: 0px;
+}
+#navbarSupportedContent{
+	overflow: hidden;
+	position: relative;
+}
+#navbarSupportedContent ul{
+	padding: 0px;
+	margin: 0px;
+}
+#navbarSupportedContent ul li a i{
+	margin-right: 10px;
+}
+#navbarSupportedContent li {
+	list-style-type: none;
+	float: left;
+}
+#navbarSupportedContent ul li a{
+	color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 20px 20px;
+    transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+#navbarSupportedContent>ul>li.active>a{
+	color: #5161ce;
+	background-color: transparent;
+	transition: all 0.7s;
+}
+#navbarSupportedContent a:not(:only-child):after {
+	content: "\f105";
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	font-size: 14px;
+	font-family: "Font Awesome 5 Free";
+	display: inline-block;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-weight: 900;
+	transition: 0.5s;
+}
+#navbarSupportedContent .active>a:not(:only-child):after {
+	transform: rotate(90deg);
+}
+.hori-selector{
+	display:inline-block;
+	position:absolute;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: #fff;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	margin-top: 10px;
+}
+.hori-selector .right,
+.hori-selector .left{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background-color: #fff;
+	bottom: 10px;
+}
+.hori-selector .right{
+	right: -25px;
+}
+.hori-selector .left{
+	left: -25px;
+}
+.hori-selector .right:before,
+.hori-selector .left:before{
+	content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #5161ce;
+}
+.hori-selector .right:before{
+	bottom: 0;
+    right: -25px;
+}
+.hori-selector .left:before{
+	bottom: 0;
+    left: -25px;
+}
+
+
+@media(min-width: 992px){
+	.navbar-expand-custom {
+	    -ms-flex-flow: row nowrap;
+	    flex-flow: row nowrap;
+	    -ms-flex-pack: start;
+	    justify-content: flex-start;
+	}
+	.navbar-expand-custom .navbar-nav {
+	    -ms-flex-direction: row;
+	    flex-direction: row;
+	}
+	.navbar-expand-custom .navbar-toggler {
+	    display: none;
+	}
+	.navbar-expand-custom .navbar-collapse {
+	    display: -ms-flexbox!important;
+	    display: flex!important;
+	    -ms-flex-preferred-size: auto;
+	    flex-basis: auto;
+	}
+}
+
+
+@media (max-width: 991px){
+	#navbarSupportedContent ul li a{
+		padding: 12px 30px;
+	}
+	.hori-selector{
+		margin-top: 0px;
+		margin-left: 10px;
+		border-radius: 0;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+	}
+	.hori-selector .left,
+	.hori-selector .right{
+		right: 10px;
+	}
+	.hori-selector .left{
+		top: -25px;
+		left: auto;
+	}
+	.hori-selector .right{
+		bottom: -25px;
+	}
+	.hori-selector .left:before{
+		left: -25px;
+		top: -25px;
+	}
+	.hori-selector .right:before{
+		bottom: -25px;
+		left: -25px;
+	}
+}
+</style>
+<nav class="navbar navbar-expand-custom navbar-mainbg new_nav" style="background:#fff; ">
+        <a class="navbar-brand navbar-logo" href="/"><img src="../media/home/img/cali1.png" alt="logo" id="logo_size" style="width:230px;"></a>
+				<div class="" style="margin-left:1%;">
+				 <form class="form-inline my-2 my-lg-0">
+
+				 <input style="width:300px; border-bottom-left-radius:40px; border-top-right-radius:20px;" class="form-control mr-sm-2  type="text" onKeyUp="fxx3(this.value)" autocomplete="off" name="qu3" id="qu3" placeholder="Search...." >
+				 </form>
+				  <div id="livesearch3" style="background:#fff; color:#000; overflow-y:scroll; " ></div>
+			 </div>
+        <button style="margin-right:8%;" class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fa fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" style="height:600px; overflow: scroll;">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+								<li class="nav-item">
+							    <a href="/" class="gNav-link1 m0 fa fa-home" style="font-size:20px; color:#4267B2;"> Home</a>
+							  </li>
+							  <li class="nav-item">
+							    <a href="/covid" class="gNav-link1 m0 fa fa-globe" style="font-size:20px; color:#4267B2;"> COVID 19</a>
+							  </li>
+							  <li class="nav-item">
+							    <a  onclick="getloc()" class="gNav-link1 m0 fa fa-search" style="font-size:20px; color:#4267B2;">  NearBy</a>
+							  </li>
+							  {% if user.is_authenticated %}
+							  <li class="nav-item">
+							    <a href="/add-location" class="gNav-link1 m0 fa fa-globe" style="font-size:20px; color:#4267B2;"> Add Location</a>
+							  </li>
+							  {% endif %}
+								{% if user.is_authenticated %}
+							  <li class="nav-item">
+							    <a href="/logout1" class="gNav-link1 m0 fa fa-comments" style="font-size:20px; color:#4267B2;"> Logout</a>
+							  </li>
+							  {% endif %}
+							  <li class="nav-item">
+							    <a href="/virtual_list" class="gNav-link1 m0 fa fa-map-pin" style="font-size:20px; color:#4267B2;"> Virtual</a>
+							  </li>
+							  <li class="nav-item">
+							    <a href="/save-park" class="gNav-link1 m0 fa fa-heart" style="font-size:20px; color:#4267B2;"> Wishlist</a>
+							  </li>
+							  <li class="nav-item">
+							    <a href="/trending" class="gNav-link1 m0 fa fa-eye" style="font-size:20px; color:#4267B2;"> Trending</a>
+							  </li>
+							  <li class="nav-item">
+							    <a href="/news" class="gNav-link1 m0 fa fa-search" style="font-size:20px; color:#4267B2;"> Search</a>
+							  </li>
+							  <li class="nav-item">
+							    <a href="/feedback" class="gNav-link1 m0 fa fa-comments" style="font-size:20px; color:#4267B2;"> Send Feedback</a>
+							  </li>
+            </ul>
+						<br> <br>
+        </div>
+    </nav>
+
+		<script type="text/javascript">
+			// ---------Responsive-navbar-active-animation-----------
+function test(){
+	var tabsNewAnim = $('#navbarSupportedContent');
+	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+	var activeItemNewAnim = tabsNewAnim.find('.active');
+	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+	var itemPosNewAnimTop = activeItemNewAnim.position();
+	var itemPosNewAnimLeft = activeItemNewAnim.position();
+	$(".hori-selector").css({
+		"top":itemPosNewAnimTop.top + "px",
+		"left":itemPosNewAnimLeft.left + "px",
+		"height": activeWidthNewAnimHeight + "px",
+		"width": activeWidthNewAnimWidth + "px"
+	});
+	$("#navbarSupportedContent").on("click","li",function(e){
+		$('#navbarSupportedContent ul li').removeClass("active");
+		$(this).addClass('active');
+		var activeWidthNewAnimHeight = $(this).innerHeight();
+		var activeWidthNewAnimWidth = $(this).innerWidth();
+		var itemPosNewAnimTop = $(this).position();
+		var itemPosNewAnimLeft = $(this).position();
+		$(".hori-selector").css({
+			"top":itemPosNewAnimTop.top + "px",
+			"left":itemPosNewAnimLeft.left + "px",
+			"height": activeWidthNewAnimHeight + "px",
+			"width": activeWidthNewAnimWidth + "px"
+		});
+	});
+}
+$(document).ready(function(){
+	setTimeout(function(){ test(); });
+});
+$(window).on('resize', function(){
+	setTimeout(function(){ test(); }, 500);
+});
+$(".navbar-toggler").click(function(){
+	$(".navbar-collapse").slideToggle(300);
+	setTimeout(function(){ test(); });
+});
+
+
+
+// --------------add active class-on another-page move----------
+jQuery(document).ready(function($){
+	// Get current path and find target link
+	var path = window.location.pathname.split("/").pop();
+
+	// Account for home page with empty path
+	if ( path == '' ) {
+		path = 'index.html';
+	}
+
+	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
+	// Add active class to target link
+	target.parent().addClass('active');
+});
+		</script>
+<!-- end -->
+
+<!-- search modal start here -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="width:97%;">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+			</div>
+			<div class="modal-body">
+				<form class="navbar-form " role="search" style="height:1000px;">
+					<div class="form-group">
+						<input  class="form-control" type="text" onKeyUp="fx(this.value)" autocomplete="off" name="qu2" id="qu2" placeholder="Search Parks...">
+					</div>
+					<div id="livesearch2" style="background:#fff; height:900px; width:100%; color:#000; overflow-y: scroll;" ></div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- search modal end -->
+
+<script type="text/javascript">
+	$('#navbar').load("/nav").fadeIn("slow");
+</script>

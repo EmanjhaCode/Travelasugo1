@@ -1,0 +1,248 @@
+<style media="screen">
+@media only screen and (max-width: 500px) {
+  #title_img{
+  width:80%;
+  }
+}
+</style>
+{% extends 'header.html' %}
+{% block title %}Travel As You Go | Park Related to Activiy{% endblock %}
+
+{% block body %}
+{% load myfilter %}
+<div id="content-wrapper" >
+  <div class="container-fluid pb-0">
+   <!-- Profile Detail Area Start-->
+    <div class="video-block section-padding">
+      <div class="main-items">
+        <div class="row justify-content-md-center" >
+          <div class="messages text-center col-md-12" >
+            <br>
+          <img src="../media/home/park_img/boxes.png" alt=""  id="title_img" >
+            <hr>
+          </div>
+        </div>
+        <div class="my-all-lisitngs" style="margin-top:-5%;">
+          <div class="row justify-content-md-center" >
+            <div class="col-lg-10 col-sm-12" >
+              <div class="help-tabs" >
+
+                <div class="tab-content" id="myTabContent" >
+                  <div class="tab-pane show active" id="web" role="tabpanel" >
+                    <div class="help-faq" >
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Camping Boxes</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;">
+                            Many experienced campers keep a "camping box" ready to go.  A camping box need not be expensive.  Most of the following items such as cups, bowls, plates, and silverware can be purchased at your local thrift store.  The box itself can be anything large enough to conveniently store a collection of food preparation items such as a plastic bin, suitcase, or even a dedicated cupboard in an RV.  Remember that if you camp in bear country, you will want your camping box to fit inside a bear-proof storage container, along with your cooler, cosmetics, etc.
+                          </p>
+
+                        </div>
+                      </div>
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Preparation items</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;">Washable plates, flatware, cups – or paper/plastic if need be <b style="color:#000; font-size:17px;"> | </b> Roll of sturdy paper towels </p> <br>
+                          <p style="background:#fff;">Roll of sturdy tinfoil <b style="color:#000; font-size:17px;"> | </b> Small and large skillet <b style="color:#000; font-size:17px;"> | </b> Small and large cooking pot <b style="color:#000; font-size:17px;"> | </b> Coffeepot </p> <br>
+                          <p style="background:#fff;"> Potholders <b style="color:#000; font-size:17px;"> | </b> Spatula <b style="color:#000; font-size:17px;"> | </b> Wooden spoon <b style="color:#000; font-size:17px;"> | </b> Several sharp knives <b style="color:#000; font-size:17px;"> | </b> Can opener <b style="color:#000; font-size:17px;"> | </b> Corkscrew </p> <br>
+                          <p style="background:#fff;">Long-handled barbecue tools <b style="color:#000; font-size:17px;"> | </b> Waterproof matches, long matches <b style="color:#000; font-size:17px;"> | </b> Long-handled lighter <b style="color:#000; font-size:17px;"> | </b> Flashlight and batteries </p> <br>
+                          <p style="background:#fff;">Baby wipes <b style="color:#000; font-size:17px;"> | </b> Antiseptic hand cleaner <b style="color:#000; font-size:17px;"> | </b> Plastic dishpan, biodegradable dish soap and sponge <b style="color:#000; font-size:17px;"> | </b> Food Staples </p> <br>
+                          <p style="background:#fff;"> Instant or perk coffee <b style="color:#000; font-size:17px;"> | </b> Black and green teas <b style="color:#000; font-size:17px;"> | </b> Packages of instant dry milk <b style="color:#000; font-size:17px;"> | </b> Packages of cocoa (no trans fats)</p> <br>
+                          <p style="background:#fff;">Raw sugar in airtight container and/or stevia powder (a no-calorie herbal sweetener) and/or organic honey or molasses (in an ant-proof container) </p> <br>
+                          <p style="background:#fff;">Packages of oatmeal <b style="color:#000; font-size:17px;"> | </b> Bottle of olive oil <b style="color:#000; font-size:17px;"> | </b> Bottle of flavored vinegar <b style="color:#000; font-size:17px;"> | </b> Oil spray for pans </p> <br>
+                          <p style="background:#fff;"> Dried herb and spice selection to taste – e.g., salt and pepper, garlic powder, crushed red chili peppers, dried parsley, cinnamon, vanilla, etc.</p>
+
+
+                        </div>
+                      </div>
+                      <!-- end -->
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Healthy Alternatives</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;">
+                          Many of our favorite foods can be prepared to hold more nutrition and less fat, sugar, and sodium with a few simple substitutions.
+                          <a href="https://www.parks.ca.gov/?page_id=24312"> Click here </a> for some suggested alternatives.
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- end -->
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Perishable Food Storage</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;">
+                          Most campers want to have a source for chilling drinks as well as perishable foods. This can be a cooler with ice, a refrigerator that plugs into a car, or a fridge in an RV. Replacement ice can usually be purchased at neighborhood markets, campground stores and gas stations. Blocks of ice last longer than cubed or crushed ice. Some campers prefer to use dry ice, which lasts longer but cannot be placed in direct contact with food, such as ice in drinks.
+                          </p>
+                          <br>
+                          <p style="background:#fff;">
+                            The foods in these recipes that require cold storage include any dairy products, such as milk, soy milk and cheese; other soy products such as soy cheese, bacon, sausage or chorizo; eggs and egg substitute; heart-healthy margarine; and hummus. Fresh fruits, vegetables and herbs will stay fresher if refrigerated especially in warmer-climate campgrounds.
+                          </p>
+                        </div>
+                      </div>
+                      <!-- end -->
+
+
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Cooking Sources</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;">
+                          There are several options for cooking while camping. Most campground sites have a campfire grill for cooking over a wood fire. Some dense foods (such as potatoes) can be double wrapped in foil and cooked right next to the flame (the double wrapping helps to prevent burning; it becomes soot covered from the fire, but the outer layer can then be removed to leave a clean, warm, wrapped potato). Pots placed above the flame will become soot covered unless covered with foil, or in some cases you can eliminate a pot and cook directly on foil. Soy replacements for meat are precooked and require little additional cooking.
+                          </p>
+                          <br>
+                          <p style="background:#fff;">
+                            Some camp sites provide a separate grill for cooking over charcoal, just as for many home barbecues. Many campers also use a campstove, usually powered by propane. Of course, RVs often feature a stove. It’s really a matter of personal choice whether to cook over a fire, over charcoal, or on a stove.
+                          </p> <br>
+                            <p style="background:#fff;">
+                              But however you choose to store and cook your food, the options for healthy, delicious eating are limitless. Experience and enjoy!
+                              </p>
+                        </div>
+                      </div>
+                      <!-- end -->
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">More Healthy Camp Recipes</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <!-- Chicken Catch-You-Later start -->
+                          <p style="background:#fff;"><b style="color:#000; font-size:18px;"> Chicken Catch-You-Later </b> <br> <br>
+                            4 boneless/skinless chicken breasts in bite-size chunks <b style="color:#000; font-size:17px;"> | </b> 16 oz can of diced tomatoes
+                          </p>
+                          <br>
+                          <p style="background:#fff;">
+                            2 large bell peppers, sliced <b style="color:#000; font-size:17px;"> | </b> 2 cups mushrooms, sliced <b style="color:#000; font-size:17px;"> | </b> 1 large onion, sliced <b style="color:#000; font-size:17px;"> | </b> 4 tbsp butter or olive oil
+                          </p> <br>
+                          <p style="background:#fff;">
+                            4 garlic cloves, smashed <b style="color:#000; font-size:17px;"> | </b> 1 tsp dried Italian herbs <b style="color:#000; font-size:17px;"> | </b> 1/2 lb pasta (egg noodles) cooked
+                          </p> <br>
+                          <p style="background:#fff;">
+                            Parmesan cheese - grated <b style="color:#000; font-size:17px;"> | </b> Large foil cooking bag
+                          </p> <br>
+                          <p style="background:#fff;">
+                            Place all ingredients into a foil bag except pasta and cheese. Seal bag tightly to avoid leakage. Place package on grill and cook for 15 minutes. Turn package over and cook for an additional 15 minutes or until chicken is done and vegetables are tender. Slit can be cut in top of package to check for doneness. Serve over pasta and sprinkle with parmesan cheese.
+                            <br>
+                            <b style="color:#000; font-size:14px;"> Serves: 4  | </b> <b style="color:#000; font-size:14px;"> Time: 45 minutes |  </b> <b style="color:#000; font-size:14px;"> Effort: 2>Easy </b>
+                          </p>
+                          <!-- end -->
+                          <br>
+                          <!-- Tangy String Beans and Carrots start -->
+                          <p style="background:#fff;"><b style="color:#000; font-size:18px;"> Tangy String Beans and Carrots </b> <br> <br>
+                            1/2 medium red onion thinly sliced <b style="color:#000; font-size:17px;"> | </b> 3 carrots cut into rounds<b style="color:#000; font-size:17px;"> | </b> 3/4 lb green beans with ends trimmed
+                          </p>
+                          <br>
+                          <p style="background:#fff;">
+                            2 tbsp. Dijon or spicy brown mustard <b style="color:#000; font-size:17px;"> | </b> 5 tsp. sweet Balsamic vinegar
+                            <b style="color:#000; font-size:17px;"> | </b>2 tbsp. virgin olive oil <b style="color:#000; font-size:17px;"> | </b> 3 tbsp. low fat yogurt
+                          </p> <br>
+
+                          <p style="background:#fff;">
+                            <b style="color:#000; font-size:17px;"> Dressing: </b> Start with mustard adding vinegar, olive oil and yogurt.  Mix, taste and adjust ingredients to taste.
+                            <br><br>
+                            Steam carrots and beans until cooked, but firm.  Add sliced onions the last minute to soften.  Place dressing on top or toss.
+                            <br><br>
+                            Top with a pine nuts or grated cheese as desired.
+                              <br>
+                            <b style="color:#000; font-size:14px;"> Serves: 2-4  | </b> <b style="color:#000; font-size:14px;"> Time: 10 minutes |  </b> <b style="color:#000; font-size:14px;"> Effort: Easy </b>
+                          </p>
+                          <!-- end -->
+
+                          <br>
+                          <!-- Sweet and Crunchy Carrots start -->
+                          <p style="background:#fff;"><b style="color:#000; font-size:18px;"> Sweet and Crunchy Carrots </b> <br> <br>
+                          10 carrots <b style="color:#000; font-size:17px;"> | </b> 3 cups water<b style="color:#000; font-size:17px;"> | </b> 2 tbsp butter/margarine
+                          </p>
+                          <br>
+                          <p style="background:#fff;">
+                            1/2 cup honey <b style="color:#000; font-size:17px;"> | </b> salt/pepper to taste
+                            <b style="color:#000; font-size:17px;"> | </b>1/2 cup cashew nuts
+                          </p> <br>
+
+                          <p style="background:#fff;">
+                            Peel carrots and remove tops and slice very thin. Steam for about 15-20 min. Heat butter and honey over very low heat. Remove carrots and place in bowl with the heated butter/honey mixture. Crush the cashews roughly and sprinkle on top. Salt/pepper to taste. Serve hot.
+
+                              <br>
+                            <b style="color:#000; font-size:14px;"> Serves: 2-4  | </b> <b style="color:#000; font-size:14px;"> Time: 35 minutes |  </b> <b style="color:#000; font-size:14px;"> Effort: Easy </b>
+                          </p>
+                          <!-- end -->
+                          <br>
+                          <!-- Vegetable Fun Packets start -->
+                          <p style="background:#fff;"><b style="color:#000; font-size:18px;"> Vegetable Fun Packets </b> <br> <br>
+                          4 new potatoes <b style="color:#000; font-size:17px;"> | </b> 2 small summer squashes<b style="color:#000; font-size:17px;"> | </b> 8 mushrooms <b style="color:#000; font-size:17px;"> | </b>1 stalk celery
+                          </p>
+                          <br>
+                          <p style="background:#fff;">
+                          1 medium carrot <b style="color:#000; font-size:17px;"> | </b> 1 medium onion
+                            <b style="color:#000; font-size:17px;"> | </b>2 tbsp olive oil <b style="color:#000; font-size:17px;"> | </b>1 clove garlic
+
+                          </p> <br>
+
+                          <p style="background:#fff;">
+                          1 tsp paprika <b style="color:#000; font-size:17px;"> | </b> 1/4 tsp cayenne
+                            <b style="color:#000; font-size:17px;"> | </b>1 tsp thyme <b style="color:#000; font-size:17px;"> | </b>1/4 tsp salt
+                          <b style="color:#000; font-size:17px;"> | </b>Black pepper to taste
+                          </p> <br>
+
+                          <p style="background:#fff;">
+                            Oil a large piece of heavy-duty foil. Cut squash into small 1" spears. Slice other vegetables thin and place all in center of foil. Mash the garlic with the salt, sprinkle on vegetables. Sprinkle remaining spices. Drizzle with olive oil or butter. Seal foil packets tightly to prevent leaking. Place over medium coals for 30-40 minutes, turning occasionally
+                              <br>
+                            <b style="color:#000; font-size:14px;"> Serves: 4  | </b> <b style="color:#000; font-size:14px;"> Time: 45 minutes |  </b> <b style="color:#000; font-size:14px;"> Effort: Easy </b>
+                          </p>
+                          <!-- end -->
+                          <br>
+                          <!-- Fruit Crisp start -->
+                          <p style="background:#fff;"><b style="color:#000; font-size:18px;"> Fruit Crisp </b> <br> <br>
+                          3 tbsp butter, melted <b style="color:#000; font-size:17px;"> | </b> 1 - 21 oz can of cherry, apple or peach pie filling
+
+                            <b style="color:#000; font-size:17px;"> | </b> 1 - 8 oz box of "Raga Muffins" muffin mix or (other type with a "honey" flavoring)
+
+                          </p> <br>
+
+                          <p style="background:#fff;">
+                          <b style="color:#000; font-size:16px;">  Melt the butter -- </b>careful not to brown or burn it. Mix the melted butter with the muffin mix, stir until the mixture is a crumbly consistency. Pour the can of pie filling into a lightly greased/buttered aluminum pie dish. Sprinkle the crumb mixture evenly over the top of the fruit. Set the pan in the Dutch oven and bake at 350 degrees for about 20 minutes.  For a 12" Dutch oven place 16 briquettes on top and 10 underneath to get 350 degrees.  When the fruit is bubbly and the crumb mixture is slightly browned it’s done. Cool slightly
+                              <br>
+                            <b style="color:#000; font-size:16px;">  Optional:</b> add a whipped low-cal topping before serving.
+                              <br>
+                            <b style="color:#000; font-size:14px;"> Serves: 6  | </b> <b style="color:#000; font-size:14px;"> Time: 30 minutes |  </b> <b style="color:#000; font-size:14px;"> Effort: Easy </b>
+                          </p>
+                          <!-- end -->
+                        </div>
+                      </div>
+                      <!-- end -->
+
+
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+var acc = document.getElementsByClassName("help-accordion");
+var i;
+
+for(i = 0; i < acc.length; i++){
+ acc[i].addEventListener("click", function(){
+ this.classList.toggle("active");
+
+   var panel = this.nextElementSibling;
+   if(panel.style.display === "block"){
+     panel.style.display = "none";
+   } else {
+     panel.style.display ="block";
+   }
+ });
+}
+
+</script>
+<!--content-wrapper End-->
+
+    {% endblock %}

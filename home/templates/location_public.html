@@ -1,0 +1,327 @@
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+  <link href="../../media/assets/plugins/select2/css/select2.css" rel="stylesheet" type="text/css" />
+  <link href="../../media/assets/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <title>Travel As You Go | Find Your Activity Facility & Near By Place </title>
+
+  {% include 'data_css.html' %}
+
+  </head>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <body id="page-top">
+
+
+{% include 'navbar.html' %}
+  <script type="text/javascript">
+    if(screen.width<500) {
+    var element = document.getElementById("page-top");
+    element.classList.add("sidebar-toggled");
+  }
+  </script>
+
+	<div class="full-width" >
+		<div  >
+		  <!-- Sidebar -->
+
+      {% if msg %}
+       <script>
+        alert(`{{msg}}`);
+        window.open('/add-location','_self');
+        </script>
+      {% endif %}
+			<div id="content-wrapper" >
+				<div class="container-fluid pb-0">
+				 <!-- Profile Detail Area Start-->
+					<div class="video-block section-padding">
+						<div class="main-items">
+							<div class="row justify-content-md-center">
+
+								<div class="feedback col-md-10">
+
+								<div class="tab-content">
+                  <form class=""  method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+									<div class="tab-pane active" id="cafebar">
+<br>
+                    <div class="email-input">
+                      <div class="midemail">
+                        <img src="images/svg/add.svg" alt="">
+                        <h6>Add New Location</h6>
+                      </div>
+                      <div class="product-dt-inputs pm-20">
+                        <div class="product-inputs m-right">
+                          <input type="hidden" name="user_name" value="{{user.first_name|slice:":12"}}">
+                          <input type="text" name="name" placeholder="Park Name">
+                        </div>
+                        <div class="product-inputs m-left">
+                          <input type="text" name="city" placeholder="City">
+                        </div>
+                      </div>
+                      <div class="product-dt-inputs">
+                        <div class="product-inputs m-right">
+                          <input style="color:#000;" type="text" name="state" value="California" placeholder="State" readonly>
+                        </div>
+                        <div class="product-inputs m-left">
+                          <input style="color:#000;" type="text" name="country" value="US" placeholder="Country" readonly>
+                        </div>
+                      </div>
+                      <div class="product-dt-inputs">
+                        <div class="product-inputs m-right">
+                          <input type="text" name="zipcode" placeholder="Zipcode">
+                        </div>
+                        <div class="product-inputs m-left">
+                          <input type="text" name="address" placeholder="Address">
+                        </div>
+                      </div>
+                      <div class="product-dt-inputs">
+                        <div class="product-inputs m-right">
+                          <input type="text" name="latitude" placeholder="Latitude">
+                        </div>
+                        <div class="product-inputs m-left">
+                          <input type="text" name="longitude" placeholder="Longitude">
+                        </div>
+                      </div>
+
+                      <div class="product-dt-inputs">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 " >
+
+                          <select id="category" name="facility" class="form-control select2-multiple" multiple required>
+
+                              <optgroup label="Select Location Facilities">
+                                {% for f in facility %}
+                                  <option  value={{f.id}}>{{f.name}}</option>
+                                  {% endfor %}
+                              </optgroup>
+
+                         </select> <br>
+
+                        </div>
+                        <div class="product-inputs m-left">
+                          <select  id="category" name="category" class="form-control select2-multiple cat" multiple required>
+                              <optgroup label="Select Location Categories">
+                                {% for c in category_data %}
+                                  <option  value={{c.id}}>{{c.name}}</option>
+
+
+                                  {% endfor %}
+                              </optgroup>
+
+                         </select>
+                        </div>
+
+                      </div>
+                      <div class="product-dt-inputs">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 " >
+
+                          <select id="category" name="activity" class="form-control select2-multiple" multiple required>
+
+                              <optgroup label="Select Location Activity">
+                                  {% for a in activity %}
+                                    <option  value={{a.id}}>{{a.name}}</option>
+                                    {% endfor %}
+                                </optgroup>
+
+
+                         </select> <br>
+
+                        </div>
+
+
+                      </div>
+                    </div>
+
+											<div class="email-input">
+												<div class="midemail">
+													<img src="images/svg/pencil.svg" alt="">
+													<h6>Description</h6>
+												</div>
+
+												<div class="inputs">
+													<textarea id="comt" name="overview" placeholder="Write feedback here"></textarea>
+												</div>
+											</div>
+											<div class="email-input">
+
+												<div class="midemail" id="preview-image">
+												<img src="images/svg/upload/image.svg" alt="">
+												<h6>Images</h6>
+												</div>
+
+                        <div class="image-upload">
+              <label for="file-input">
+                <img src="http://icon-library.com/images/upload-photo-icon/upload-photo-icon-21.jpg" style="width:35px; height:35px; margin-left:20px; margin-top:10%;">
+              </label>
+
+              <input id="file-input" type="file" name="img" style="display: none;" onchange="preview_image(event)" multiple />
+
+              <!-- image preview -->
+              <style type="text/css">
+              .thumbimage {
+                  float:left;
+                  width:100px;
+                  height:100px;
+                  position:relative;
+                  padding:5px;
+              }
+              </style>
+
+            <!-- end -->
+            </div>
+
+											</div>
+
+											<div class="sends">
+												<input type="button" onclick="tab()" class="btn btn-danger" data-toggle="modal" value="Submit" data-target="#exampleModal">
+											</div>
+									</div>
+                  <div id="demo"></div>
+                  </form>
+
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--content-wrapper End-->
+		</div>
+	</div>
+</div>
+<style type="text/css">
+.thumbimage {
+    float:left;
+    width:100px;
+    height:100px;
+    position:relative;
+    padding:5px;
+}
+</style>
+  <!-- Sticky Footer -->
+  {% include 'footer.html' %}
+
+<!-- Scroll to Top Button Start-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="ti-arrow-up"></i>
+</a>
+<!-- Scroll to Top Button End-->
+
+<!-- Bootstrap core JavaScript-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type='text/javascript'>
+
+
+$("#file-input").on('change', function () {
+
+     var countFiles = $(this)[0].files.length;
+
+     var imgPath = $(this)[0].value;
+     var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+     var image_holder = $("#preview-image");
+     image_holder.empty();
+
+     if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+         if (typeof (FileReader) != "undefined") {
+
+             for (var i = 0; i < countFiles; i++) {
+
+                 var reader = new FileReader();
+                 reader.onload = function (e) {
+                     $("<img />", {
+                         "src": e.target.result,
+                             "class": "thumbimage"
+                     }).appendTo(image_holder);
+                 }
+
+                 image_holder.show();
+                 reader.readAsDataURL($(this)[0].files[i]);
+             }
+
+         } else {
+             alert("It doesn't supports");
+         }
+     } else {
+         alert("Select Only images");
+     }
+
+ });
+ function tab(){
+   var c = document.getElementById('comt').value
+   if(c!=''){
+   document.getElementById("demo").innerHTML=`<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">Review Alert</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+           </button>
+         </div>
+         <div class="modal-body">
+           Are you sure You want to submit this Location
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           <input value="Submit" type="submit" class="btn btn-primary">
+         </div>
+       </div>
+     </div>
+   </div>`
+
+ }else {
+     alert("Fill all the fields");
+   }
+ }
+</script>
+
+<script src="../media/home/js/jquery.min.js"></script>
+<script src="../media/home/js/bootstrap.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src='../../../../api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+
+<!-- Custom scripts for all pages-->
+<script src="../media/home/js/sb-admin.min.js"></script>
+<script src="../media/home/js/carousel_recom.js"></script>
+<script src="../media/home/js/menurght.js"></script>
+<script src="../media/home/js/crausal1.js"></script>
+<script src="../media/home/js/custom.js"></script>
+<script src="../media/home/js/photoswipe.min.js"></script>
+<script src="../media/home/js/photoswipe-ui-default.min.js"></script>
+
+<!-- Demo scripts for this page-->
+<script src="../media/home/js/slick.min.js"></script>
+
+<!-- Assect scripts for this page-->
+<script src="../media/home/assets/vendors/jquery.min.js"></script>
+<script src="../media/home/assets/owlcarousel/owl.carousel.js"></script>
+<script src="../media/assets/js/res_sidebar.js"></script>
+
+
+
+<script src="../../media/assets/plugins/select2/js/select2.js" ></script>
+<script src="../../media/assets/js/pages/select2/select2-init.js" ></script>
+</body>
+
+</html>
+{% else %}
+<script>
+ alert('You are not login....Please Login');
+ window.open('/signin','_self');
+ </script>
+ {% endif %}

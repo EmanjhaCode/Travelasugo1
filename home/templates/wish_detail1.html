@@ -1,0 +1,22 @@
+{% if user.is_authenticated %}
+{% if z == 1  %}
+<div id="old{{id}}">
+<div class="favorite" id="id{{id}}"   onclick="remove({{id}},'old')">
+  <i class="fa fa-heart" ></i>
+</div>
+</div>
+{% else %}
+
+<div id="old{{id}}">
+<div class="favorite" id="id{{id}}" style="background:#fff;"  onclick="home({{id}},'old')">
+  <i class="fa fa-heart" ></i>
+</div>
+</div>
+{% endif %}
+
+
+{% else %}
+<div class="favorite" id="id{{id}}"  style="background:#fff;" onclick="notlog()">
+  <i class="fa fa-heart" ></i>
+</div>
+{% endif %}

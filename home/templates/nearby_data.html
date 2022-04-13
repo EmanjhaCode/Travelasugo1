@@ -1,0 +1,514 @@
+{% if msg %}
+<script>
+ alert(`{{msg}}`);
+ window.open('/','_self');
+  </script>
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Travel As You Go | Find Your Activity Facility & Near By Place </title>
+
+  {% include 'data_css.html' %}
+  </head>
+
+  <body id="page-top">
+
+	<!-- Social Account Share Model Start -->
+	<div class="modal fade" id="sharelisitng" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered none" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<ul class="share-options">
+						<li>
+							<a href="#"><i class="fa fa-facebook-f" style="background-color: #3b5998;"></i> Facebook </a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-twitter" style="background-color: #4099FF;"></i> Twitter </a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-whatsapp" style="background-color: #128c7e;"></i> Whatsapp </a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-telegram" style="background-color: #0088cc;"></i> Telegram </a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-pinterest" style="background-color: #C92228;"></i> Pinterest </a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-google-plus" style="background-color: #D34836;"></i> Google+ </a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-linkedin" style="background-color: #0077B5;"></i> LinkedIn </a>
+						</li>
+						<li>
+							<a href="#"><i class="far fa-clone" style="background-color:#95a5a6;"></i> Copy Link </a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Social Account Share Model End -->
+    {% include 'navbar.html' %}
+    <script type="text/javascript">
+      if(screen.width<500) {
+      var element = document.getElementById("page-top");
+      element.classList.add("sidebar-toggled");
+    }
+    </script>
+	<div class="full-width">
+		<div id="wrapper">
+		  <!-- Sidebar -->
+      {% include "sidebar.html" %}
+			<div id="content-wrapper">
+				<div class="container-fluid pb-0">
+				 <!-- Profile Detail Area Start-->
+					<div class="video-block section-padding">
+						<div class="main-item">
+							<div class="row">
+                <!-- PAGE IMAGE -->
+                <div class="col-md-12 px-0">
+                  <div class="profile-area">
+                    <div class="bnnr-img-dpt">
+                {% if random == 1 %}
+              <div class="featured-section profile-cover profile-cover-image"  style="background-image: url({{allnear.location.location_images.img1}})"></div>
+                <div class=" dash-profile">
+                  <img src="{{allnear.location.location_images.img1}}" alt="">
+                </div>
+                {% elif random == 2 %}
+                <div class="featured-section profile-cover profile-cover-image"  style="background-image: url({{allnear.location.location_images.img2}})"></div>
+                  <div class=" dash-profile">
+                    <img src="{{allnear.location.location_images.img2}}" alt="">
+                  </div>
+                  {% elif random == 3 %}
+                  <div class="featured-section profile-cover profile-cover-image"  style="background-image: url({{allnear.location.location_images.img3}})"></div>
+                    <div class=" dash-profile">
+                      <img src="{{allnear.location.location_images.img3}}" alt="">
+                    </div>
+
+                    {% elif random == 0 %}
+                    <div class="featured-section profile-cover profile-cover-image"  style="background-image: url({{allnear.location.location_images.img0}})"></div>
+                      <div class=" dash-profile">
+                        <img src="{{allnear.location.location_images.img0}}" alt="">
+                      </div>
+
+                      {% else %}
+                      <div class="featured-section profile-cover profile-cover-image"  style="background-image: url({{allnear.location.location_images.fimg}})"></div>
+                        <div class=" dash-profile">
+                          <img src="{{allnear.location.location_images.fimg}}" alt="">
+                        </div>
+                        {% endif %}
+                      </div>
+                      <div class="item-dt">
+                        <div class="item-title">
+                          <h4> {{allnear.location.location_name}} </h4>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- END -->
+
+								<!-- Profile Detail Area End-->
+								<!--Nav Tabs Start -->
+								<div class="row item-detail-tabs">
+									<div class="col-xl-12 com-md-12 col-sm-12 px-0">
+										<ul class="nav  nav-tabs" role="tablist" id="myTab">
+											<li role="presentation">
+												<a class="active" href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> Park Details </a>
+											</li>
+											<li role="presentation">
+												<a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab"> Reviews </a>
+											</li>
+											<li role="presentation">
+												<a href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab"> Gallery </a>
+											</li>
+                      <li role="presentation">
+												<a href="#products" aria-controls="products" role="tab" data-toggle="tab"> Shop </a>
+											</li>
+											<li role="presentation">
+												<a class="more-options" type="button" data-toggle="modal" data-target="#sharelisitng"> Share </a>
+											</li>
+
+										</ul><!--Nav Tabs End -->
+
+										<!--Tabs Panes Start -->
+
+										<div class="tab-content">
+											<div class="tab-pane active" role="tabpanel" id="profile">
+												<div class="row lr-row">
+													<div class="col-md-8" style="overflow: scroll; height:700px;">
+														<div class=" locatins">
+															<div class="heading">
+																<img src="../media/home/images/svg/menu1.svg" alt=""><h3>{{allnear.location.location_name}}</h3>
+                                <h3 style="margin-left:78%; margin-top:-20px;"> {{wther.0.temp|add:-273.15}} C <span id="weather">{{wther.3.description}}</span>
+                                  {% if wther.3.main|lower == 'clouds' %}
+                                  <img src="../media/home/img/cloud.gif" style="width:50px; margin-top:-25px; margin-left:80%;">
+                                  {% elif wther.3.main|lower == 'clear' %}
+                                  <img src="../media/home/img/clear.gif" style="width:50px; margin-top:-25px; margin-left:80%;">
+                                  {% elif wther.3.main|lower == 'haze' %}
+                                  <img src="../media/home/img/cloud.gif" style="width:50px; margin-top:-25px; margin-left:80%;">
+                                  {% elif wther.3.main|lower == 'rain' %}
+                                  <img src="../media/home/img/rain.gif" style="width:50px; margin-top:-25px; margin-left:80%;">
+                                  {% elif wther.3.main|lower == 'thunderstorm' %}
+                                  <img src="../media/home/img/thunderstorm.gif" style="width:50px; margin-top:-25px; margin-left:80%;">
+                                  {% else %}
+                                  <img src="../media/home/img/cloud.gif" style="width:50px; margin-top:-25px; margin-left:80%;">
+                                  {% endif %}
+                                </h3>
+
+															</div>
+
+															<div class="sub-heading">
+																{{allnear.location.location_overview}}
+															</div>
+															<div class="clearfix"></div>
+														</div>
+                            <!-- google news api -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                                <img src="../media/home/images/svg/map.svg" alt=""><h3> News & Updates</h3>
+                              </div>
+                              <p class="faq-accordion" > {{news_api.0.desc}}... </p>
+                              <div class="panel" style="overflow: scroll; height:300px;">
+                                {% for news in news_api %}
+                                <div class="open-timing" >
+
+                                  <div class="time-left">
+                                    {{news.title}}
+                                  </div> <br>
+                                  <div class="time-right">
+                                    {{news.desc}}
+                                  </div> <br>
+                                  <div class="message-heading1">
+
+                                    <span>{{news.date}} </span>
+                                  <a href="{{news.link}}"  ><span style='margin-left:5px;'>View More</span> </a>
+                                  </div>
+                                </div>
+
+                                {% endfor %}
+
+                              </div>
+                            </div>
+                                <div class="clearfix"></div>
+                              </div>
+                            <!-- end -->
+														<div class="locatins heading">
+															<div class="heading">
+																<img src="../media/home/images/svg/tag.svg" alt=""><h3>Activity</h3>
+															</div>
+															<div class="tag">
+                                {%  for i in allnear.activities %}
+
+
+																       <a href="#" class="tag-r">{{i.activity_name}}</a>
+                                {% endfor %}
+
+
+															</div>
+															<div class="clearfix"></div>
+														</div>
+
+                          <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                                <img src="../media/home/images/svg/map.svg" alt=""><h3>Address</h3>
+                              </div>
+                              <p class="faq-accordion">  {{allnear.location.location_address}}</p>
+                              <div class="panel">
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    City
+                                  </div>
+                                  <div class="time-right">
+                                    {{allnear.location.location_city}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    State
+                                  </div>
+                                  <div class="time-right">
+                                    {{allnear.location.location_state}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                  Country
+                                  </div>
+                                  <div class="time-right">
+                                    {{allnear.location.location_country}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    Zipcode
+                                  </div>
+                                  <div class="time-right">
+                                    {{allnear.location.location_zip}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    Longitude
+                                  </div>
+                                  <div class="time-right">
+                                    {{allnear.location.location_longitude}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    Latitude
+                                  </div>
+                                  <div class="time-right">
+                                    {{allnear.location.location_latitude}}
+                                  </div>
+                                </div>
+
+
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="locatins heading">
+                            <div class="heading">
+                              <img src="../media/home/images/svg/tag.svg" alt=""><h3>Facility</h3>
+                            </div>
+                            <div class="tag">
+                              {%  for i in allnear.facilities %}
+                                     <a href="#" class="tag-r">{{i.facility_name}}</a>
+                              {% endfor %}
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+
+                          <div class="locatins heading">
+                            <div class="heading">
+                              <img src="../media/home/images/svg/tag.svg" alt=""><h3>Categories</h3>
+                            </div>
+                            <div class="tag">
+
+                            <a href="#" class="tag-r">  {{allnear.location.location_tag1}}</a>
+                              <a href="#" class="tag-r">  {{allnear.location.location_tag2}}</a>
+
+                            </div>
+                            <div class="clearfix"></div>
+                          </div>
+                          </div>
+                          <div class="col-md-4">
+                            <div class="box-left">
+
+                              <div class="heading">
+																<img src="../media/home/images/svg/tag.svg" alt=""><h3>Recommended</h3>
+															</div>
+                            {% include "suggest.html" %}
+                          </div>
+
+
+                          {% include "promo.html" %}
+
+
+													</div>
+												</div>
+											</div>
+
+
+									{% include 'review.html' %}
+											<div class="tab-pane" role="tabpanel" id="gallery">
+												<div class="video-block section-padding">
+													<div class="row lr-row mdb-lightbox">
+														<div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+															<div class="gallery-sets">
+																<a class="col-lg-3 col-sm-6" href="{{allnear.location.location_images.fimg}}" >
+																	<img src="{{allnear.location.location_images.fimg}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="{{allnear.location.location_images.img0}}" >
+																	<img src="{{allnear.location.location_images.img0}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="{{allnear.location.location_images.img1}}" >
+																	<img src="{{allnear.location.location_images.img1}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="{{allnear.location.location_images.img2}}" >
+																	<img src="{{allnear.location.location_images.img2}}" alt="" style="height:200px;">
+																</a>
+
+                                <a class="col-lg-3 col-sm-6" href="{{allnear.location.location_images.img3}}" >
+																	<img src="{{allnear.location.location_images.img3}}" alt="" style="height:200px;">
+																</a>
+
+
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+											<div class="tab-pane" role="tabpanel" id="products">
+												<div class="video-block section-padding">
+													<div class="row">
+														<div class="tabby">
+															<div class="clearfix"></div>
+															<div class="col-xl-3 col-sm-6">
+																<div class="box">
+																	<div class="box-img1">
+																		<img src="../media/home/images/restaurant/shop-product-1.png" class="img" alt="" title="">
+																	</div>
+																	<div class="product-dt">
+																		<h4>Maggi 5 minute</h4>
+																		<span>$5</span>
+																	</div>
+																</div>
+															</div>
+															<div class="col-xl-3 col-sm-6">
+																<div class="box">
+																	<div class="box-img1">
+																		<img src="../media/home/images/restaurant/shop-product-2.png" class="img" alt="" title="">
+																	</div>
+																	<div class="product-dt">
+																		<h4>Tide</h4>
+																		<span>$5</span>
+																	</div>
+																</div>
+															</div>
+															<div class="col-xl-3 col-sm-6">
+																<div class="box">
+																	<div class="box-img1">
+																		<img src="../media/home/images/restaurant/shop-product-3.png" class="img" alt="" title="">
+																	</div>
+																	<div class="product-dt">
+																		<h4>Fruits</h4>
+																		<span>$6</span>
+																	</div>
+																</div>
+															</div>
+															<div class="col-xl-3 col-sm-6">
+																<div class="box">
+																	<div class="box-img1">
+																		<img src="../media/home/images/restaurant/shop-product-4.png" class="img" alt="" title="">
+																	</div>
+																	<div class="product-dt">
+																		<h4>Smuckers Strawberry </h4>
+																		<span>$3</span>
+																	</div>
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+
+											</div>
+										</div>
+
+										<!--Tabs Panes End -->
+									</div>
+								</div>
+								<!--Tab Links End-->
+							</div>
+						</div>
+					</div>
+			</div>
+		  <!--content-wrapper End-->
+		</div>
+	</div>
+	</div>
+
+    <!--wrapper -->
+			<!-- Sticky Footer -->
+			<footer class="sticky-footer">
+			  <div class="container my-auto">
+				<div class="copyright text-center my-auto">
+
+				<div class="footer-info">
+							<a href="#">About </a> |
+							<a href="#">Faq’s </a> |
+							<a href="#">Privacy</a> |
+							<a href="#"> Advertise</a>  |
+							<a href="#">Term & Conditions </a> |
+							<a href="#">Sitemap  </a>|
+							<a href="#">Tags  </a>|
+							<a href="#">Blog</a>
+						</div>
+						<div class="copy-right">
+						© Copyright 2019 by Emanjha LLC. All Rights Reserved.
+						</div>
+				</div>
+			  </div>
+			</footer>
+
+
+    <!-- Scroll to Top Button Start-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="ti-arrow-up"></i>
+    </a>
+	<!-- Scroll to Top Button End-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../media/home/js/jquery.min.js"></script>
+    <script src="../media/home/js/bootstrap.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src='../../../../api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../media/home/js/sb-admin.min.js"></script>
+    <script src="../media/home/js/carousel_recom.js"></script>
+	<script src="../media/home/js/menurght.js"></script>
+	<script src="../media/home/js/crausal1.js"></script>
+	<script src="../media/home/js/custom.js"></script>
+	<script src="../media/home/js/photoswipe.min.js"></script>
+	<script src="../media/home/js/photoswipe-ui-default.min.js"></script>
+
+	<!-- Demo scripts for this page-->
+   	<script src="../media/home/js/slick.min.js"></script>
+
+	<!-- Assect scripts for this page-->
+	<script src="../media/home/assets/vendors/jquery.min.js"></script>
+    <script src="../media/home/assets/owlcarousel/owl.carousel.js"></script>
+    <script src="../media/assets/js/res_sidebar.js"></script>
+
+	<script>
+	var acc = document.getElementsByClassName("faq-accordion");
+	var i;
+
+	for(i = 0; i < acc.length; i++){
+		acc[i].addEventListener("click", function(){
+		this.classList.toggle("active");
+
+			var panel = this.nextElementSibling;
+			if(panel.style.display === "block"){
+				panel.style.display = "none";
+			} else {
+				panel.style.display ="block";
+			}
+		});
+	}
+
+	</script>
+
+  </body>
+
+</html>

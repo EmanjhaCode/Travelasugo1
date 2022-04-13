@@ -1,0 +1,261 @@
+<style media="screen">
+#nav_color11{
+	color:#000;
+
+}
+.radi{
+	border-bottom-left-radius:40px; border-top-right-radius:20px;
+}
+#nav_color:hover {
+color: #4267B2;
+font-size:20px;
+transform: translateY(-7px);
+
+
+}
+</style>
+<style media="screen">
+@media only screen and (max-width: 500px) {
+.srch {
+display: None;
+}
+#logo_size{
+	margin-left:10%;
+}
+}
+@media only screen and (min-width: 500px) {
+.srch1 {
+display: None
+}
+#logo_size{
+	margin-top:-1%;
+	margin-left:2%;
+}
+}
+</style>
+<script>
+
+function lightbg_clr() {
+	$('#qu').val("");
+	$('#textbox-clr').text("");
+ 	$('#search-layer').css({"width":"auto","height":"auto"});
+	$('#livesearch').css({"display":"none"});
+	$("#qu").focus();
+ };
+
+function fxx(str)
+{
+var s1=document.getElementById("qu").value;
+var xmlhttp;
+if (str.length==0) {
+    document.getElementById("livesearch").innerHTML="";
+    document.getElementById("livesearch").style.border="0px";
+	document.getElementById("search-layer").style.width="auto";
+	document.getElementById("search-layer").style.height="auto";
+	document.getElementById("livesearch").style.display="block";
+	$('#textbox-clr').text("");
+    return;
+  }
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+  document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+	document.getElementById("search-layer").style.width="100%";
+	document.getElementById("search-layer").style.height="100%";
+	document.getElementById("livesearch").style.display="block";
+  $('#textbox-clr').text("X");
+    }
+}
+xmlhttp.open("GET","/search/"+s1,true);
+xmlhttp.send();
+}
+
+
+<!-- responsive search  -->
+function lightbg_clr2() {
+
+	$('#qu2').val("");
+
+	$('#textbox-clr2').text("");
+
+ 	$('#search-layer').css({"width":"auto","height":"auto"});
+
+	$('#livesearch2').css({"display":"none"});
+
+	$("#qu2").focus();
+
+ };
+
+
+
+function fx(str)
+
+{
+
+var s1=document.getElementById("qu2").value;
+
+var xmlhttp;
+
+if (str.length==0) {
+
+    document.getElementById("livesearch2").innerHTML="";
+
+    document.getElementById("livesearch2").style.border="0px";
+
+	document.getElementById("search-layer").style.width="auto";
+
+	document.getElementById("search-layer").style.height="auto";
+
+	document.getElementById("livesearch2").style.display="block";
+
+	$('#textbox-clr2').text("");
+
+    return;
+
+  }
+
+if (window.XMLHttpRequest)
+
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+
+  xmlhttp=new XMLHttpRequest();
+
+  }
+
+else
+
+  {// code for IE6, IE5
+
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+
+  }
+
+xmlhttp.onreadystatechange=function()
+
+  {
+
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+
+    {
+
+    document.getElementById("livesearch2").innerHTML=xmlhttp.responseText;
+
+	document.getElementById("search-layer").style.width="100%";
+
+	document.getElementById("search-layer").style.height="100%";
+
+	document.getElementById("livesearch2").style.display="block";
+
+	$('#textbox-clr2').text("X");
+
+    }
+
+  }
+
+xmlhttp.open("GET","/search/"+s1,true);
+
+xmlhttp.send();
+
+}
+
+<!-- start hide show  -->
+$(document).ready(function(){
+
+    $("#qu2").hide();
+  $("#show").click(function(){
+    $("#qu2").show();
+    $("#show").hide();
+  });
+});
+</script>
+
+<nav class="navbar navbar-expand-md navbar-light sticky-top nav-menu" >
+	<div  class="btn btn-link btn-sm text-white order-1 order-sm-0 " id="st" onclick="gNavOpen();">
+    <div class="menu-bar-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="18" height="14" class="header-icon" viewBox="0 0 18 14">
+        <path d="M17.000,-0.000 C17.552,-0.000 18.000,0.448 18.000,1.000 C18.000,1.552 17.552,2.000 17.000,2.000 L1.000,2.000 C0.448,2.000 -0.000,1.552 -0.000,1.000 C-0.000,0.448 0.448,-0.000 1.000,-0.000 L17.000,-0.000 ZM17.000,6.000 C17.552,6.000 18.000,6.447 18.000,7.000 C18.000,7.552 17.552,8.000 17.000,8.000 L1.000,8.000 C0.448,8.000 -0.000,7.552 -0.000,7.000 C-0.000,6.447 0.448,6.000 1.000,6.000 L17.000,6.000 ZM17.000,12.000 C17.552,12.000 18.000,12.448 18.000,13.000 C18.000,13.552 17.552,14.000 17.000,14.000 L1.000,14.000 C0.448,14.000 -0.000,13.552 -0.000,13.000 C-0.000,12.448 0.448,12.000 1.000,12.000 L17.000,12.000 Z"></path>
+      </svg>
+    </div>
+  </div>
+  {% include 'res_sidebar1_demo.html' %}
+	<div class="logo">
+    <a href="/">
+    <img src="../media/home/img/cal5.png" alt="logo" id="logo_size" style="width:230px;">
+    </a>
+  </div>
+	<div class="searching srch" style="margin-left:1%;">
+	 <form class="form-inline my-2 my-lg-0">
+
+	 <input style="width:400px;  border-bottom-left-radius:40px; border-top-right-radius:20px;" class="form-control mr-sm-2 type="text" onKeyUp="fxx(this.value)" autocomplete="off" name="qu" id="qu" placeholder="Search...." >
+	 </form>
+	 <div id="livesearch" style="background:#fff; color:#000;   overflow-y:scroll; " ></div>
+ </div>
+ <div class="searching srch1" style="margin-left:-2%;">
+	<form>
+	<button type="button" style="margin-top:-13%; margin-left:80%;" id="show">
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="19" height="18" class="header-icon" viewBox="0 0 19 18">
+			<path d="M14.720,12.516 L18.658,16.455 C18.993,16.790 18.993,17.332 18.658,17.667 C18.324,18.001 17.781,18.001 17.447,17.667 L13.508,13.728 C12.189,14.783 10.516,15.414 8.695,15.414 C4.436,15.414 0.984,11.962 0.984,7.703 C0.984,3.445 4.436,-0.007 8.695,-0.007 C12.954,-0.007 16.406,3.445 16.406,7.703 C16.406,9.524 15.775,11.197 14.720,12.516 L14.720,12.516 ZM8.695,13.701 C12.007,13.701 14.692,11.016 14.692,7.703 C14.692,4.391 12.007,1.706 8.695,1.706 C5.383,1.706 2.698,4.391 2.698,7.703 C2.698,11.016 5.383,13.701 8.695,13.701 Z"></path>
+		</svg>
+	</button>
+	<input type="text" onKeyUp="fx(this.value)" autocomplete="off" name="qu2" id="qu2" placeholder="Search Places and Parks...">
+
+	</form>
+	<div id="livesearch2" style="background:#fff; width:100%; color:#000; overflow-y: scroll;" ></div>
+
+</div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+      <li class="nav-item btn btn-primary radi" style="background:#000; ">
+				<a class="nav-link fos " style="color:#fff; width:105px; height:30px;" href="/" id="nav_color" >Home</a>
+      </li>
+
+			<li class="nav-item btn btn-primary radi" style="margin-left:1%; background:#000;">
+      <a class="nav-link fos " style="color:#fff; width:105px; height:30px;" href="/feedback" id="nav_color"> Feedback </a>
+      </li>
+			<li class="nav-item dropdown btn btn-primary radi" style="margin-left:1%;  color:#fff; background:#000;">
+        <a class="nav-link " style=" width:105px; height:30px; color:#fff; margin-top:-3%;" href="#"   data-toggle="dropdown"  >
+          Location <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a style="width:20px; color:#000;" class="dropdown-item" href="#" onclick="getloc()">NearBy</a>
+					<a style="width:20px; color:#000;" class="dropdown-item" href="/covid" >COVID 19</a>
+						{% if user.is_authenticated %}
+					<a style="width:20px; color:#000;" class="dropdown-item" href="/add-location">Add Location</a>
+						{% endif %}
+        </div>
+      </li>
+			<li class="nav-item dropdown btn btn-primary radi" style="margin-left:1%; background:#000;">
+        <a class="nav-link " style="color:#fff; width:105px; height:30px; margin-top:-3%;" href="#"   data-toggle="dropdown"  >
+          More <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a style="width:20px; color:#000;" class="dropdown-item" href="/save-park">Wishlist</a>
+          <a style="width:20px; color:#000;" class="dropdown-item" href="/trending">Trending</a>
+
+          <a style="width:20px; color:#000;" class="dropdown-item" href="/news">News</a>
+						{% if user.is_authenticated %}
+					<a style="width:20px; color:#000;" class="dropdown-item" href="/logout1">Logout</a>
+						{% endif %}
+        </div>
+      </li>
+
+    </ul>
+<div id="navbar" ></div>
+  </div>
+
+
+
+</nav>
+
+<script type="text/javascript">
+	$('#navbar').load("/nav").fadeIn("slow");
+</script>

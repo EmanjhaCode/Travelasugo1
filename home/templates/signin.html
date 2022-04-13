@@ -1,0 +1,133 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Travel As You Go | Sign In </title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="../media/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../media/home/css/style.css" rel="stylesheet">
+	<link href="../media/home/css/responsive.css" rel="stylesheet">
+
+    <!-- Page level plugin CSS-->
+    <link rel="stylesheet" href="../media/home/css/portfolio.css" type="text/css">
+    <link rel="stylesheet" href="../media/home/css/owlslider.css" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="../media/home/css/sb-admin.css" rel="stylesheet" type="text/css">
+    <link href="../media/home/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="../media/home/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	 <link rel="stylesheet" href="../media/home/assets/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../media/home/assets/owlcarousel/assets/owl.theme.default.min.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <style media="screen">
+      @media screen and (max-width: 740px) {
+       #rcaptcha{margin-left:-12%;}
+         .submits1{margin-left:-25px;}
+      }
+
+      @media only screen and (min-width: 1124px) {
+        #rcaptcha{margin-left:-1%;}
+      }
+    </style>
+  </head>
+
+  <body>
+	<div class="sign" ">
+		<div class="container" >
+			<div class="row">
+				<div class="col-lg-12 col-sm-12">
+					<div class="bg-form">
+						<div class="sinheader">
+							<div class="col-md-6 col-sm-12">
+								<a href="/"><img src="../media/home/img/1.png" alt="" style="width:175px;"></a>
+							</div>
+							<div class="sings col-md-6 col-sm-12">
+								<a href="/signup">Sign up now</a>
+							</div>
+							<div class="clearfix">
+							</div>
+							<div class="sform">
+								<h1>Sign in</h1>
+								<span>Hello there! Sign in and start finding park.</span>
+								<div class="row justify-content-md-center">
+									<div class="col-lg-4 col-sm-12">
+										<form class="sinup" action="signin" method='post' id="myForm">
+                      {% csrf_token %}
+											<div class="input-container">
+												<input class="input-field" type="text" placeholder="Email" name="em" required>
+
+											</div>
+											<div class="input-container">
+												<input class="input-field" type="password" placeholder="Password" name="ps" required>
+
+											</div>
+
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 " >
+                        <br>
+                      <div   class="g-recaptcha" id="rcaptcha"  data-sitekey="6LfrFKQUAAAAAMzFobDZ7ZWy982lDxeps8cd1I2i"></div>
+                      <span  id="captcha" style="color:red" ></span>
+                    </div>
+
+                       <input type="submit" onclick="sign()"  class="btn btn-primary submits1" value="Sign In" style="width:320px; margin-top:15px;">
+
+											<div class="forgets">
+												<!-- <a href="#">
+													Forgot password?
+												</a> -->
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="footer-sign">
+
+							<div class="p-center col-md-4 copyrightsign">
+								© Copyright 2021 by <a href="#">Travelasugo.</a> All Rights Reserved.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <script type="text/javascript">
+
+
+    function sign(){
+      var v = grecaptcha.getResponse();
+      if(v.length == 0)
+      {
+          document.getElementById("myForm").reset();
+          document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+          alert("You can't leave Captcha Code empty");
+
+            window.open('/signin','_self');
+
+      }
+
+
+    }
+  </script>
+  {% if msg %}
+  <script>
+   alert(`{{msg}}`);
+    </script>
+  {% endif %}
+    <!-- Bootstrap core JavaScript-->
+    <script src="../media/home/vendor/jquery/jquery.min.js"></script>
+    <script src="../media/home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+
+
+  </body>
+</html>

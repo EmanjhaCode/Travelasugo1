@@ -1,0 +1,142 @@
+<style media="screen">
+@media only screen and (max-width: 500px) {
+  #title_img{
+  width:80%;
+  }
+}
+</style>
+{% extends 'header.html' %}
+{% block title %}Travel As You Go | Terms & Conditions{% endblock %}
+
+{% block body %}
+{% load myfilter %}
+<div id="content-wrapper" >
+  <div class="container-fluid pb-0">
+   <!-- Profile Detail Area Start-->
+    <div class="video-block section-padding">
+      <div class="main-items">
+        <div class="row justify-content-md-center" >
+          <div class="messages text-center col-md-12" >
+            <br>
+          <img src="../media/home/park_img/term.png" alt="Terms & Conditions"  id="title_img" >
+            <hr>
+          </div>
+        </div>
+        <div class="my-all-lisitngs" style="margin-top:-5%;">
+          <div class="row justify-content-md-center" >
+            <div class="col-lg-10 col-sm-12" >
+              <div class="help-tabs" >
+
+                <div class="tab-content" id="myTabContent" >
+                  <div class="tab-pane show active" id="web" role="tabpanel" >
+                    <div class="help-faq" >
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Please Read </button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:20px;">Please Read  </b>
+                              TERMS OF SERVICE AGREEMENT CAREFULLY, AS IT CONTAINS IMPORTANT INFORMATION REGARDING YOUR LEGAL RIGHTS AND REMEDIES
+                          </p>
+
+                        </div>
+                      </div>
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">OVERVIEW</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:19px;">Terms of Service </b>
+                             Terms of Service Agreement ("Agreement") is entered into by and between Travelasugo,  and you, and is made effective as of the date of your use of  Travelasugo.
+                             Agreement sets the general terms and conditions of your use of the Travelasugo
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- end -->
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">Agreement our Privacy policy</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:17px;">You have read  </b>
+                          understand, acknowledge and agree to be bound by this Agreement our Privacy policy. The terms "we", "us" or "our" shall refer to Company. The terms "you", "your", "User" or "customer" shall refer to any individual or entity who accepts this Agreement, uses our Site
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- end -->
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">You will not use this Site in a manner that:</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;">
+                            * Is illegal, or promotes or encourages illegal activity;
+                          </p> <br>
+                          <p style="background:#fff;">
+                            * Promotes, encourages or engages in child pornography or the exploitation of children;
+                          </p> <br>
+                          <p style="background:#fff;">
+                            * Promotes, encourages or engages in terrorism, violence against people, animals, or property;
+                          </p> <br>
+                          <p style="background:#fff;">
+                            * Promotes, encourages or engages in any spam or other unsolicited bulk email, or computer or network hacking or cracking;
+                          </p> <br>
+                          <p style="background:#fff;">
+                            * Violates the privacy or publicity rights of another User or any other person or entity, or breaches any duty of confidentiality that you owe to another User or any other person or entity;
+                          </p> <br>
+                          <p style="background:#fff;">
+                            * Interferes with the operation of this Site;
+                          </p> <br>
+                          <p style="background:#fff;">
+                            * Contains or installs any viruses, worms, bugs, Trojan horses, Cryptocurrency Miners or other code, files or programs designed to, or capable of, using many resources, disrupting, damaging, or limiting the functionality of any software or hardware.
+                          </p> <br>
+                          
+
+                        </div>
+                      </div>
+                      <!-- end -->
+
+
+
+                      <div class="faq-items" >
+                        <button class="help-accordion" style="background:#fff; color:#000; font-size:20px;">LINKS TO THIRD-PARTY WEBSITES</button>
+                        <div class="panel" style="display: none; background:#fff;" >
+                          <p style="background:#fff;"> <b style="color:#000; font-size:17px;">Site may contain </b>
+                            Site may contain links to third-party websites that are not owned or controlled by Travelasugo. Travelasugo assumes no responsibility for the content, terms and conditions, privacy policies, or practices of any third-party websites. In addition, Travelasugo does not censor or edit the content of any third-party websites. By using this Site you expressly release Travelasugo from any and all liability arising from your use of any third-party website. Accordingly, Travelasugo encourages you to be aware when you leave this Site and to review the terms and conditions, privacy policies, and other governing documents of each other website that you may visit.
+
+                          </p>
+
+                        </div>
+                      </div>
+                      <!-- end -->
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+var acc = document.getElementsByClassName("help-accordion");
+var i;
+
+for(i = 0; i < acc.length; i++){
+ acc[i].addEventListener("click", function(){
+ this.classList.toggle("active");
+
+   var panel = this.nextElementSibling;
+   if(panel.style.display === "block"){
+     panel.style.display = "none";
+   } else {
+     panel.style.display ="block";
+   }
+ });
+}
+
+</script>
+<!--content-wrapper End-->
+
+    {% endblock %}

@@ -1,0 +1,270 @@
+
+{% extends 'header.html' %}
+
+{% block title %}Travel As You Go | Best  Parks in the U.S. You Should Visit | Find Your Activity Facility & Near By Place{% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!--#Places & Events Listing Start -->
+  {% block body %}
+
+  <style media="screen">
+  @media only screen and (max-width: 500px) {
+  .martop {
+  margin-top:-20%;
+  }
+  .martop1{
+    margin-left:3%;
+    margin-right:3%;
+  }
+  #title_img{
+    margin-top:10%; width:98%; margin-left:2%;
+  }
+  #title_tags{
+    width:80% ; margin-left:8%;
+  }
+  .visit_slider{
+    margin-left:0%;
+  }
+  }
+  @media only screen and (min-width: 1124px) {
+  .box-heading2{font-size: 22px!important; font-family: cursive;}
+  }
+  @media screen and (min-width: 740px) and (max-width: 900px) {
+  #title_img{width:410px;}
+  #title_tags{width:300px;}
+  .box-heading2{font-size: 15px!important; font-family: cursive;}
+  }
+
+  @media screen and (min-width: 1020px) and (max-width: 1124px) {
+  	#title_img{width:550px; }
+    .box-heading2{font-size: 15px!important; font-family: cursive;}
+  }
+
+  @media only screen and (min-width: 500px) {
+  .martop {
+  margin-top:0%;
+  }
+
+  .martop1{
+    margin-left:2%;
+    margin-right:1%;
+  }
+  .visit_slider {
+  margin-top : -1%;
+  margin-left:0%;
+  }
+  #title_img{
+    margin-left:27%; margin-top:-5%;
+  }
+  #title_tags{
+    margin-left:34%; margin-top:-5%;
+  }
+  .content_margin{
+    margin-top:-1%;
+  }
+  .content_margin1{
+    margin-top:-3%;
+  }
+  .small_screen_view{
+    display:None;
+  }
+  }
+  .a1{
+    cursor: pointer;
+
+  }
+  </style>
+
+<!-- virtual and activity style -->
+<style media="screen">
+  .a1:hover {
+  transform: translateY(-4px);
+  font-size:30px;
+  font-family: Fantasy;
+
+}
+.a1{
+ color:#fff;   margin-left:6%; position: absolute;
+  width:60%;
+  font-family: cursive;
+ font-size:35px;
+}
+
+.a2{
+ color:#fff;   margin-left:12%; position: absolute;
+  width:60%;
+  font-family: cursive;
+  font-size:25px;
+}
+
+.img_border{
+  border-radius:50px; margin-top:-1%;
+}
+.img_border1{
+  border-radius:30px; margin-top:-1%;
+}
+
+.text-center1{
+  margin-left:20%;
+}
+.box-heading3 {
+  font-size:15px;
+
+}
+.title_font{
+  font-family: Algerian;
+}
+</style>
+<!-- end -->
+  <script>
+
+    navigator.geolocation.getCurrentPosition(showPosition);
+    function showPosition(position){
+
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+
+  }
+
+  </script>
+
+
+<style media="screen">
+  .hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.6);
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transform: translate(460px, -100px) rotate(180deg);
+  -ms-transform: translate(460px, -100px) rotate(180deg);
+  transform: translate(460px, -100px) rotate(180deg);
+  -webkit-transition: all 0.2s 0.4s ease-in-out;
+  transition: all 0.2s 0.4s ease-in-out;
+
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  padding: 10px;
+  background: #000;
+}
+
+.hovereffect a.info {
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 14px;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid #fff;
+  margin: 50px 0 0 0;
+  background-color: transparent;
+  -webkit-transform: translateY(-200px);
+  -ms-transform: translateY(-200px);
+  transform: translateY(-200px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.hovereffect a.info:hover {
+  box-shadow: 0 0 5px #fff;
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
+
+.hovereffect:hover h2 {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.hovereffect:hover a.info {
+  -webkit-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  transform: translateY(0px);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+h1:hover {
+  color:#fff;
+}
+</style>
+{% load myfilter %}
+  <!-- Banner -->
+  <div class="row" >
+    <div class="col-md-12">
+      <div class="advertisment-banner" >
+        <div class="row" style="margin-top:2%;">
+          <div class="col-xl-12 col-lg-12 col-sm-12" >
+            {% include 'slider.html' %}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+     <!-- Banner Area advertisment-banner-->
+  <div  class=" martop martop1" >
+
+      <div  id="virtual_list">   </div>
+      <div  id="activity">  </div>
+      <div  id="facility">  </div>
+      <div  id="tags">  </div>
+      <script type="text/javascript">
+        $('#virtual_list').load("/home_virtual_list").fadeIn("slow");
+        $('#activity').load("/home_activity_list").fadeIn("slow");
+        $('#facility').load("/home_facility_list").fadeIn("slow");
+        $('#tags').load("/home_tag_list").fadeIn("slow");
+      </script>
+    </div>
+    </div>
+
+    <!--  include "recom.html" for nearby open recom.html -->
+    {% if msg %}
+    <script>
+     alert(`{{msg}}`);
+      </script>
+    {% endif %}
+
+
+  {% endblock %}
+	<!--#owl Slider End-->

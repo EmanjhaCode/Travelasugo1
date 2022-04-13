@@ -1,0 +1,297 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta name="description" content="Responsive Admin Template" />
+    <meta name="author" content="SmartUniversity" />
+    <title>Welcome Admin | Emanjha Dashboard</title>
+    <!-- google font -->
+    <link href="fonts.googleapis.com/css6079.css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
+	<!-- icons -->
+    <link href="../../media/assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../media/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<!--bootstrap -->
+	<link href="../../media/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="../../media/assets/plugins/summernote/summernote.css" rel="stylesheet">
+	<!-- morris chart -->
+    <link href="../../media/assets/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+    <!-- Material Design Lite CSS -->
+	<link rel="stylesheet" href="../../media/assets/plugins/material/material.min.css">
+	<link rel="stylesheet" href="../../media/assets/css/material_style.css">
+	<!-- animation -->
+	<link href="../../media/assets/css/pages/animate_page.css" rel="stylesheet">
+	<!-- Template Styles -->
+    <link href="../../media/assets/css/plugins.min.cs" rel="stylesheet" type="text/css" />
+    <link href="../../media/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../../media/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+    <link href="../../media/assets/css/theme-color.css" rel="stylesheet" type="text/css" />
+	<!-- favicon -->
+    <link rel="shortcut icon" href="../../media/img/favicon.ico" />
+<link href="../../media/assets/plugins/dropzone/dropzone.css" rel="stylesheet" media="screen">
+<link href="../../media/assets/plugins/jquery-tags-input/jquery-tags-input.css" rel="stylesheet">
+    <!--select2-->
+    <link href="../../media/assets/plugins/select2/css/select2.css" rel="stylesheet" type="text/css" />
+    <link href="../../media/assets/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {% block outside%}{% endblock %}
+ </head>
+ <!-- END HEAD -->
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
+    <div class="page-wrapper">
+        <!-- start header -->
+        <div class="page-header navbar navbar-fixed-top">
+            <div class="page-header-inner ">
+                <!-- logo start -->
+                <div class="page-logo">
+                    <a href="#">
+                    <!-- <img alt="" src="../static/assets/img/logo.png"> -->
+                    <span class="logo-default" style="font-size:95%;">Emanjha | Admin</span> </a>
+                </div>
+                <!-- logo end -->
+				<ul class="nav navbar-nav navbar-left in">
+					<li><a href="#" class="menu-toggler sidebar-toggler"><i class="icon-menu"></i></a></li>
+				</ul>
+
+                <!-- start mobile menu -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span></span>
+                </a>
+               <!-- end mobile menu -->
+                <!-- start header menu -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+
+ 						<!-- start manage user dropdown -->
+ 						<li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                <img alt="" class="img-circle " src="assets/img/dp.jpg" />
+                                <span class="username username-hide-on-mobile"> Setting </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default animated jello">
+
+                                <li>
+                                    <a href="/logout">
+                                        <i class="icon-logout"></i> Log Out </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- end manage user dropdown -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- end header -->
+        <!-- start page container -->
+        <div class="page-container">
+ 			<!-- start sidebar menu -->
+ 			<div class="sidebar-container">
+ 				<div class="sidemenu-container navbar-collapse collapse fixed-menu">
+	                <div id="remove-scroll">
+	                    <ul class="sidemenu page-header-fixed p-t-20" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+	                        <li class="sidebar-toggler-wrapper hide">
+	                            <div class="sidebar-toggler">
+	                                <span></span>
+	                            </div>
+	                        </li>
+	                        <li class="sidebar-user-panel">
+	                            <div class="user-panel">
+	                                <div class="row">
+                                            <div class="sidebar-userpic">
+                                                <img src="../../media/assets/img/dp.jpg" class="img-responsive" alt=""> </div>
+                                        </div>
+                                        <div class="profile-usertitle">
+                                            <div class="sidebar-userpic-name"> Tabish Adnan </div>
+                                            <div class="profile-usertitle-job"> Developer </div>
+                                        </div>
+
+	                            </div>
+	                        </li>
+
+	                        <li class="nav-item start active">
+	                            <a href="/emanjha" class="nav-link nav-toggle">
+	                                <i class="material-icons">dashboard</i>
+	                                <span class="title">Dashboard</span>
+                                	<span class="selected"></span>
+                                	<span class="arrow open"></span>
+	                            </a>
+
+	                        </li>
+
+	                        <li class="nav-item">
+	                            <a href="/emanjha/location" class="nav-link nav-toggle">
+	                                <i class="material-icons">location_on</i>
+	                                <span class="title">Locations</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+                          <li class="nav-item">
+	                            <a href="/emanjha/user_location" class="nav-link nav-toggle">
+	                                <i class="material-icons">location_on</i>
+	                                <span class="title">By User</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+
+
+                          <li class="nav-item">
+	                            <a href="/emanjha/facilities" class="nav-link nav-toggle">
+	                                <i class="material-icons">dvr</i>
+	                                <span class="title">Facilities</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+
+
+                          <li class="nav-item">
+                             <a href="/emanjha/activities" class="nav-link nav-toggle">
+                                 <i class="material-icons">timeline</i>
+                                 <span class="title"> Activities</span>
+                                 <span class="arrow"></span>
+                             </a>
+
+                         </li>
+
+
+
+	                        <li class="nav-item">
+	                            <a href="/emanjha/categories" class="nav-link nav-toggle">
+	                                <i class="material-icons">list</i>
+	                                <span class="title">Categories</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+                          <li class="nav-item">
+	                            <a href="/emanjha/all_activity" class="nav-link nav-toggle">
+	                                <i class="material-icons">list</i>
+	                                <span class="title">All activity</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+                          <li class="nav-item">
+                             <a href="/emanjha/safety" class="nav-link nav-toggle">
+                                 <i class="material-icons">list</i>
+                                 <span class="title">Safety</span>
+                                 <span class="arrow"></span>
+                             </a>
+
+                         </li>
+
+                          <li class="nav-item">
+	                            <a href="/emanjha/add_us_state" class="nav-link nav-toggle">
+	                                <i class="material-icons">location_on</i>
+	                                <span class="title">Add USA State</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+
+                          <li class="nav-item">
+	                            <a href="/emanjha/api_document" class="nav-link nav-toggle">
+	                                <i class="material-icons">grain</i>
+	                                <span class="title">Documentation</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+                          <li class="nav-item">
+	                            <a href="/emanjha/virtual_add" class="nav-link nav-toggle">
+	                                <i class="material-icons">verified_user</i>
+	                                <span class="title">Virtual</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+                          <li class="nav-item">
+	                            <a href="/emanjha/admin_feedback" class="nav-link nav-toggle">
+	                                <i class="material-icons">contacts</i>
+	                                <span class="title">Feedback</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+                          <li class="nav-item">
+	                            <a href="/emanjha/covid_state_link" class="nav-link nav-toggle">
+	                                <i class="material-icons">shopping_cart</i>
+	                                <span class="title">Covid-link</span>
+	                                <span class="arrow"></span>
+	                            </a>
+
+	                        </li>
+
+
+
+	                    </ul>
+	                </div>
+                </div>
+            </div>
+            <!-- end sidebar menu -->
+            <div >
+{% block body %}{% endblock %}
+            </div>
+
+        <!-- start footer -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2020 &copy; Emanjha
+            <a href="https://www.emanjha.com/" target="_top" class="makerCss">Emanjha LLC</a>
+            </div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- end footer -->
+    </div>
+
+    <!-- start js include path -->
+    <script src="../../media/assets/plugins/jquery/jquery.min.js" ></script>
+    <script src="../../media/assets/plugins/popper/popper.min.js" ></script>
+    <script src="../../media/assets/plugins/jquery-blockui/jquery.blockui.min.js" ></script>
+	<script src="../../media/assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- bootstrap -->
+    <script src="../../media/assets/plugins/bootstrap/js/bootstrap.min.js" ></script>
+    <script src="../../media/assets/plugins/sparkline/jquery.sparkline.min.js" ></script>
+	<script src="../../media/assets/js/pages/sparkline/sparkline-data.js" ></script>
+    <!-- Common js-->
+	<script src="../../media/assets/js/app.js" ></script>
+    <script src="../../media/assets/js/layout.js" ></script>
+    <script src="../../media/assets/js/theme-color.js" ></script>
+    <!-- material -->
+    <script src="../../media/assets/plugins/material/material.min.js"></script>
+    <!-- animation -->
+    <script src="../../media/assets/js/pages/ui/animations.js" ></script>
+    <!-- morris chart -->
+    <script src="../../media/assets/plugins/morris/morris.min.js" ></script>
+    <script src="../../media/assets/plugins/morris/raphael-min.js" ></script>
+    <script src="../../media/assets/js/pages/chart/morris/morris_home_data.js" ></script>
+    <!-- end js include path -->
+	<!-- dropzone -->
+    <script src="../../media/assets/plugins/dropzone/dropzone.js" ></script>
+    <!--tags input-->
+    <script src="../../media/assets/plugins/jquery-tags-input/jquery-tags-input.js" ></script>
+    <script src="../../media/assets/plugins/jquery-tags-input/jquery-tags-input-init.js" ></script>
+    <!--select2-->
+    <script src="../../media/assets/plugins/select2/js/select2.js" ></script>
+    <script src="../../media/assets/js/pages/select2/select2-init.js" ></script>
+  </body>
+
+</html>

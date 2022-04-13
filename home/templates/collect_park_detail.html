@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Keywords" content="{{park_name}}, {{tag}}, best {{tag}} in USA, about {{park_name}}" />
+    <meta name="description" content="{{park_name}} is also America's most visited {{tag}}, receiving millions of recreational visitors annually">
+    <meta name="author" content="Travel As You Go">
+	<!-- Favicon -->
+	<link href="../media/home/img/fav.png" rel="shortcut icon" type="image/x-icon"/>
+
+    <title>Travel As You Go | {{park_name}} | One of most visited {{tag}} </title>
+
+  {% include 'data_css.html' %}
+<style media="screen">
+@media screen and (min-width: 0px) and (max-width: 600px) {
+#weather{ display: None; }  /* show it on smaller screen */
+}
+
+</style>
+
+  </head>
+<script type="text/javascript">
+if(window.performance==1){
+
+    window.open('abx','_self');
+}
+
+</script>
+<style media="screen">
+.tabish :nth-child(even){
+  background-color: #0000;
+}
+
+
+@media only screen and (max-width: 500px) {
+.state {
+  margin-top:25%;
+}
+.message-radius{
+width:100%;
+}
+.img11{
+  width:100%;
+}
+}
+@media only screen and (min-width: 500px) {
+.state {
+margin-left:30%;
+margin-top:-18%;
+}
+.message-radius{
+width:200px;
+}
+.img11{
+  width:200px;
+}
+}
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <body id="page-top">
+
+
+{% include 'navbar.html' %}
+  <script type="text/javascript">
+    if(screen.width<500) {
+    var element = document.getElementById("page-top");
+    element.classList.add("sidebar-toggled");
+  }
+  </script>
+{% load myfilter %}
+	<div class="full-width" >
+		<div  style="background:#fff;">
+		  <!-- Sidebar -->
+
+			<div id="content-wrapper" >
+				<div class="container-fluid pb-0">
+				 <!-- Profile Detail Area Start-->
+					<div class="video-block section-padding">
+						<div class="main-item">
+							<div class="row">
+                {% with img=imagelink|string_to_list %}
+                {% for i in location_single %}
+
+                {% include 'scraping_page_image.html' %}
+                <!-- Social Account Share Model Start -->
+              	<div class="modal fade" id="sharelisitng" tabindex="-1" role="dialog" aria-hidden="true">
+              		<div class="modal-dialog modal-dialog-centered none" role="document">
+              			<div class="modal-content">
+              				<div class="modal-body">
+              					<ul class="share-options">
+              						<li>
+              							<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.travelasugo.com/best-park-in-usa/{{park_name|replace_blank_plus}},{{id}}"><i class="fa fa-facebook-f" style="background-color: #3b5998;"></i> Facebook </a>
+              						</li>
+              						<li>
+              							<a href="https://twitter.com/share?url=http://www.travelasugo.com/best-park-in-usa/{{park_name|replace_blank_plus}},{{id}}"><i class="fa fa-twitter" style="background-color: #4099FF;"></i> Twitter </a>
+              						</li>
+              						<li>
+              							<a href="whatsapp://send?text=http://www.travelasugo.com/best-park-in-usa/{{park_name|replace_blank_plus}},{{id}}"><i class="fa fa-whatsapp" style="background-color: #128c7e;"></i> Whatsapp </a>
+              						</li>
+              						<li>
+              							<a href="https://telegram.me/share/url?url=http://www.travelasugo.com/best-park-in-usa/{{park_name|replace_blank_plus}},{{id}}&text={{park_name}}"><i class="fa fa-telegram" style="background-color: #0088cc;"></i> Telegram </a>
+              						</li>
+              						<li>
+              							<a href="http://pinterest.com/pin/create/link/?url=http://www.travelasugo.com/best-park-in-usa/{{park_name|replace_blank_plus}},{{i.id}}"><i class="fa fa-pinterest" style="background-color: #C92228;"></i> Pinterest </a>
+                          </li>
+              						<li>
+              							<a href="https://plus.google.com/share?url=http://www.travelasugo.com/best-park-in-usa/{{park_name|replace_blank_plus}},{{id}}"><i class="fa fa-google-plus" style="background-color: #D34836;"></i> Google+ </a>
+              						</li>
+              						<li>
+              							<a href="https://www.linkedin.com/shareArticle?mini=true&url=http://www.travelasugo.com/best-park-in-usa/{{park_name|replace_blank_plus}},{{id}}"><i class="fa fa-linkedin" style="background-color: #0077B5;"></i> LinkedIn </a>
+              						</li>
+
+              					</ul>
+              				</div>
+              			</div>
+              		</div>
+              	</div>
+              	<!-- Social Account Share Model End -->
+                {% endfor %}
+
+								<!-- Profile Detail Area End-->
+								<!--Nav Tabs Start -->
+								<div class="row item-detail-tabs">
+									<div class="col-xl-12 com-md-12 col-sm-12 px-0">
+										<ul class="nav  nav-tabs " role="tablist" id="myTab" style="margin-left:1%;">
+											<li role="presentation">
+												<a style="color:#000;" class="active" href="#profile" aria-controls="profile" role="tab" data-toggle="tab"> Park Details </a>
+											</li>
+											<li role="presentation">
+												<!-- <a href="#reviews" aria-controls="reviews" role="tab" data-toggle="tab"> Reviews </a> -->
+                        <a style="color:#000;" href="/after_review/{{state}},{{id}}" aria-controls="reviews"  > Reviews </a>
+											</li>
+											<li role="presentation">
+												<a style="color:#000;" href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab"> Gallery </a>
+											</li>
+
+                      <li role="presentation">
+												<a style="color:#000;" href="#safety" aria-controls="gallery" role="tab" data-toggle="tab"> Safety </a>
+											</li>
+
+											<li role="presentation">
+												<a style="color:#000;" class="more-options" type="button" data-toggle="modal" data-target="#sharelisitng"> Share </a>
+											</li>
+
+
+										</ul><!--Nav Tabs End -->
+
+
+
+
+										<!--Tabs Panes Start -->
+                    {% for i in location_single %}
+
+										<div class="tab-content" style="margin-left:1%;">
+											<div class="tab-pane active" role="tabpanel" id="profile">
+												<div class="row lr-row">
+													<!-- <div class="col-md-8" style="overflow: scroll; height:700px;"> if u want to scroll -->
+                            <div class="col-md-8" >
+
+														<div class=" locatins" >
+                                <h4 title="{{park_name}}" style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/pname2.png" alt=""> {{park_name}}</h4>
+
+
+
+															<div class="sub-heading" style="color:#000;">
+
+																{{i.overview|change_color|safe}}
+
+                              </div>
+                              <br><br>
+                                <div class="sub-heading" id="cweather">
+                                  </div>
+                                  <script type="text/javascript">
+                              	    $('#cweather').load("/cweather/{{neartown}}").fadeIn("slow");
+                              	  </script>
+
+                              {% if wiki != 'none113' %}
+                              <div class="sub-heading" >
+                                <br>
+														<b style="color:#4267B2; font-size:18px;">Wikipedia Summary </b> <br>	 <b style="color:#000;">{{wiki}}</b>
+															</div>
+                              {% endif %}
+                              {% if i.direction != '' %}
+                              <div class="sub-heading">
+                              <br>   <b style="color:#4267B2; font-size:18px;">Direction  </b> <br>
+																<b style="color:#000;">{{i.direction|safe}}</b>
+															</div>
+                            {% endif %}
+															<div class="clearfix"></div>
+														</div>
+
+                            <!-- google news api -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                                <img src="../media/home/images/svg/map.svg" alt=""><h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/news.jpg" alt="find all News & Update for {{park_name}} "> News & Updates  </h3>
+                              </div>
+                              <p class="faq-accordion"  style="color:#4267B2;">View News : Click Here </p>
+
+                              <div   class="panel" >
+                              <div id="update_news" style="overflow: scroll; height:300px;">
+                                <center>  <img src="../media/home/img/load113.gif" alt="" style="width:300px; height:200px;" ></center>
+                              <p style="margin-left:40%; margin-top:-5%; color:red;">News Loading...</p>
+                              </div>
+                           </div>
+                          </div>
+                              <div class="clearfix"></div>
+                            </div>
+                            {% load myfilter %}
+    													<script type="text/javascript">
+                                $('#update_news').load("/google_news_api1/{{i.list_id}}").fadeIn("slow");
+
+    													</script>
+                            <!-- end -->
+
+
+                            <!-- Twitter api -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                                <h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/tweet.png" alt="Get all Latests Tweets for {{park_name}}"> Latests Tweets</h3>
+                              </div>
+                              <p class="faq-accordion" style="color:#4267B2;">View Tweets : Click Here  </p>
+                              <div class="panel" style="overflow: scroll; height:300px;">
+                                <table class="table table-striped">
+                                  <tbody>
+                                {% for twit in twit_api %}
+                                <tr>
+                                 <td>
+                  							<div class="rightbox">
+                  								<div class="msg-scroll">
+                  									<div class="rightmsg">
+                  										<div class="message-heading" >
+                                           {{twit.twit_text}}...
+                  										</div>
+
+                  										<div class="message-heading1">
+                                        <span>{{twit.twit_date}} </span>
+                                        <a   ><span style='margin-left:5px;'>Retweet Count : {{twit.twit_count}}</span> </a>
+                                        <a   ><span style='margin-left:5px;'>Like : {{twit.twit_like}}</span> </a>
+                                        <a   href="https://twitter.com/stanguy997/status/{{twit.twit_id}}"><span style='margin-left:5px;'>View More</span> </a>
+                  										</div>
+
+                  										<div class="clearfix"></div>
+                  										<hr>
+                  									</div>
+                  								</div>
+
+                  							</div>
+                              </td>
+                            </tr>
+                                {% empty %} <br>
+                                No Twit available in this location. Pelase visit later for more twit about this location
+
+                               {% endfor %}
+                             </tbody>
+                           </table>
+                              </div>
+                            </div>
+  															<div class="clearfix"></div>
+  														</div>
+                            <!-- end -->
+
+                            <!--XXXXXXX-hotel api start-XXXXXXXX-->
+                            {% if neartown == 'nonedisplaytab' %}
+
+                            {% else %}
+                            <div id="park_api">
+                              <center>  <img src="../media/home/img/load113.gif" alt="" style="width:300px; height:200px;" ></center>
+                            </div>
+                            <script type="text/javascript">
+                              $(document).ready( function() {
+                                $('#park_api').load("/park_hotel_api_search/{{neartown}}+{{state}}").fadeIn("slow");
+                              });
+                            </script>
+                            {% endif %}
+                            <!--XXXXXXX-END-XXXXXXXX-->
+
+                            <div class="locatins heading">
+															<div class="heading">
+																<h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/activity_icon.png" alt="">Activity & Facility</h3>
+															</div>
+
+                              <div class="row" >
+                                <section id="demos1" >
+                                  <div class="col-md-12" >
+                                    <div class="large-12 columns" >
+                                      <div class="owltab owl-carousel owl-theme " >
+
+                                      {% for a in activity_park %}
+                                      <div class="item" >
+                                        <div class="box" >
+                                        <div class="box-img" >
+                                          <a href="/park-detail/{{r.id}}"  > </a>
+                                          {% for im in img_act %}
+                                          {% if im.activity|lower == a.activity|lower %}
+                                          <img src="{{im.img}}" class="img" alt="" title="" style="height:260px; margin-bottom:8%;">
+                                          {% endif %}
+                                          {% endfor %}
+                                        </div>
+                                        <div class="box-heading3" style="margin-left:5%;">
+                                        <a> {{a.activity}}</a>
+                                        </div>
+                                      </div>
+                                      </div>
+
+                                      {% endfor %}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                              </div>
+
+															<div class="clearfix"></div>
+														</div>
+
+
+														<div class="locatins heading">
+															<div class="heading">
+																<h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/nearby.png" alt="">NearBy</h3>
+															</div>
+                              <!-- near by data show -->
+                              <div class="row" >
+
+                                <section id="demos1" >
+                                  <div class="col-md-12" >
+                                    <div class="large-12 columns" >
+                                      <div class="owltab owl-carousel owl-theme " >
+
+
+                                        {% with dic=i.nearby|string_to_dict %}
+                                        {% for d in dic %}
+                                        {% for l in l_list %}
+                                        {% if d|lower == l.name|lower %}
+                                        {% with img1=l.imagelinks|string_to_list %}
+                                      <div class="item" >
+                                        <div class="box" >
+                                        <div class="box-img" >
+                                          <a href="/best-park-in-usa/{{d}},{{l.id}}"  >
+                                          <img src="{{img1.0|remove_quote}}" class="img" alt="" title="" style="height:260px; margin-bottom:8%;">
+                                          </a>
+                                        </div>
+                                        <div class="box-heading3" style="margin-left:5%;">
+                                        <a href="/best-park-in-usa/{{d}},{{l.id}}"> {{d}}</a>
+                                        </div>
+                                      </div>
+                                      </div>
+                                      {% endwith %}
+                                      {% endif %}
+                                      {% endfor %}
+                                      {% endfor %}
+                                      {% endwith %}
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                              </div>
+                              <!-- end -->
+
+
+															<div class="clearfix"></div>
+														</div>
+
+                            <!-- town near by  -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                              <h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/nearby.png" alt=""> NearBy City</h3>
+                              </div>
+                              <p class="faq-accordion" style="color:#4267B2;">  Check all nearby city and town</p>
+                              <div class="panel">
+
+                                {% for town in alltown %}
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                  {{town|remove_quote}}
+                                  </div>
+                                </div>
+                                {% endfor %}
+                              </div>
+                            </div>
+                            </div>
+
+                            <!-- end -->
+
+                            <!--  -->
+                            <div class="box-left">
+                            <div class="rightboxs">
+                              <div class="heading">
+                              <h3 style="color:#4267B2;"><img style="width:20px;" src="../media/home/img/nearby.png" alt="">Address</h3>
+                              </div>
+                              <p class="faq-accordion" style="color:#4267B2;">  {{i.address}} </p>
+                              <div class="panel">
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    City
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.city}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    Latitude
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.lat}}
+                                  </div>
+                                </div>
+                                <div class="open-timing">
+                                  <div class="week-left">
+                                    Longitude
+                                  </div>
+                                  <div class="time-right">
+                                    {{i.lon}}
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            </div>
+
+                            <!--  -->
+
+
+                            <!--  -->
+													</div>
+													<div class="col-md-4">
+                            <div class="box-left">
+
+                              <div class="heading">
+															  <img style="width:20px;" src="../media/home/img/recommend113.png" alt="Find all nearby Hotel, Park, restaurants"><h3 style="color:#4267B2;">Recommended</h3>
+															</div>
+
+                              <div class="row" >
+
+                                <section id="demos1" >
+                                  <div class="col-md-12" >
+                                    <div class="large-12 columns" >
+                                      <div class="owl-carousel owl-theme" >
+
+                                        {% for r in recom_park %}
+                                        {% with img2=r.imagelinks|string_to_list %}
+                                      <div class="item" >
+                                        <div class="box" >
+                                        <div class="box-img" >
+                                          <a href="/best-park-in-usa/{{r.name}},{{r.id}}"  >
+                                          <img src="{{img2.0|remove_quote}}" class="img" alt="" title="" style="height:230px; ">
+                                          </a>
+
+                                        </div>
+
+                                        <div class="box-heading3" >
+                                        <a href="/best-park-in-usa/{{r.name}},{{r.id}}" style="margin-left:5%;">{{r.name|slice:":25"}}</a>
+                                        </div>
+                                      </div>
+                                      </div>
+                                      {% endwith %}
+                                      {% endfor %}
+
+
+
+
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                              </div>
+
+
+
+                          </div>
+
+                          <div class="box-left">
+                            <h4>Get Direction </h4>
+                          <div class="heading">
+
+                          <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=320&amp;height=300&amp;hl=en&amp;q={{park_name}}&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+                          <style>.mapouter{position:relative;text-align:right;width:100%;height:300px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:300px;}.gmap_iframe {width:100%!important;height:300px!important;}</style>
+                        </div>
+                          </div>
+                          <!-- <small>{{i.address}}</small> -->
+                          </div>
+
+													</div>
+												</div>
+											</div>
+
+
+											<div class="tab-pane" role="tabpanel" id="gallery">
+												<div class="video-block section-padding">
+													<div class="row lr-row mdb-lightbox">
+														<div id="demo-test-gallery" class="demo-gallery" data-pswp-uid="1">
+															<div class="gallery-sets">
+
+															{% include "collect_gallery.html" %}
+
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+
+                      <!-- XXXXXXXX  SAFETY XXXXXXXX -->
+                      <div class="tab-pane" role="tabpanel" id="safety">
+                        <div class="my-all-lisitngs">
+                          <div class="row justify-content-md-center">
+                            <div class="col-lg-10 col-sm-12">
+                              <div class="help-tabs">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                  <li class="nav-item">
+                                  </li>
+
+                                </ul>
+                        <div class="tab-content" id="myTabContent">
+                          <div class="tab-pane show active" id="web" role="tabpanel">
+                            <div class="help-faq">
+                              <div class="faq-items">
+
+                                <button class="help-accordion" style="background:#fff; color:#000;"> <h4>COVID(coronavirus) Safety</h4> </button>
+                                <div class="panel" style="display: none; background:#fff;">
+                                  <li style="list-style-type:none;">Research about the Coronavirus outbreak in the country you are visiting</li><br> <hr>
+                                  <li style="list-style-type:none;">Wear a mask and seek medical help if you develop symptoms</li><br> <hr>
+                                  <li style="list-style-type:none;">Stay in a place with good hygiene and cleanliness</li><br> <hr>
+                                  <li style="list-style-type:none;">Avoid crowds</li><br> <hr>
+                                  <li style="list-style-type:none;">Remember to avoid touching your face with unwashed hands</li><br> <hr>
+                                  <li style="list-style-type:none;">Wash your hands frequently</li><br> <hr>
+                                  <li style="list-style-type:none;">Avoid contact with anyone who is sick</li><br> <hr>
+                                  <li style="list-style-type:none;">Check local requirements and restrictions</li><br> <hr>
+                                  <li style="list-style-type:none;">Contactless payment</li><br> <hr>
+                                  {% for c in c_safety %}
+                                  For more information about {{c.usa_state}} state safety visit : <a href="{{c.link}}">{{c.link}}</a>
+                                  {% endfor %}
+                                </div>
+
+                                {% for safety in safety %}
+                                <button class="help-accordion" style="background:#fff; color:#000;"> <h4>{{safety.title}}</h4> </button>
+                                <div class="panel" style="display: none; background:#fff;">
+
+                                  {{safety.des|safe}}
+                                </div>
+                                {% endfor %}
+
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                      <!-- END -->
+
+										</div>
+
+                  {% endfor %}
+										<!--Tabs Panes End -->
+									</div>
+								</div>
+								<!--Tab Links End-->
+							</div>
+              {% endwith %}
+						</div>
+					</div>
+			</div>
+		  <!--content-wrapper End-->
+		</div>
+	</div>
+	</div>
+
+    <!--wrapper -->
+			<!-- Sticky Footer -->
+			{% include 'footer.html' %}
+
+    <!-- Scroll to Top Button Start-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="ti-arrow-up"></i>
+    </a>
+	<!-- Scroll to Top Button End-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="../media/home/js/jquery.min.js"></script>
+    <script src="../media/home/js/bootstrap.min.js"></script>
+
+	<!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src='../../../../api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="../media/home/js/sb-admin.min.js"></script>
+	<script src="../media/home/js/carousel_recom.js"></script>
+	<script src="../media/home/js/menurght.js"></script>
+	<script src="../media/home/js/crausal1.js"></script>
+	<script src="../media/home/js/custom.js"></script>
+	<script src="../media/home/js/photoswipe.min.js"></script>
+	<script src="../media/home/js/photoswipe-ui-default.min.js"></script>
+
+	<!-- Demo scripts for this page-->
+   	<script src="../media/home/js/slick.min.js"></script>
+
+	<!-- Assect scripts for this page-->
+	<script src="../media/home/assets/vendors/jquery.min.js"></script>
+    <script src="../media/home/assets/owlcarousel/owl.carousel.js"></script>
+    <script src="../media/assets/js/res_sidebar.js"></script>
+
+	<script>
+	var acc = document.getElementsByClassName("faq-accordion");
+	var i;
+
+	for(i = 0; i < acc.length; i++){
+		acc[i].addEventListener("click", function(){
+		this.classList.toggle("active");
+
+			var panel = this.nextElementSibling;
+			if(panel.style.display === "block"){
+				panel.style.display = "none";
+			} else {
+				panel.style.display ="block";
+			}
+		});
+	}
+
+	</script>
+  <script>
+  var acc = document.getElementsByClassName("help-accordion");
+  var i;
+
+  for(i = 0; i < acc.length; i++){
+   acc[i].addEventListener("click", function(){
+   this.classList.toggle("active");
+
+     var panel = this.nextElementSibling;
+     if(panel.style.display === "block"){
+       panel.style.display = "none";
+     } else {
+       panel.style.display ="block";
+     }
+   });
+  }
+
+  </script>
+<style media="screen">
+  .owl-theme .owl-nav .owl-prev{
+    margin-bottom:50px!important;
+  }
+  .owl-theme .owl-nav .owl-next{
+    margin-bottom:50px!important;
+  }
+</style>
+  </body>
+
+</html>

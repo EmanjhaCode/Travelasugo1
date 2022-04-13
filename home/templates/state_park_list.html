@@ -1,0 +1,110 @@
+{% extends 'header.html' %}
+{% block title %}Travel As You Go | Park Related to Activiy{% endblock %}
+
+{% block body %}
+{% load myfilter %}
+				 <!-- Activity Detail Area Start-->
+					<div class="row" style="background:#fff; margin:1%;">
+
+						<div class="col-lg-12 col-sm-12 ">
+							<br>
+						<center>	<h3> {{tag}} in California</h3></center>
+							<hr>
+							<div class="row ">
+								<div class="tabby">
+
+									<!-- live hotel section start -->
+
+
+									{% for d in data %}
+
+									{% with img=d.imagelinks|string_to_list %}
+									<div class="col-xl-3 col-sm-6" >
+										<div class="box">
+											<div class="box-img">
+												<a href="/best-park-in-usa/{{d.name}},{{d.id}}"><div class="over-bg"></div></a>
+
+												<img src="{{img.0|remove_quote}}" class="img" alt="{{d.name}}" title="{{d.name}}" style="height:200px;">
+
+												<div class="box-heading1">
+
+													<a href="/best-park-in-usa/{{d.name}},{{d.id}}">{{d.name}} </a>
+													<div class="box-heading2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="12" height="14" class="location-icon" viewBox="0 0 12 14">
+													  <path d="M6.720,10.847 C6.242,11.332 5.477,11.332 4.998,10.847 C2.719,8.534 1.555,6.413 1.555,4.454 C1.555,1.994 3.482,-0.000 5.859,-0.000 C8.236,-0.000 10.163,1.994 10.163,4.454 C10.163,6.413 8.999,8.534 6.720,10.847 ZM8.934,4.454 C8.934,2.697 7.557,1.273 5.859,1.273 C4.161,1.273 2.785,2.697 2.785,4.454 C2.785,6.004 3.793,7.842 5.859,9.938 C7.925,7.842 8.934,6.004 8.934,4.454 ZM5.859,6.045 C4.840,6.045 4.015,5.191 4.015,4.136 C4.015,3.082 4.840,2.227 5.859,2.227 C6.878,2.227 7.704,3.082 7.704,4.136 C7.704,5.191 6.878,6.045 5.859,6.045 ZM5.859,4.773 C6.199,4.773 6.474,4.488 6.474,4.136 C6.474,3.785 6.199,3.500 5.859,3.500 C5.520,3.500 5.244,3.785 5.244,4.136 C5.244,4.488 5.520,4.773 5.859,4.773 ZM2.165,9.509 C2.483,9.385 2.838,9.552 2.957,9.881 C3.076,10.210 2.915,10.577 2.597,10.700 C1.895,10.973 1.555,11.285 1.555,11.454 C1.555,11.987 3.462,12.727 5.859,12.727 C8.256,12.727 10.163,11.987 10.163,11.454 C10.163,11.285 9.823,10.973 9.122,10.700 C8.804,10.577 8.643,10.210 8.762,9.881 C8.881,9.552 9.235,9.385 9.553,9.509 C10.684,9.948 11.393,10.598 11.393,11.454 C11.393,13.031 8.895,14.000 5.859,14.000 C2.823,14.000 0.326,13.031 0.326,11.454 C0.326,10.598 1.034,9.948 2.165,9.509 Z">
+													</path></svg> {{d.tag}} </div>
+												</div>
+
+											</div>
+											<div class="box-radius">
+												<img src="{{img.0|remove_quote}}" class="img" alt="{{d.name}}" title="{{d.name}}" style="width:50px; height:50px; border-radius: 50%;">
+											</div>
+											<div class="box-heading3">
+												<a href="/best-park-in-usa/{{d.name}},{{d.id}}">{{d.name}} </a>
+											</div>
+										</div>
+									</div>
+									{% endwith %}
+
+                  {% endfor %}
+									<!-- end -->
+									<br>
+                  {% for n in near %}
+                  {% if n.state|lower == state|lower %}
+
+									<div class="col-xl-3 col-sm-6">
+										<div class="box">
+											<div class="box-img">
+												<a href="/park-detail/{{n.id}}"><div class="over-bg"></div></a>
+
+												<img src="../../media/{{n.thumbnail1}}" class="img" alt="" title="" style="height:200px;">
+
+												<div class="box-heading1">
+													<a href="/park-detail/{{n.id}}">{{n.name}} </a>
+													<div class="box-heading2">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="12" height="14" class="location-icon" viewBox="0 0 12 14">
+													  <path d="M6.720,10.847 C6.242,11.332 5.477,11.332 4.998,10.847 C2.719,8.534 1.555,6.413 1.555,4.454 C1.555,1.994 3.482,-0.000 5.859,-0.000 C8.236,-0.000 10.163,1.994 10.163,4.454 C10.163,6.413 8.999,8.534 6.720,10.847 ZM8.934,4.454 C8.934,2.697 7.557,1.273 5.859,1.273 C4.161,1.273 2.785,2.697 2.785,4.454 C2.785,6.004 3.793,7.842 5.859,9.938 C7.925,7.842 8.934,6.004 8.934,4.454 ZM5.859,6.045 C4.840,6.045 4.015,5.191 4.015,4.136 C4.015,3.082 4.840,2.227 5.859,2.227 C6.878,2.227 7.704,3.082 7.704,4.136 C7.704,5.191 6.878,6.045 5.859,6.045 ZM5.859,4.773 C6.199,4.773 6.474,4.488 6.474,4.136 C6.474,3.785 6.199,3.500 5.859,3.500 C5.520,3.500 5.244,3.785 5.244,4.136 C5.244,4.488 5.520,4.773 5.859,4.773 ZM2.165,9.509 C2.483,9.385 2.838,9.552 2.957,9.881 C3.076,10.210 2.915,10.577 2.597,10.700 C1.895,10.973 1.555,11.285 1.555,11.454 C1.555,11.987 3.462,12.727 5.859,12.727 C8.256,12.727 10.163,11.987 10.163,11.454 C10.163,11.285 9.823,10.973 9.122,10.700 C8.804,10.577 8.643,10.210 8.762,9.881 C8.881,9.552 9.235,9.385 9.553,9.509 C10.684,9.948 11.393,10.598 11.393,11.454 C11.393,13.031 8.895,14.000 5.859,14.000 C2.823,14.000 0.326,13.031 0.326,11.454 C0.326,10.598 1.034,9.948 2.165,9.509 Z">
+													</path></svg> {{ n.city}} </div>
+												</div>
+
+											</div>
+											<div class="box-radius">
+												<img src="../../media/{{n.thumbnail1}}" class="img" alt="" title="" style="width:50px; height:50px; border-radius: 50%;">
+											</div>
+											<div class="box-heading3">
+												<a href="/park-detail/{{n.id}}">{{n.name}}</a>
+											</div>
+										</div>
+									</div>
+
+                  {% endif %}
+                  {% endfor %}
+									<br>
+
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+		  <!--content-wrapper End-->
+			<script>
+			var acc = document.getElementsByClassName("help-accordion");
+			var i;
+
+			for(i = 0; i < acc.length; i++){
+			 acc[i].addEventListener("click", function(){
+			 this.classList.toggle("active");
+
+				 var panel = this.nextElementSibling;
+				 if(panel.style.display === "block"){
+					 panel.style.display = "none";
+				 } else {
+					 panel.style.display ="block";
+				 }
+			 });
+			}
+
+			</script>
+    {% endblock %}

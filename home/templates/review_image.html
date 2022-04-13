@@ -1,0 +1,34 @@
+
+<div class="video-block section-padding">
+  <div class="row">
+    <section id="demos1">
+      <div class="col-md-12">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme">
+            {% for i in image %}
+            {% if i.rid|add:'0' == r.id|add:'0' %}
+          <div class="item">
+            <div class="box">
+            <div class="box-img">
+              <a href="../../media/{{i.img}}" ></a>
+              <img src="../../media/{{i.img}}" class="img" alt="" title="" style="height:230px; ">
+            </div>
+          </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<script src="../media/home/js/carousel_home.js"></script>
+<style media="screen">
+  .owl-theme .owl-nav .owl-prev{
+    margin-bottom:-5%!important;
+  }
+  .owl-theme .owl-nav .owl-next{
+    margin-bottom:-5%!important;
+  }
+</style>

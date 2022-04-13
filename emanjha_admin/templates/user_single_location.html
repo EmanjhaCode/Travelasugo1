@@ -1,0 +1,278 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+{% if user.is_authenticated %}
+			<!-- start page content -->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-bar">
+                        <div class="page-title-breadcrumb">
+                            <div class=" pull-left">
+                                <div class="page-title">Selected Location</div>
+                            </div>
+                            <ol class="breadcrumb page-breadcrumb pull-right">
+                                <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="index.html">Home</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                </li>
+                                <li><a class="parent-item" href="#">Location</a>&nbsp;<i class="fa fa-angle-right"></i>
+                                </li>
+                                <li class="active">Selected Location</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                      {% for i in location_single %}
+                        <div class="col-md-12">
+                            <!-- BEGIN PROFILE SIDEBAR -->
+                            <div class="profile-sidebar">
+                                <div class="card card-topline-aqua">
+                                    <div class="card-body no-padding height-9">
+
+                                        <div class="profile-usertitle">
+                                            <div class="profile-usertitle-name"> {{i.name}} </div>
+
+                                        </div>
+                                        <ul class="list-group list-group-unbordered">
+                                            <li class="list-group-item">
+                                                <b>City</b> <a class="pull-right">{{i.city}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>State</b> <a class="pull-right">{{i.state}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Country</b> <a class="pull-right">{{i.country}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Zipcode</b> <a class="pull-right">{{i.zipcode}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Longitude</b> <a class="pull-right">{{i.logitude}}</a>
+                                            </li>
+                                            <li class="list-group-item">
+                                                <b>Latitude</b> <a class="pull-right">{{i.latitude}}</a>
+                                            </li>
+                                        </ul>
+                                        <!-- END SIDEBAR USER TITLE -->
+
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-head card-topline-aqua">
+                                        <header>Address</header>
+                                    </div>
+                                    <div class="card-body no-padding height-9">
+                                        <div class="row text-center m-t-10">
+                                    <div class="col-md-12">
+                                        <p>{{i.address}}
+
+                                    </div>
+                                </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- END BEGIN PROFILE SIDEBAR -->
+                            <!-- BEGIN PROFILE CONTENT -->
+                            <div class="profile-content">
+                                <div class="row">
+									<div class="profile-tab-box">
+										<div class="p-l-20">
+											<ul class="nav ">
+												<li class="nav-item tab-all"><a
+													class="nav-link active show" href="#tab1" data-toggle="tab">Overview</a></li>
+												<li class="nav-item tab-all p-l-20"><a class="nav-link"
+													href="#tab2" data-toggle="tab">Activities</a></li>
+												<li class="nav-item tab-all p-l-20"><a class="nav-link"
+													href="#tab3" data-toggle="tab">Facilities</a></li>
+                          <li class="nav-item tab-all p-l-20"><a class="nav-link"
+  													href="#tab4" data-toggle="tab">Gallery</a></li>
+                            <li class="nav-item tab-all p-l-20"><a class="nav-link"
+    													href="#tab5" data-toggle="tab">User Review</a></li>
+											</ul>
+										</div>
+									</div>
+									<div class="white-box">
+					                            <!-- Tab panes -->
+				                            <div class="tab-content">
+				                                <div class="tab-pane active fontawesome-demo" id="tab1">
+														<div id="biography" >
+						                                    <div class="row">
+						                                        <div class="col-md-3 col-6 b-r"> <strong>Overview</strong>
+
+						                                        </div>
+
+						                                    </div>
+
+						                                    <hr>
+						                                    <p class="m-t-30">{{i.overview|safe}}</p>
+
+
+
+                                           <br>
+                                           <div class="row">
+                                               <div class="col-md-3 col-6 b-r"> <strong>Category</strong>
+
+                                               </div>
+
+                                           </div>
+                                           <hr>
+                                           <ul class="activity-list" >
+                                               <li >
+
+                                                   <div class="activity-desk" >
+
+
+                                                       <div class="album" >
+                                                         {% for c in cat_id %}
+
+                                                           <a href="#" style="height:200px;">
+                                                             <h3 style="color:#000;">{{c.name}}</h3>
+                                                               <img alt="" src="../../media/{{c.image}}" style="height:100px; width:100px;">
+
+                                                           </a>
+                                                           {% endfor %}
+
+
+                                                       </div>
+                                                   </div>
+                                               </li>
+
+                                           </ul>
+
+
+						                                </div>
+													</div>
+					                      <div class="tab-pane" id="tab2">
+														   <div class="container-fluid">
+		                                                    <div class="row">
+
+		                                                        <div class="full-width p-l-20">
+                                                              <div class="row">
+              						                                        <div class="col-md-3 col-6 b-r"> <strong>Activities</strong>
+
+              						                                        </div>
+
+              						                                    </div>
+              						                                    <hr>
+		                                                            <ul class="activity-list" >
+		                                                                <li >
+
+		                                                                    <div class="activity-desk" >
+
+
+		                                                                        <div class="album" >
+                                                                              {% for a in act_id %}
+
+		                                                                            <a href="#" style="height:200px;">
+                                                                                  <h3 style="color:#000;">{{a.name}}</h3>
+		                                                                                <img alt="" src="../../media/{{a.image}}" style="height:100px; width:100px;">
+
+		                                                                            </a>
+                                                                                {% endfor %}
+
+
+		                                                                        </div>
+		                                                                    </div>
+		                                                                </li>
+
+		                                                            </ul>
+
+		                                                        </div>
+		                                                	</div>
+														</div>
+													</div>
+													<div class="tab-pane" id="tab3">
+														<div class="container-fluid">
+                              <div class="row">
+
+                                  <div class="full-width p-l-20">
+                                    <div class="row">
+                                        <div class="col-md-3 col-6 b-r"> <strong>Facilities</strong>
+
+                                        </div>
+
+                                    </div>
+                                    <hr>
+                                      <ul class="activity-list" >
+                                          <li >
+
+                                              <div class="activity-desk" >
+
+
+                                                  <div class="album" >
+
+                                                    {% for f in fat_id %}
+
+                                                      <a href="#" style="height:200px;">
+                                                        <h3 style="color:#000;">{{f.name}}</h3>
+                                                          <img alt="" src="../../media/{{f.image}}" style="height:100px; width:100px;">
+
+                                                      </a>
+                                                      {% endfor %}
+                                                  </div>
+                                              </div>
+                                          </li>
+
+                                      </ul>
+
+                                  </div>
+                            </div>
+														</div>
+													</div>
+                          <div class="tab-pane" id="tab4">
+                            <div class="container-fluid">
+                              <div class="row">
+
+                                  <div class="full-width p-l-20">
+                                    <div class="row">
+                                        <div class="col-md-3 col-6 b-r"> <strong>Other Images</strong>
+
+                                        </div>
+
+                                    </div>
+                                    <hr>
+                                      <ul class="activity-list" >
+                                          <li >
+
+                                              <div class="activity-desk" >
+
+
+                                                  <div class="album" >
+                                                    {% for img in image %}
+
+                                                      <a href="#" >
+                                                          <img alt="" src="../../media/{{img.img}}" style="height:100px; width:100px;">
+                                                      </a>
+                                                      {% endfor %}
+
+                                                  </div>
+                                              </div>
+                                          </li>
+
+                                          
+
+                                      </ul>
+
+                                  </div>
+                            </div>
+                            </div>
+                          </div>
+
+
+					                            </div>
+					                        </div>
+                                     </div>
+                                </div>
+                                <!-- END PROFILE CONTENT -->
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                <!-- end page content -->
+                {% else %}
+                 <script>
+                   alert('You are not Logged-In..!');
+                   window.open('/login','_self');
+                   </script>
+                   {% endif %}
+{% endblock %}

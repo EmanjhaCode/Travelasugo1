@@ -1,0 +1,94 @@
+<style media="screen">
+  #nav_color{
+    color:#000;
+  }
+  #nav_color:hover {
+  color: #4267B2;
+  font-size:20px;
+  transform: translateY(-10px);
+  border-radius:40px;
+}
+</style>
+
+  <ul class="sidebar navbar-nav"  style="background:#fff; margin-left:-1%;" id="t1">
+
+    <li class="nav-item active" style="color:#000;">
+      <a href="/" id="nav_color">
+        <img src="../media/home/icon/h4.png" style="width:40px;">
+        <div class="fos" id="foo"> Home </div>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a href="/covid" id="nav_color">
+        <img src="../media/home/icon/c.png" style="width:40px;">
+        <div class="fos" id="foo1"> COVID 19 </div>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a onclick="getloc()" id="nav_color">
+        <img src="../media/home/icon/n.png" style="width:40px;">
+        <div class="fos" id="foo11"> NearBy </div>
+      </a>
+    </li>
+    {% if user.is_authenticated %}
+      <li class="nav-item active">
+        <a href="/add-location" id="nav_color">
+          <img src="../media/home/icon/loc.png" style="width:40px;">
+          <div class="fos" id="foo1"> Add Location </div>
+        </a>
+      </li>
+    {% endif %}
+    <li class="dropdown-divider"></li>
+    <li class="nav-item active">
+      <a href="/virtual_list" id="nav_color">
+        <img src="../media/home/icon/v.png" style="width:40px;">
+        <div class="fos" id="foo3"> Virtual </div>
+      </a>
+    </li>
+
+    <li class="nav-item active">
+      <a href="/save-park" id="nav_color">
+        <img src="../media/home/icon/w.png" style="width:40px;">
+        <div class="fos" id="foo4"> Wishlist </div>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a href="/trending" id="nav_color">
+        <img src="../media/home/icon/t.png" style="width:40px;">
+        <div class="fos" id="foo5"> Trending </div>
+      </a></li>
+<li class="dropdown-divider"></li>
+      <li class="nav-item active">
+        <a href="/news" id="nav_color">
+          <img src="../media/home/icon/s.png" style="width:40px;">
+          <div class="fos" id="foo11"> Search </div>
+        </a>
+      </li>
+
+
+
+
+
+    <li class="nav-item active">
+      <a href="/feedback" id="nav_color">
+        <img src="../media/home/icon/f.jpg" style="width:40px;">
+        <div class="fos" id="foo10"> Send Feedback </div>
+      </a>
+    </li>
+  {% if user.is_authenticated %}
+    <li class="nav-item active">
+      <a href="/logout1" id="nav_color">
+        <img src="../media/home/icon/out.png" style="width:40px;">
+        <div class="fos" id="foo10"> Logout </div>
+      </a>
+    </li>
+  {% endif %}
+  </ul>
+
+  <script type="text/javascript">
+    if(screen.width<500) {
+    var element = document.getElementById("t1");
+    element.classList.add("toggled");
+  }
+
+  </script>

@@ -1,0 +1,183 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+{% if user.is_authenticated %}
+{% if msg %}
+<script>
+ alert(`{{msg}}`);
+ window.open('location','_self');
+  </script>
+{% endif %}
+<!-- start page content -->
+      <div class="page-content-wrapper">
+          <div class="page-content">
+
+               <div class="row">
+      <div class="col-sm-12">
+        <div class="card-box">
+          <div class="card-head">
+            <header>Add New Location</header>
+
+          </div>
+          <div class="card-body ">
+            <form class="" method='post' enctype="multipart/form-data">
+{% csrf_token %}
+                      <div class="row">
+
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Name</label>
+                         <input type="text" name="name" placeholder=" Location Name" style="width:100%; margin-bottom:15px;">
+
+                       </div>
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location City</label>
+                         <input type="text" name="city" placeholder="Location City" style="width:100%; margin-bottom:15px;">
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location State</label>
+                         <input type="text" name="state" placeholder="Location State" style="width:100%; margin-bottom:15px;">
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Country</label>
+                         <input type="text" name="country" placeholder="Location Country" style="width:100%; margin-bottom:15px;">
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Zipcode</label>
+                         <input type="text" name="zipcode" placeholder="Location Zipcode" style="width:100%; margin-bottom:15px;">
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Address</label>
+                         <input type="text" name="address" placeholder=" Location Address" style="width:100%; margin-bottom:15px;">
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Longitude</label>
+                         <input type="text" name="logitude" placeholder="Location Logitude" style="width:100%; margin-bottom:15px;">
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Latitude</label>
+                         <input type="text" name="latitude" placeholder=" Location Latitude" style="width:100%; margin-bottom:15px;">
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Overview</label>
+                         <textarea name="overview" placeholder=" Location Overview" style="width:100%; margin-bottom:15px;"></textarea>
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 " >
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Categories</label>
+                         <select  id="category" name="category" class="form-control select2-multiple cat" multiple >
+                             <optgroup label="Select Location Categories">
+                               {% for c in category_data %}
+                                 <option  value={{c.id}}>{{c.name}}</option>
+
+
+                                 {% endfor %}
+                             </optgroup>
+
+                        </select>
+                        <!-- {% for c in category_data %}
+                       <button type="button" name="button">{{c.name}}</button>
+                       {% endfor %} -->
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 " >
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Facilities</label>
+                         <select id="multiple" name="facility" class="form-control select2-multiple" multiple >
+                             <optgroup label="Select Location Facilities">
+                               {% for f in facility_data %}
+                                 <option value={{f.id}}>{{f.name}}</option>
+                                 {% endfor %}
+                             </optgroup>
+
+                        </select> <br>
+
+                       </div>
+
+                       <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 " >
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Location Activities</label>
+                         <select id="multiple" name="activity" class="form-control select2-multiple" multiple >
+                             <optgroup label="Select Location Activities">
+                               {% for a in activity_data %}
+                                  <option value={{a.id}}>{{a.name}}</option>
+                                 {% endfor %}
+                             </optgroup>
+
+                        </select>
+
+                       </div>
+
+
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"> <br>
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Thumbnail Image 1</label>
+                        <input type="file" class="custom-file-label" name="thumbnail1" style="width:95%;">
+
+                        </div>
+
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"><br>
+                          <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Other Image 1</label>
+                          <input type="file" class="custom-file-label" name="other1" style="width:95%;">
+                          </div>
+
+                          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"><br>
+                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Thumbnail Image 2</label>
+                            <input type="file" class="custom-file-label" name="thumbnail2" style="width:95%;">
+                            </div>
+
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"><br>
+                              <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Other Image 2</label>
+                              <input type="file" class="custom-file-label" name="other2" style="width:95%;">
+                              </div>
+
+                              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"><br>
+                                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Thumbnail Image 3</label>
+                                <input type="file" class="custom-file-label" name="thumbnail3" style="width:95%;">
+                                </div>
+
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12"><br>
+                                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Other Image 3</label>
+                                  <input type="file" class="custom-file-label" name="other3" style="width:95%;">
+                                  </div>
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+      <input type="submit"  class="btn btn-primary " value="Add New Location" style="width:100%; margin-top:15px;">
+    </div>
+
+                      </div>
+
+</form>
+  </div>
+        </div>
+      </div>
+    </div>
+          </div>
+      </div>
+      <script>
+        $('.cat').click(function(){{
+          var cat = $('#category').val()
+          console.log('cat');
+          <!-- var myJSON = JSON.parse(cat); -->
+          alert(cat)
+        }
+      </script>
+      <!-- end page content -->
+      {% else %}
+       <script>
+         alert('You are not Logged-In..!');
+         window.open('login','_self');
+         </script>
+         {% endif %}
+{% endblock %}
